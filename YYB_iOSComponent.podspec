@@ -98,6 +98,7 @@ Pod::Spec.new do |s|
     photoViewController.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController/**/*.{h,m}'
     photoViewController.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController_Icons.xcassets'
     photoViewController.dependency 'YYB_iOSComponent/Base'
+    photoViewController.dependency 'YYB_iOSComponent/AlertView'
     photoViewController.framework = 'Photos'
   end
 

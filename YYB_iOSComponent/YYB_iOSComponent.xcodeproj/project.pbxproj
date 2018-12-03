@@ -421,22 +421,22 @@
 		C8C5AF7E21B4B3C200FEE44E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C83E059321B5036C00619F0D /* PhotoViewController */,
-				C83E05AF21B5038600619F0D /* PhotoViewController_Icons.xcassets */,
 				C8C5B09921B4E96600FEE44E /* Base_Icons.xcassets */,
 				C83E059121B501E500619F0D /* PhotoBrowser_Icons.xcassets */,
-				C8C5B09F21B4FD3D00FEE44E /* PhotoBrowser */,
+				C83E05AF21B5038600619F0D /* PhotoViewController_Icons.xcassets */,
+				C8C5B02221B4C6AE00FEE44E /* AlertView */,
 				C8C5B08921B4E35B00FEE44E /* Base */,
+				C8C5AF7F21B4B3D200FEE44E /* Category */,
+				C8C5B03621B4C77C00FEE44E /* Indicator */,
+				C8C5B03A21B4C7E200FEE44E /* NavigationBar */,
+				C8C5B05021B4C86E00FEE44E /* PageControl */,
+				C8C5B09F21B4FD3D00FEE44E /* PhotoBrowser */,
+				C83E059321B5036C00619F0D /* PhotoViewController */,
+				C8C5B05421B4C93400FEE44E /* PlaceholderTextView */,
+				C8C5B05821B4C9FD00FEE44E /* RefreshView */,
+				C8C5B01B21B4C3AB00FEE44E /* Router */,
 				C8C5B08421B4CB6D00FEE44E /* ShadowButton */,
 				C8C5B08121B4CB6D00FEE44E /* ShadowView */,
-				C8C5B05821B4C9FD00FEE44E /* RefreshView */,
-				C8C5B05421B4C93400FEE44E /* PlaceholderTextView */,
-				C8C5B05021B4C86E00FEE44E /* PageControl */,
-				C8C5B03A21B4C7E200FEE44E /* NavigationBar */,
-				C8C5B03621B4C77C00FEE44E /* Indicator */,
-				C8C5B02221B4C6AE00FEE44E /* AlertView */,
-				C8C5B01B21B4C3AB00FEE44E /* Router */,
-				C8C5AF7F21B4B3D200FEE44E /* Category */,
 			);
 			path = Components;
 			sourceTree = "<group>";

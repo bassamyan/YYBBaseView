@@ -60,3 +60,21 @@
    pod 'YYB_iOSComponent', :subspecs => ["ShadowButton"]
    ```
 
+11. **YYBBase ：基础控制器**
+
+    ```
+    pod 'YYB_iOSComponent', :subspecs => ["Base"]
+    ```
+
+12. **YYBPhotoBrowser ：图片浏览器**
+
+    ```
+    pod 'YYB_iOSComponent', :subspecs => ["PhotoBrowser"]
+    ```
+
+13. **YYBPhotoViewController ：图片选择器**
+
+    ```
+    pod 'YYB_iOSComponent', :subspecs => ["PhotoViewController"]
+    ```
+
