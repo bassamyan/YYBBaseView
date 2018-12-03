@@ -23,12 +23,16 @@ Pod::Spec.new do |s|
   s.author        = { "Sniper" => "yanyibin.nz@gmail.com" }
   s.platform      = :ios
   s.source        = { :git => "https://github.com/bassamyan/YYB_iOSComponent.git", :tag => "#{s.version}" }
+  s.homepage      = "https://github.com/bassamyan/YYB_iOSComponent"
 
   s.subspec 'Category' do |category|
     category.subspec 'Base' do |base|
       base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Category/Base/**/*.{h,m}'
+    end
     
     category.subspec 'Layout' do |layout|
       layout.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Category/Layout/**/*.{h,m}'
       layout.dependency 'Masonry'
+    end
+  end
 end
