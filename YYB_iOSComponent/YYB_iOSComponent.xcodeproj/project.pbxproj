@@ -207,6 +207,7 @@
 		C8C5AF4B21B4B3A800FEE44E /* YYB_iOSComponent */ = {
 			isa = PBXGroup;
 			children = (
+				C8C5AFDB21B4B74B00FEE44E /* ViewControllers */,
 				C8C5AF7E21B4B3C200FEE44E /* Components */,
 				C8C5AF4C21B4B3A800FEE44E /* AppDelegate.h */,
 				C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */,
@@ -250,7 +251,7 @@
 		C8C5AF7F21B4B3D200FEE44E /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				C8C5AF9021B4B3F900FEE44E /* Categories */,
+				C8C5AF9021B4B3F900FEE44E /* Base */,
 				C8C5AF8021B4B3F900FEE44E /* Layout */,
 			);
 			path = Category;
@@ -278,7 +279,7 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
-		C8C5AF9021B4B3F900FEE44E /* Categories */ = {
+		C8C5AF9021B4B3F900FEE44E /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				C8C5AFB721B4B3F900FEE44E /* NSArray+YYBAdd.h */,
@@ -327,7 +328,14 @@
 				C8C5AFB421B4B3F900FEE44E /* UIView+YYBAdd.m */,
 				C8C5AFA821B4B3F900FEE44E /* YYBCategory.h */,
 			);
-			path = Categories;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C8C5AFDB21B4B74B00FEE44E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D47B92C829197AE5AA8F3CE9 /* Frameworks */ = {
