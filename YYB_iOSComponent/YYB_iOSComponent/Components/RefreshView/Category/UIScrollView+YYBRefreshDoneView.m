@@ -14,6 +14,10 @@ static char const YYBREFRESH_DONE_KEY;
 
 @implementation UIScrollView (YYBRefreshDoneView)
 
+- (void)addRefreshDoneView {
+    [self addRefreshDoneViewWithClass:NSClassFromString(@"YYBRefreshDoneView")];
+}
+
 - (void)addRefreshDoneViewWithClass:(Class)viewClass {
     [self addRefreshDoneViewWithClass:viewClass height:YYBREFRESH_DONE_HEIGHT];
 }

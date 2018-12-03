@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.2"
+  s.version       = "0.0.3"
   s.summary       = "YYB_iOSComponent"
   s.description   = "A pod for iOS develope components"
   s.license       = "MIT"
@@ -38,6 +38,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'PageControl' do |pageControl|
     pageControl.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PageControl/**/*.{h,m}'
+    pageControl.dependency 'YYB_iOSComponent/Category'
   end
 
   s.subspec 'PlaceholderTextView' do |placeholderTextView|

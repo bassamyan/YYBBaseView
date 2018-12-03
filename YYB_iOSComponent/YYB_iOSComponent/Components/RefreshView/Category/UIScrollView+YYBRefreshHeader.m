@@ -15,7 +15,7 @@ static char const YYBREFRESH_HEADER_KEY;
 @implementation UIScrollView (YYBRefreshHeader)
 
 - (void)addRefreshHeaderWithHandler:(YYBRefreshStartRefreshHandler)startRefreshHandler {
-    [self addRefreshHeaderWithClass:[YYBRefreshTopView class] handler:startRefreshHandler];
+    [self addRefreshHeaderWithClass:NSClassFromString(@"YYBRefreshTopView") handler:startRefreshHandler];
 }
 
 - (void)addRefreshHeaderWithClass:(Class)viewClass handler:(YYBRefreshStartRefreshHandler)startRefreshHandler {

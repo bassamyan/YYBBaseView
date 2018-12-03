@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "YYBRefreshBaseView.h"
 #import "YYBRefreshFooterView.h"
-#import "YYBRefreshBottomView.h"
 
 @interface UIScrollView (YYBRefreshFooter)
 
