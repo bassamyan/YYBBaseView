@@ -10,6 +10,16 @@
 		4439A2AB7F552F06DC3F9AAA /* libPods-YYB_iOSComponent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4ABB93F869C1D3375AA426F /* libPods-YYB_iOSComponent.a */; };
 		68A4CB3640530B7F0BA492BD /* libPods-YYB_iOSComponentTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17ACD8324E974E272B97B8A0 /* libPods-YYB_iOSComponentTests.a */; };
 		8A0F1CE07CE22BE951306424 /* libPods-YYB_iOSComponentUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FCE5D93771191ACE3A51D3 /* libPods-YYB_iOSComponentUITests.a */; };
+		C83E059221B501E500619F0D /* PhotoBrowser_Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83E059121B501E500619F0D /* PhotoBrowser_Icons.xcassets */; };
+		C83E05A521B5036C00619F0D /* YYBAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E059421B5036C00619F0D /* YYBAlbumTableViewCell.m */; };
+		C83E05A621B5036C00619F0D /* YYBPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E059521B5036C00619F0D /* YYBPhotoViewController.m */; };
+		C83E05A821B5036C00619F0D /* YYBPhotoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E059821B5036C00619F0D /* YYBPhotoContentView.m */; };
+		C83E05A921B5036C00619F0D /* YYBPhotoSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E059A21B5036C00619F0D /* YYBPhotoSectionView.m */; };
+		C83E05AB21B5036C00619F0D /* PHAsset+YYBPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E059E21B5036C00619F0D /* PHAsset+YYBPhoto.m */; };
+		C83E05AC21B5036C00619F0D /* YYBPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05A121B5036C00619F0D /* YYBPhotoCollectionViewCell.m */; };
+		C83E05AE21B5036C00619F0D /* YYBPhotoSelectionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05A421B5036C00619F0D /* YYBPhotoSelectionsView.m */; };
+		C83E05B021B5038700619F0D /* PhotoViewController_Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83E05AF21B5038600619F0D /* PhotoViewController_Icons.xcassets */; };
+		C83E05B321B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05B221B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m */; };
 		C8C5AF4E21B4B3A800FEE44E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */; };
 		C8C5AF5121B4B3A800FEE44E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF5021B4B3A800FEE44E /* ViewController.m */; };
 		C8C5AF5621B4B3A900FEE44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C5AF5521B4B3A900FEE44E /* Assets.xcassets */; };
@@ -81,8 +91,14 @@
 		C8C5B09121B4E37F00FEE44E /* YYBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B08C21B4E37E00FEE44E /* YYBViewController.m */; };
 		C8C5B09221B4E37F00FEE44E /* YYBCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B08D21B4E37F00FEE44E /* YYBCollectionViewController.m */; };
 		C8C5B09821B4E5C700FEE44E /* UIDevice+YYBAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B09621B4E5C700FEE44E /* UIDevice+YYBAdd.m */; };
-		C8C5B09A21B4E96600FEE44E /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C5B09921B4E96600FEE44E /* Icons.xcassets */; };
+		C8C5B09A21B4E96600FEE44E /* Base_Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C5B09921B4E96600FEE44E /* Base_Icons.xcassets */; };
 		C8C5B09E21B4EAD800FEE44E /* YIPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B09D21B4EAD800FEE44E /* YIPushViewController.m */; };
+		C8C5B0AC21B4FD3D00FEE44E /* YYBPhotoBrowserPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0A021B4FD3D00FEE44E /* YYBPhotoBrowserPopAnimator.m */; };
+		C8C5B0AD21B4FD3D00FEE44E /* YYBPhotoBrowserTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0A121B4FD3D00FEE44E /* YYBPhotoBrowserTransition.m */; };
+		C8C5B0AE21B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0A321B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.m */; };
+		C8C5B0AF21B4FD3D00FEE44E /* YYBPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0A521B4FD3D00FEE44E /* YYBPhotoBrowser.m */; };
+		C8C5B0B021B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0A821B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m */; };
+		C8C5B0B121B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0AB21B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +125,24 @@
 		37B16A44D4CAE0D7220C2E73 /* Pods-YYB_iOSComponent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponent/Pods-YYB_iOSComponent.debug.xcconfig"; sourceTree = "<group>"; };
 		6B6A54FBE9DAC04800B12C15 /* Pods-YYB_iOSComponent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponent.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponent/Pods-YYB_iOSComponent.release.xcconfig"; sourceTree = "<group>"; };
 		B4ABB93F869C1D3375AA426F /* libPods-YYB_iOSComponent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYB_iOSComponent.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83E059121B501E500619F0D /* PhotoBrowser_Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PhotoBrowser_Icons.xcassets; sourceTree = "<group>"; };
+		C83E059421B5036C00619F0D /* YYBAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBAlbumTableViewCell.m; sourceTree = "<group>"; };
+		C83E059521B5036C00619F0D /* YYBPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoViewController.m; sourceTree = "<group>"; };
+		C83E059621B5036C00619F0D /* PHAsset+YYBPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHAsset+YYBPhoto.h"; sourceTree = "<group>"; };
+		C83E059821B5036C00619F0D /* YYBPhotoContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoContentView.m; sourceTree = "<group>"; };
+		C83E059921B5036C00619F0D /* YYBPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		C83E059A21B5036C00619F0D /* YYBPhotoSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoSectionView.m; sourceTree = "<group>"; };
+		C83E059B21B5036C00619F0D /* YYBPhotoSelectionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoSelectionsView.h; sourceTree = "<group>"; };
+		C83E059C21B5036C00619F0D /* YYBAlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBAlbumTableViewCell.h; sourceTree = "<group>"; };
+		C83E059E21B5036C00619F0D /* PHAsset+YYBPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+YYBPhoto.m"; sourceTree = "<group>"; };
+		C83E059F21B5036C00619F0D /* YYBPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoViewController.h; sourceTree = "<group>"; };
+		C83E05A021B5036C00619F0D /* YYBPhotoSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoSectionView.h; sourceTree = "<group>"; };
+		C83E05A121B5036C00619F0D /* YYBPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		C83E05A221B5036C00619F0D /* YYBPhotoContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoContentView.h; sourceTree = "<group>"; };
+		C83E05A421B5036C00619F0D /* YYBPhotoSelectionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoSelectionsView.m; sourceTree = "<group>"; };
+		C83E05AF21B5038600619F0D /* PhotoViewController_Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PhotoViewController_Icons.xcassets; sourceTree = "<group>"; };
+		C83E05B121B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+PhotoViewWaiting.h"; sourceTree = "<group>"; };
+		C83E05B221B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+PhotoViewWaiting.m"; sourceTree = "<group>"; };
 		C8C5AF4921B4B3A800FEE44E /* YYB_iOSComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYB_iOSComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C5AF4C21B4B3A800FEE44E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -257,9 +291,21 @@
 		C8C5B08F21B4E37F00FEE44E /* YYBCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBCollectionViewController.h; sourceTree = "<group>"; };
 		C8C5B09621B4E5C700FEE44E /* UIDevice+YYBAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+YYBAdd.m"; sourceTree = "<group>"; };
 		C8C5B09721B4E5C700FEE44E /* UIDevice+YYBAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+YYBAdd.h"; sourceTree = "<group>"; };
-		C8C5B09921B4E96600FEE44E /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		C8C5B09921B4E96600FEE44E /* Base_Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Base_Icons.xcassets; sourceTree = "<group>"; };
 		C8C5B09C21B4EAD800FEE44E /* YIPushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIPushViewController.h; sourceTree = "<group>"; };
 		C8C5B09D21B4EAD800FEE44E /* YIPushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIPushViewController.m; sourceTree = "<group>"; };
+		C8C5B0A021B4FD3D00FEE44E /* YYBPhotoBrowserPopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoBrowserPopAnimator.m; sourceTree = "<group>"; };
+		C8C5B0A121B4FD3D00FEE44E /* YYBPhotoBrowserTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoBrowserTransition.m; sourceTree = "<group>"; };
+		C8C5B0A221B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowserInteractiveTransition.h; sourceTree = "<group>"; };
+		C8C5B0A321B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoBrowserCollectionViewCell.m; sourceTree = "<group>"; };
+		C8C5B0A421B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowserPushAnimator.h; sourceTree = "<group>"; };
+		C8C5B0A521B4FD3D00FEE44E /* YYBPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoBrowser.m; sourceTree = "<group>"; };
+		C8C5B0A621B4FD3D00FEE44E /* YYBPhotoBrowserTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowserTransition.h; sourceTree = "<group>"; };
+		C8C5B0A721B4FD3D00FEE44E /* YYBPhotoBrowserPopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowserPopAnimator.h; sourceTree = "<group>"; };
+		C8C5B0A821B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoBrowserInteractiveTransition.m; sourceTree = "<group>"; };
+		C8C5B0A921B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowserCollectionViewCell.h; sourceTree = "<group>"; };
+		C8C5B0AA21B4FD3D00FEE44E /* YYBPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowser.h; sourceTree = "<group>"; };
+		C8C5B0AB21B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoBrowserPushAnimator.m; sourceTree = "<group>"; };
 		E13CDEB53C2305927B696C50 /* Pods-YYB_iOSComponentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponentUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponentUITests/Pods-YYB_iOSComponentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E9D23593DCFC5692FF931D /* Pods-YYB_iOSComponentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponentUITests/Pods-YYB_iOSComponentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6FCE5D93771191ACE3A51D3 /* libPods-YYB_iOSComponentUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYB_iOSComponentUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +339,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C83E059321B5036C00619F0D /* PhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C83E05B121B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.h */,
+				C83E05B221B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m */,
+				C83E059621B5036C00619F0D /* PHAsset+YYBPhoto.h */,
+				C83E059E21B5036C00619F0D /* PHAsset+YYBPhoto.m */,
+				C83E059C21B5036C00619F0D /* YYBAlbumTableViewCell.h */,
+				C83E059421B5036C00619F0D /* YYBAlbumTableViewCell.m */,
+				C83E059921B5036C00619F0D /* YYBPhotoCollectionViewCell.h */,
+				C83E05A121B5036C00619F0D /* YYBPhotoCollectionViewCell.m */,
+				C83E05A221B5036C00619F0D /* YYBPhotoContentView.h */,
+				C83E059821B5036C00619F0D /* YYBPhotoContentView.m */,
+				C83E05A021B5036C00619F0D /* YYBPhotoSectionView.h */,
+				C83E059A21B5036C00619F0D /* YYBPhotoSectionView.m */,
+				C83E059B21B5036C00619F0D /* YYBPhotoSelectionsView.h */,
+				C83E05A421B5036C00619F0D /* YYBPhotoSelectionsView.m */,
+				C83E059F21B5036C00619F0D /* YYBPhotoViewController.h */,
+				C83E059521B5036C00619F0D /* YYBPhotoViewController.m */,
+			);
+			path = PhotoViewController;
+			sourceTree = "<group>";
+		};
 		C8C5AF4021B4B3A700FEE44E = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +421,11 @@
 		C8C5AF7E21B4B3C200FEE44E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C8C5B09921B4E96600FEE44E /* Icons.xcassets */,
+				C83E059321B5036C00619F0D /* PhotoViewController */,
+				C83E05AF21B5038600619F0D /* PhotoViewController_Icons.xcassets */,
+				C8C5B09921B4E96600FEE44E /* Base_Icons.xcassets */,
+				C83E059121B501E500619F0D /* PhotoBrowser_Icons.xcassets */,
+				C8C5B09F21B4FD3D00FEE44E /* PhotoBrowser */,
 				C8C5B08921B4E35B00FEE44E /* Base */,
 				C8C5B08421B4CB6D00FEE44E /* ShadowButton */,
 				C8C5B08121B4CB6D00FEE44E /* ShadowView */,
@@ -628,6 +701,25 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		C8C5B09F21B4FD3D00FEE44E /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C8C5B0AA21B4FD3D00FEE44E /* YYBPhotoBrowser.h */,
+				C8C5B0A521B4FD3D00FEE44E /* YYBPhotoBrowser.m */,
+				C8C5B0A921B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.h */,
+				C8C5B0A321B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.m */,
+				C8C5B0A221B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.h */,
+				C8C5B0A821B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m */,
+				C8C5B0A721B4FD3D00FEE44E /* YYBPhotoBrowserPopAnimator.h */,
+				C8C5B0A021B4FD3D00FEE44E /* YYBPhotoBrowserPopAnimator.m */,
+				C8C5B0A421B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.h */,
+				C8C5B0AB21B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m */,
+				C8C5B0A621B4FD3D00FEE44E /* YYBPhotoBrowserTransition.h */,
+				C8C5B0A121B4FD3D00FEE44E /* YYBPhotoBrowserTransition.m */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		D47B92C829197AE5AA8F3CE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,8 +850,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C5B09A21B4E96600FEE44E /* Icons.xcassets in Resources */,
+				C83E059221B501E500619F0D /* PhotoBrowser_Icons.xcassets in Resources */,
+				C8C5B09A21B4E96600FEE44E /* Base_Icons.xcassets in Resources */,
 				C8C5AF5621B4B3A900FEE44E /* Assets.xcassets in Resources */,
+				C83E05B021B5038700619F0D /* PhotoViewController_Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,6 +956,7 @@
 				C8C5B04D21B4C7E200FEE44E /* YYBNavigationBarContainer+Create.m in Sources */,
 				C8C5AFC721B4B3F900FEE44E /* UIImage+YYBAdd.m in Sources */,
 				C8C5AFD021B4B3F900FEE44E /* UITextField+YYBAdd.m in Sources */,
+				C83E05A921B5036C00619F0D /* YYBPhotoSectionView.m in Sources */,
 				C8C5AFC521B4B3F900FEE44E /* UIImageView+YYBAdd.m in Sources */,
 				C8C5B07621B4C9FD00FEE44E /* YYBRefreshSpotTopView.m in Sources */,
 				C8C5B07721B4C9FD00FEE44E /* YYBRefreshDoneView.m in Sources */,
@@ -872,8 +967,11 @@
 				C8C5AF5C21B4B3A900FEE44E /* main.m in Sources */,
 				C8C5AFC121B4B3F900FEE44E /* UIView+YYBLayout.m in Sources */,
 				C8C5AFCE21B4B3F900FEE44E /* NSArray+YYBAdd.m in Sources */,
+				C8C5B0AC21B4FD3D00FEE44E /* YYBPhotoBrowserPopAnimator.m in Sources */,
 				C8C5B09221B4E37F00FEE44E /* YYBCollectionViewController.m in Sources */,
+				C83E05A621B5036C00619F0D /* YYBPhotoViewController.m in Sources */,
 				C8C5AFC621B4B3F900FEE44E /* UILabel+YYBAdd.m in Sources */,
+				C83E05AC21B5036C00619F0D /* YYBPhotoCollectionViewCell.m in Sources */,
 				C8C5AFD521B4B3F900FEE44E /* NSData+YYBAdd.m in Sources */,
 				C8C5AFD321B4B3F900FEE44E /* NSObject+YYBAdd.m in Sources */,
 				C8C5AF4E21B4B3A800FEE44E /* AppDelegate.m in Sources */,
@@ -881,12 +979,16 @@
 				C8C5B05721B4C93400FEE44E /* YYBPlaceholderTextView.m in Sources */,
 				C8C5AFBE21B4B3F900FEE44E /* UIImageView+YYBLayout.m in Sources */,
 				C8C5AFCF21B4B3F900FEE44E /* NSError+YYBAdd.m in Sources */,
+				C8C5B0B121B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m in Sources */,
 				C8C5B03321B4C6BD00FEE44E /* YYBAlertViewAction.m in Sources */,
 				C8C5B07921B4C9FD00FEE44E /* YYBRefreshSpotBottomView.m in Sources */,
+				C8C5B0AE21B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.m in Sources */,
 				C8C5AFC821B4B3F900FEE44E /* NSDictionary+YYBAdd.m in Sources */,
 				C8C5B04B21B4C7E200FEE44E /* YYBNavigationBarControl.m in Sources */,
+				C83E05A821B5036C00619F0D /* YYBPhotoContentView.m in Sources */,
 				C8C5B04E21B4C7E200FEE44E /* YYBNavigationBar.m in Sources */,
 				C8C5B07F21B4C9FD00FEE44E /* YYBRefreshBaseDoneView.m in Sources */,
+				C8C5B0B021B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m in Sources */,
 				C8C5B03421B4C6BD00FEE44E /* YYBAlertView.m in Sources */,
 				C8C5AFDA21B4B3F900FEE44E /* UIGestureRecognizer+YYBAdd.m in Sources */,
 				C8C5B07B21B4C9FD00FEE44E /* UIScrollView+YYBRefreshHeader.m in Sources */,
@@ -894,6 +996,7 @@
 				C8C5AFCC21B4B3F900FEE44E /* UIApplication+YYBAdd.m in Sources */,
 				C8C5B07521B4C9FD00FEE44E /* YYBRefreshBottomView.m in Sources */,
 				C8C5B08721B4CB6D00FEE44E /* YYBShadowView.m in Sources */,
+				C8C5B0AD21B4FD3D00FEE44E /* YYBPhotoBrowserTransition.m in Sources */,
 				C8C5B03921B4C77C00FEE44E /* YYBIndicator.m in Sources */,
 				C8C5B03221B4C6BD00FEE44E /* YYBAlertView+Animation.m in Sources */,
 				C8C5AFD121B4B3F900FEE44E /* NSString+YYBAdd.m in Sources */,
@@ -902,16 +1005,19 @@
 				C8C5AFD221B4B3F900FEE44E /* NSDate+YYBAdd.m in Sources */,
 				C8C5B07A21B4C9FD00FEE44E /* UIScrollView+YYBRefreshFooter.m in Sources */,
 				C8C5AFCB21B4B3F900FEE44E /* UIScrollView+YYBAdd.m in Sources */,
+				C83E05A521B5036C00619F0D /* YYBAlbumTableViewCell.m in Sources */,
 				C8C5B03121B4C6BD00FEE44E /* YYBAlertPlaceholderTextView.m in Sources */,
 				C8C5AFC021B4B3F900FEE44E /* UIButton+YYBLayout.m in Sources */,
 				C8C5AFD721B4B3F900FEE44E /* UIView+YYBAdd.m in Sources */,
 				C8C5AFBF21B4B3F900FEE44E /* UICollectionView+YYBLayout.m in Sources */,
+				C83E05AB21B5036C00619F0D /* PHAsset+YYBPhoto.m in Sources */,
 				C8C5B02121B4C3AB00FEE44E /* YYBRouter.m in Sources */,
 				C8C5B03521B4C6BD00FEE44E /* UIView+Responder.m in Sources */,
 				C8C5AFC421B4B3F900FEE44E /* UITableView+YYBLayout.m in Sources */,
 				C8C5B02021B4C3AB00FEE44E /* UIViewController+YYBRouter.m in Sources */,
 				C8C5B04A21B4C7E200FEE44E /* YYBNavigationBarContainer.m in Sources */,
 				C8C5B09821B4E5C700FEE44E /* UIDevice+YYBAdd.m in Sources */,
+				C8C5B0AF21B4FD3D00FEE44E /* YYBPhotoBrowser.m in Sources */,
 				C8C5B09021B4E37F00FEE44E /* YYBTableViewController.m in Sources */,
 				C8C5B04F21B4C7E200FEE44E /* YYBNavigationBarLabel.m in Sources */,
 				C8C5AFCA21B4B3F900FEE44E /* NSNumber+YYBAdd.m in Sources */,
@@ -922,6 +1028,8 @@
 				C8C5B07C21B4C9FD00FEE44E /* UIScrollView+YYBRefreshDoneView.m in Sources */,
 				C8C5AFC321B4B3F900FEE44E /* UITextField+YYBLayout.m in Sources */,
 				C8C5B04C21B4C7E200FEE44E /* YYBNavigationBarImageView.m in Sources */,
+				C83E05B321B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m in Sources */,
+				C83E05AE21B5036C00619F0D /* YYBPhotoSelectionsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

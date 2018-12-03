@@ -17,11 +17,11 @@
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
     YYBViewController *viewController = [super allocWithZone:zone];
     
-    @weakify(viewController)
+    __weak typeof(viewController) weak_vc =  viewController;
     [[viewController rac_signalForSelector:@selector(viewDidLoad)]
      subscribeNext:^(id x) {
-         @strongify(viewController)
-         [viewController renderDefaultViews];
+         __strong typeof(viewController) strong_vc = weak_vc;
+         [strong_vc renderDefaultViews];
      }];
     
     return viewController;

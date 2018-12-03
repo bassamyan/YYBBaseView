@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.6"
+  s.version       = "0.0.7"
   s.summary       = "YYB_iOSComponent"
   s.description   = "A pod for iOS develope components"
   s.license       = "MIT"
@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.platform      = :ios
   s.source        = { :git => "https://github.com/bassamyan/YYB_iOSComponent.git", :tag => "#{s.version}" }
   s.homepage      = "https://github.com/bassamyan/YYB_iOSComponent"
+  s.ios.deployment_target = '10.0'
 
   s.subspec 'Category' do |category|
     category.subspec 'Base' do |base|
@@ -77,13 +78,27 @@ Pod::Spec.new do |s|
 
   s.subspec 'Base' do |base|
     base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Base/**/*.{h,m}'
-    base.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/Icons.xcassets'
+    base.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/Base_Icons.xcassets'
     base.dependency 'Masonry'
     base.dependency 'ReactiveObjC'
     base.dependency 'TPKeyboardAvoiding'
     base.dependency 'FDFullscreenPopGesture'
     base.dependency 'YYB_iOSComponent/Category'
     base.dependency 'YYB_iOSComponent/NavigationBar'
+  end
+
+  s.subspec 'PhotoBrowser' do |photoBrowser|
+    photoBrowser.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser/**/*.{h,m}'
+    photoBrowser.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser_Icons.xcassets'
+    photoBrowser.dependency 'YYB_iOSComponent/Base'
+    photoBrowser.dependency 'SDWebImage'
+  end
+
+  s.subspec 'PhotoViewController' do |photoViewController|
+    photoViewController.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController/**/*.{h,m}'
+    photoViewController.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController_Icons.xcassets'
+    photoViewController.dependency 'YYB_iOSComponent/Base'
+    photoViewController.framework = 'Photos'
   end
 
 end
