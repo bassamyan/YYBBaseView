@@ -6,6 +6,9 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - TPKeyboardAvoiding (1.3.2)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
 
 DEPENDENCIES:
   - FDFullscreenPopGesture
@@ -13,6 +16,7 @@ DEPENDENCIES:
   - ReactiveObjC
   - SDWebImage
   - TPKeyboardAvoiding
+  - YYCategories
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,6 +25,7 @@ SPEC REPOS:
     - ReactiveObjC
     - SDWebImage
     - TPKeyboardAvoiding
+    - YYCategories
 
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -28,7 +33,8 @@ SPEC CHECKSUMS:
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: e175fbd0a133319f13027148e0a23d8eedd2eafc
+PODFILE CHECKSUM: 2f8bf536b4f03be435d970f2c54749f218a4869a
 
 COCOAPODS: 1.5.3

@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  YYB_iOSComponent
+//
+//  Created by Sniper on 2018/12/3.
+//  Copyright © 2018 Univease Co., Ltd. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "YYBCategory.h"
+#import "YYBLayout.h"
+#import <YYCategories/YYCategories.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

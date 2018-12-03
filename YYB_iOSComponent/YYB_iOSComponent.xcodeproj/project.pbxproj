@@ -20,6 +20,18 @@
 		C83E05AE21B5036C00619F0D /* YYBPhotoSelectionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05A421B5036C00619F0D /* YYBPhotoSelectionsView.m */; };
 		C83E05B021B5038700619F0D /* PhotoViewController_Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83E05AF21B5038600619F0D /* PhotoViewController_Icons.xcassets */; };
 		C83E05B321B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05B221B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m */; };
+		C83E05B721B518AB00619F0D /* YIAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05B621B518AB00619F0D /* YIAlertViewController.m */; };
+		C83E05BB21B5190300619F0D /* YYBAlertView+Waiting.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05BA21B5190300619F0D /* YYBAlertView+Waiting.m */; };
+		C83E05BE21B51A8600619F0D /* YYBAlertView+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05BD21B51A8600619F0D /* YYBAlertView+Status.m */; };
+		C83E05C121B51AC500619F0D /* YYBAlertView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05BF21B51AC400619F0D /* YYBAlertView+Alert.m */; };
+		C83E05C421B51C6D00619F0D /* YYBAlertView+DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05C221B51C6C00619F0D /* YYBAlertView+DatePicker.m */; };
+		C83E05C721B51C8700619F0D /* SPCreateDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05C621B51C8700619F0D /* SPCreateDateView.m */; };
+		C83E05CE21B51CA600619F0D /* SPStorageCardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05CB21B51CA600619F0D /* SPStorageCardsView.m */; };
+		C83E05CF21B51CA600619F0D /* SPStorageStoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05CC21B51CA600619F0D /* SPStorageStoreView.m */; };
+		C83E05D021B51CA600619F0D /* SPStorageTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05CD21B51CA600619F0D /* SPStorageTextInputView.m */; };
+		C83E05D321B51D1800619F0D /* SPStorageCardSettingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05D121B51D1700619F0D /* SPStorageCardSettingCollectionViewCell.m */; };
+		C83E05D621B51DCA00619F0D /* YYBAlertView+Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E05D521B51DCA00619F0D /* YYBAlertView+Storage.m */; };
+		C83E05D821B51EB400619F0D /* ic_storage_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = C83E05D721B51EB300619F0D /* ic_storage_setting.png */; };
 		C8C5AF4E21B4B3A800FEE44E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */; };
 		C8C5AF5121B4B3A800FEE44E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF5021B4B3A800FEE44E /* ViewController.m */; };
 		C8C5AF5621B4B3A900FEE44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C5AF5521B4B3A900FEE44E /* Assets.xcassets */; };
@@ -143,6 +155,30 @@
 		C83E05AF21B5038600619F0D /* PhotoViewController_Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PhotoViewController_Icons.xcassets; sourceTree = "<group>"; };
 		C83E05B121B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+PhotoViewWaiting.h"; sourceTree = "<group>"; };
 		C83E05B221B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+PhotoViewWaiting.m"; sourceTree = "<group>"; };
+		C83E05B421B5124B00619F0D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C83E05B521B518AB00619F0D /* YIAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIAlertViewController.h; sourceTree = "<group>"; };
+		C83E05B621B518AB00619F0D /* YIAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIAlertViewController.m; sourceTree = "<group>"; };
+		C83E05B921B5190300619F0D /* YYBAlertView+Waiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+Waiting.h"; sourceTree = "<group>"; };
+		C83E05BA21B5190300619F0D /* YYBAlertView+Waiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+Waiting.m"; sourceTree = "<group>"; };
+		C83E05BC21B51A8600619F0D /* YYBAlertView+Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+Status.h"; sourceTree = "<group>"; };
+		C83E05BD21B51A8600619F0D /* YYBAlertView+Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+Status.m"; sourceTree = "<group>"; };
+		C83E05BF21B51AC400619F0D /* YYBAlertView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+Alert.m"; sourceTree = "<group>"; };
+		C83E05C021B51AC500619F0D /* YYBAlertView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+Alert.h"; sourceTree = "<group>"; };
+		C83E05C221B51C6C00619F0D /* YYBAlertView+DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+DatePicker.m"; sourceTree = "<group>"; };
+		C83E05C321B51C6D00619F0D /* YYBAlertView+DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+DatePicker.h"; sourceTree = "<group>"; };
+		C83E05C521B51C8700619F0D /* SPCreateDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCreateDateView.h; sourceTree = "<group>"; };
+		C83E05C621B51C8700619F0D /* SPCreateDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCreateDateView.m; sourceTree = "<group>"; };
+		C83E05C821B51CA500619F0D /* SPStorageCardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPStorageCardsView.h; sourceTree = "<group>"; };
+		C83E05C921B51CA500619F0D /* SPStorageStoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPStorageStoreView.h; sourceTree = "<group>"; };
+		C83E05CA21B51CA500619F0D /* SPStorageTextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPStorageTextInputView.h; sourceTree = "<group>"; };
+		C83E05CB21B51CA600619F0D /* SPStorageCardsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPStorageCardsView.m; sourceTree = "<group>"; };
+		C83E05CC21B51CA600619F0D /* SPStorageStoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPStorageStoreView.m; sourceTree = "<group>"; };
+		C83E05CD21B51CA600619F0D /* SPStorageTextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPStorageTextInputView.m; sourceTree = "<group>"; };
+		C83E05D121B51D1700619F0D /* SPStorageCardSettingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPStorageCardSettingCollectionViewCell.m; sourceTree = "<group>"; };
+		C83E05D221B51D1700619F0D /* SPStorageCardSettingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPStorageCardSettingCollectionViewCell.h; sourceTree = "<group>"; };
+		C83E05D421B51DCA00619F0D /* YYBAlertView+Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+Storage.h"; sourceTree = "<group>"; };
+		C83E05D521B51DCA00619F0D /* YYBAlertView+Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+Storage.m"; sourceTree = "<group>"; };
+		C83E05D721B51EB300619F0D /* ic_storage_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_storage_setting.png; sourceTree = "<group>"; };
 		C8C5AF4921B4B3A800FEE44E /* YYB_iOSComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYB_iOSComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C5AF4C21B4B3A800FEE44E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -362,6 +398,34 @@
 			path = PhotoViewController;
 			sourceTree = "<group>";
 		};
+		C83E05B821B518B700619F0D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C83E05D721B51EB300619F0D /* ic_storage_setting.png */,
+				C83E05D421B51DCA00619F0D /* YYBAlertView+Storage.h */,
+				C83E05D521B51DCA00619F0D /* YYBAlertView+Storage.m */,
+				C83E05D221B51D1700619F0D /* SPStorageCardSettingCollectionViewCell.h */,
+				C83E05D121B51D1700619F0D /* SPStorageCardSettingCollectionViewCell.m */,
+				C83E05C821B51CA500619F0D /* SPStorageCardsView.h */,
+				C83E05CB21B51CA600619F0D /* SPStorageCardsView.m */,
+				C83E05C921B51CA500619F0D /* SPStorageStoreView.h */,
+				C83E05CC21B51CA600619F0D /* SPStorageStoreView.m */,
+				C83E05CA21B51CA500619F0D /* SPStorageTextInputView.h */,
+				C83E05CD21B51CA600619F0D /* SPStorageTextInputView.m */,
+				C83E05C521B51C8700619F0D /* SPCreateDateView.h */,
+				C83E05C621B51C8700619F0D /* SPCreateDateView.m */,
+				C83E05C321B51C6D00619F0D /* YYBAlertView+DatePicker.h */,
+				C83E05C221B51C6C00619F0D /* YYBAlertView+DatePicker.m */,
+				C83E05C021B51AC500619F0D /* YYBAlertView+Alert.h */,
+				C83E05BF21B51AC400619F0D /* YYBAlertView+Alert.m */,
+				C83E05B921B5190300619F0D /* YYBAlertView+Waiting.h */,
+				C83E05BA21B5190300619F0D /* YYBAlertView+Waiting.m */,
+				C83E05BC21B51A8600619F0D /* YYBAlertView+Status.h */,
+				C83E05BD21B51A8600619F0D /* YYBAlertView+Status.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		C8C5AF4021B4B3A700FEE44E = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +451,7 @@
 		C8C5AF4B21B4B3A800FEE44E /* YYB_iOSComponent */ = {
 			isa = PBXGroup;
 			children = (
+				C83E05B821B518B700619F0D /* Category */,
 				C8C5B09B21B4EAB600FEE44E /* ViewControllers */,
 				C8C5AF7E21B4B3C200FEE44E /* Components */,
 				C8C5AF4C21B4B3A800FEE44E /* AppDelegate.h */,
@@ -396,6 +461,7 @@
 				C8C5AF5521B4B3A900FEE44E /* Assets.xcassets */,
 				C8C5AF5A21B4B3A900FEE44E /* Info.plist */,
 				C8C5AF5B21B4B3A900FEE44E /* main.m */,
+				C83E05B421B5124B00619F0D /* PrefixHeader.pch */,
 			);
 			path = YYB_iOSComponent;
 			sourceTree = "<group>";
@@ -697,6 +763,8 @@
 			children = (
 				C8C5B09C21B4EAD800FEE44E /* YIPushViewController.h */,
 				C8C5B09D21B4EAD800FEE44E /* YIPushViewController.m */,
+				C83E05B521B518AB00619F0D /* YIAlertViewController.h */,
+				C83E05B621B518AB00619F0D /* YIAlertViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -852,6 +920,7 @@
 			files = (
 				C83E059221B501E500619F0D /* PhotoBrowser_Icons.xcassets in Resources */,
 				C8C5B09A21B4E96600FEE44E /* Base_Icons.xcassets in Resources */,
+				C83E05D821B51EB400619F0D /* ic_storage_setting.png in Resources */,
 				C8C5AF5621B4B3A900FEE44E /* Assets.xcassets in Resources */,
 				C83E05B021B5038700619F0D /* PhotoViewController_Icons.xcassets in Resources */,
 			);
@@ -954,6 +1023,7 @@
 				C8C5B05321B4C86E00FEE44E /* YYBPageControl.m in Sources */,
 				C8C5AFD621B4B3F900FEE44E /* NSTimer+YYBAdd.m in Sources */,
 				C8C5B04D21B4C7E200FEE44E /* YYBNavigationBarContainer+Create.m in Sources */,
+				C83E05D321B51D1800619F0D /* SPStorageCardSettingCollectionViewCell.m in Sources */,
 				C8C5AFC721B4B3F900FEE44E /* UIImage+YYBAdd.m in Sources */,
 				C8C5AFD021B4B3F900FEE44E /* UITextField+YYBAdd.m in Sources */,
 				C83E05A921B5036C00619F0D /* YYBPhotoSectionView.m in Sources */,
@@ -974,20 +1044,25 @@
 				C83E05AC21B5036C00619F0D /* YYBPhotoCollectionViewCell.m in Sources */,
 				C8C5AFD521B4B3F900FEE44E /* NSData+YYBAdd.m in Sources */,
 				C8C5AFD321B4B3F900FEE44E /* NSObject+YYBAdd.m in Sources */,
+				C83E05D621B51DCA00619F0D /* YYBAlertView+Storage.m in Sources */,
+				C83E05CF21B51CA600619F0D /* SPStorageStoreView.m in Sources */,
 				C8C5AF4E21B4B3A800FEE44E /* AppDelegate.m in Sources */,
 				C8C5B09121B4E37F00FEE44E /* YYBViewController.m in Sources */,
 				C8C5B05721B4C93400FEE44E /* YYBPlaceholderTextView.m in Sources */,
 				C8C5AFBE21B4B3F900FEE44E /* UIImageView+YYBLayout.m in Sources */,
+				C83E05BB21B5190300619F0D /* YYBAlertView+Waiting.m in Sources */,
 				C8C5AFCF21B4B3F900FEE44E /* NSError+YYBAdd.m in Sources */,
 				C8C5B0B121B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m in Sources */,
 				C8C5B03321B4C6BD00FEE44E /* YYBAlertViewAction.m in Sources */,
 				C8C5B07921B4C9FD00FEE44E /* YYBRefreshSpotBottomView.m in Sources */,
 				C8C5B0AE21B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.m in Sources */,
+				C83E05C721B51C8700619F0D /* SPCreateDateView.m in Sources */,
 				C8C5AFC821B4B3F900FEE44E /* NSDictionary+YYBAdd.m in Sources */,
 				C8C5B04B21B4C7E200FEE44E /* YYBNavigationBarControl.m in Sources */,
 				C83E05A821B5036C00619F0D /* YYBPhotoContentView.m in Sources */,
 				C8C5B04E21B4C7E200FEE44E /* YYBNavigationBar.m in Sources */,
 				C8C5B07F21B4C9FD00FEE44E /* YYBRefreshBaseDoneView.m in Sources */,
+				C83E05C421B51C6D00619F0D /* YYBAlertView+DatePicker.m in Sources */,
 				C8C5B0B021B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m in Sources */,
 				C8C5B03421B4C6BD00FEE44E /* YYBAlertView.m in Sources */,
 				C8C5AFDA21B4B3F900FEE44E /* UIGestureRecognizer+YYBAdd.m in Sources */,
@@ -998,6 +1073,8 @@
 				C8C5B08721B4CB6D00FEE44E /* YYBShadowView.m in Sources */,
 				C8C5B0AD21B4FD3D00FEE44E /* YYBPhotoBrowserTransition.m in Sources */,
 				C8C5B03921B4C77C00FEE44E /* YYBIndicator.m in Sources */,
+				C83E05BE21B51A8600619F0D /* YYBAlertView+Status.m in Sources */,
+				C83E05B721B518AB00619F0D /* YIAlertViewController.m in Sources */,
 				C8C5B03221B4C6BD00FEE44E /* YYBAlertView+Animation.m in Sources */,
 				C8C5AFD121B4B3F900FEE44E /* NSString+YYBAdd.m in Sources */,
 				C8C5B07D21B4C9FD00FEE44E /* YYBRefreshFooterView.m in Sources */,
@@ -1006,6 +1083,7 @@
 				C8C5B07A21B4C9FD00FEE44E /* UIScrollView+YYBRefreshFooter.m in Sources */,
 				C8C5AFCB21B4B3F900FEE44E /* UIScrollView+YYBAdd.m in Sources */,
 				C83E05A521B5036C00619F0D /* YYBAlbumTableViewCell.m in Sources */,
+				C83E05C121B51AC500619F0D /* YYBAlertView+Alert.m in Sources */,
 				C8C5B03121B4C6BD00FEE44E /* YYBAlertPlaceholderTextView.m in Sources */,
 				C8C5AFC021B4B3F900FEE44E /* UIButton+YYBLayout.m in Sources */,
 				C8C5AFD721B4B3F900FEE44E /* UIView+YYBAdd.m in Sources */,
@@ -1018,6 +1096,7 @@
 				C8C5B04A21B4C7E200FEE44E /* YYBNavigationBarContainer.m in Sources */,
 				C8C5B09821B4E5C700FEE44E /* UIDevice+YYBAdd.m in Sources */,
 				C8C5B0AF21B4FD3D00FEE44E /* YYBPhotoBrowser.m in Sources */,
+				C83E05CE21B51CA600619F0D /* SPStorageCardsView.m in Sources */,
 				C8C5B09021B4E37F00FEE44E /* YYBTableViewController.m in Sources */,
 				C8C5B04F21B4C7E200FEE44E /* YYBNavigationBarLabel.m in Sources */,
 				C8C5AFCA21B4B3F900FEE44E /* NSNumber+YYBAdd.m in Sources */,
@@ -1030,6 +1109,7 @@
 				C8C5B04C21B4C7E200FEE44E /* YYBNavigationBarImageView.m in Sources */,
 				C83E05B321B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m in Sources */,
 				C83E05AE21B5036C00619F0D /* YYBPhotoSelectionsView.m in Sources */,
+				C83E05D021B51CA600619F0D /* SPStorageTextInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1184,6 +1264,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = YYB_iOSComponent/PrefixHeader.pch;
 				INFOPLIST_FILE = YYB_iOSComponent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1193,6 +1275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.univease.YYB-iOSComponent";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = YYB_iOSComponent/YYB_iOSComponent/Components;
 			};
 			name = Debug;
 		};
@@ -1203,6 +1286,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = YYB_iOSComponent/PrefixHeader.pch;
 				INFOPLIST_FILE = YYB_iOSComponent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1212,6 +1297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.univease.YYB-iOSComponent";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = YYB_iOSComponent/YYB_iOSComponent/Components;
 			};
 			name = Release;
 		};

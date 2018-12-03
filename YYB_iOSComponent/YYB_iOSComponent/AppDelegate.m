@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "YIPushViewController.h"
+#import "YYBRouter.h"
 
 @interface AppDelegate ()
 
@@ -18,8 +18,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[YYBRouter shared] setMapppedHandler:^NSString *(NSString *protocol) {
+        return [NSString stringWithFormat:@"YI%@ViewController",protocol];
+    }];
 
-    YIPushViewController *vc = [[YIPushViewController alloc] init];
+    ViewController *vc = [[ViewController alloc] init];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
     
     self.window = [[UIWindow alloc] init];

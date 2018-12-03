@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YYBRouter.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.isPreferBackNavigationButtonHidden = TRUE;
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    self.results = @[@[@"Push",@"Router"],
+                     @[@"Alert",@"AlertView"]].mutableCopy;
+}
+
+- (NSString *)titleForNavigationBar {
+    return @"YYB  iOSComponent";
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    cell.textLabel.text = [[self.results objectAtIndex:indexPath.row] objectAtIndex:1];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *className = [[self.results objectAtIndex:indexPath.row] objectAtIndex:0];
+    [YYBRouter openURL:[NSString stringWithFormat:@"yyb://%@",className]];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60.0f;
 }
 
 @end

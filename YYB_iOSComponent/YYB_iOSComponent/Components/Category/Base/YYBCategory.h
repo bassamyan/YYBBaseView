@@ -30,5 +30,6 @@
 #import "UITextField+YYBAdd.h"
 #import "UIView+YYBAdd.h"
 #import "UIGestureRecognizer+YYBAdd.h"
+#import "UIDevice+YYBAdd.h"
 
 #endif /* YYBCategory */

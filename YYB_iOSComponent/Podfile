@@ -8,6 +8,7 @@ target 'YYB_iOSComponent' do
     pod 'TPKeyboardAvoiding'
     pod 'FDFullscreenPopGesture'
     pod 'SDWebImage'
+    pod 'YYCategories'
     
     target 'YYB_iOSComponentTests' do
         inherit! :search_paths

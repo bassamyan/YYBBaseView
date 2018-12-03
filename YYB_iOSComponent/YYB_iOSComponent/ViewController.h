@@ -6,9 +6,9 @@
 //  Copyright © 2018 Sniper. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "YYBTableViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : YYBTableViewController
 
 
 @end
