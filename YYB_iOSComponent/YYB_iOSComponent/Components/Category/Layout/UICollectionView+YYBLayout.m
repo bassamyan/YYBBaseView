@@ -2,7 +2,7 @@
 //  UICollectionView+YYBLayout.m
 //  SavingPot365
 //
-//  Created by Aokura on 2018/9/23.
+//  Created by Sniper on 2018/9/23.
 //  Copyright © 2018年 Tree,Inc. All rights reserved.
 //
 

@@ -426,8 +426,9 @@
 		C8C5AF4121B4B3A700FEE44E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YYB;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = Sniper;
+				ORGANIZATIONNAME = "Univease Co., Ltd";
 				TargetAttributes = {
 					C8C5AF4821B4B3A800FEE44E = {
 						CreatedOnToolsVersion = 10.1;
@@ -773,7 +774,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.univease.components.YYB-iOSComponent";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.univease.YYB-iOSComponent";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -791,7 +792,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.univease.components.YYB-iOSComponent";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.univease.YYB-iOSComponent";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

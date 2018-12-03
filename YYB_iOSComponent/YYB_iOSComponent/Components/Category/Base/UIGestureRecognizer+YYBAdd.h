@@ -2,7 +2,7 @@
 //  UIGestureRecognizer+YYBAdd.h
 //  YYBCategory
 //
-//  Created by Aokura on 2018/9/4.
+//  Created by Sniper on 2018/9/4.
 //  Copyright © 2018年 UnderTree,Inc. All rights reserved.
 //
 
