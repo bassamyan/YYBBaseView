@@ -592,8 +592,8 @@
 		C8C5B08421B4CB6D00FEE44E /* ShadowButton */ = {
 			isa = PBXGroup;
 			children = (
-				C8C5B08521B4CB6D00FEE44E /* YYBShadowButton.m */,
 				C8C5B08621B4CB6D00FEE44E /* YYBShadowButton.h */,
+				C8C5B08521B4CB6D00FEE44E /* YYBShadowButton.m */,
 			);
 			path = ShadowButton;
 			sourceTree = "<group>";

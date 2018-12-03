@@ -29,17 +29,16 @@
     } configureButtonHandler:^(UIButton *button) {
         
     }];
-    
-    @weakify(self);
-    [[_actionButton rac_signalForControlEvents:1<<6]
-     subscribeNext:^(__kindof UIControl * _Nullable x) {
-         @strongify(self);
-         if (self.buttonTapedHandler) {
-             self.buttonTapedHandler();
-         }
-     }];
+
+    [_actionButton addTarget:self action:@selector(senderTapedAction) forControlEvents:1<<6];
     
     return self;
+}
+
+- (void)senderTapedAction {
+    if (self.buttonTapedHandler) {
+        self.buttonTapedHandler();
+    }
 }
 
 @end
