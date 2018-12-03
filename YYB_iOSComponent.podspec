@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
     indicator.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Indicator/**/*.{h,m}'
   end
   
-  s.subspec 'Navigationbar' do |navigationbar|
-    navigationbar.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Navigationbar/**/*.{h,m}'
+  s.subspec 'NavigationBar' do |navigationBar|
+    navigationBar.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/NavigationBar/**/*.{h,m}'
   end
 
   s.subspec 'PageControl' do |pageControl|

@@ -56,7 +56,7 @@
 
 10. **YYBShadowButton ：带有阴影的按钮**
 
-    ```
-    pod 'YYB_iOSComponent', :subspecs => ["ShadowButton"]
-    ```
+   ```
+   pod 'YYB_iOSComponent', :subspecs => ["ShadowButton"]
+   ```
 
