@@ -1,9 +1,9 @@
 //
 //  YYBAlertView+Waiting.m
-//  SavingPot365
+//  YYB_iOSComponent
 //
-//  Created by Aokura on 2018/9/26.
-//  Copyright © 2018年 Tree,Inc. All rights reserved.
+//  Created by Sniper on 2018/9/26.
+//  Copyright © 2018年 Univease Co., Ltd All rights reserved.
 //
 
 #import "YYBAlertView+PhotoViewWaiting.h"

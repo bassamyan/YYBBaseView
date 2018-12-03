@@ -1,9 +1,9 @@
 //
 //  YYBPhotoBrowser.m
-//  SavingPot365
+//  YYB_iOSComponent
 //
-//  Created by September on 2018/10/27.
-//  Copyright © 2018 Tree,Inc. All rights reserved.
+//  Created by Sniper on 2018/10/27.
+//  Copyright © 2018 Univease Co., Ltd All rights reserved.
 //
 
 #import "YYBPhotoBrowser.h"
