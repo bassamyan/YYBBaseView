@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.1"
+  s.version       = "0.0.2"
   s.summary       = "YYB_iOSComponent."
   s.description   = "A pod for iOS develope components"
   s.license       = "MIT"
@@ -34,5 +34,48 @@ Pod::Spec.new do |s|
       layout.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Category/Layout/**/*.{h,m}'
       layout.dependency 'Masonry'
     end
+  end
+
+  s.subspec 'Router' do |router|
+    router.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Router/**/*.{h,m}'
+
+  s.subspec 'AlertView' do |alertView|
+    alertView.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/**/*.{h,m}'
+
+  s.subspec 'Indicator' do |indicator|
+    indicator.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Indicator/**/*.{h,m}'
+
+  s.subspec 'Navigationbar' do |navigationbar|
+    navigationbar.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Navigationbar/**/*.{h,m}'
+
+  s.subspec 'PageControl' do |pageControl|
+    pageControl.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PageControl/**/*.{h,m}'
+
+  s.subspec 'PlaceholderTextView' do |placeholderTextView|
+    placeholderTextView.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PlaceholderTextView/**/*.{h,m}'
+
+  s.subspec 'RefreshView' do |refreshView|
+    refreshView.subspec 'Base' do |base|
+      base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/RefreshView/Base/**/*.{h,m}'
+    end
+    
+    refreshView.subspec 'Category' do |category|
+      category.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/RefreshView/Category/**/*.{h,m}'
+      category.dependency 'RefreshView/Base'
+    end
+
+    refreshView.subspec 'Extension' do |extension|
+      extension.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/RefreshView/Extension/**/*.{h,m}'
+      extension.dependency 'Masonry'
+      extension.dependency 'RefreshView/Base'
+      extension.dependency 'RefreshView/Category'
+    end
+
+    s.subspec 'ShadowView' do |shadowView|
+      shadowView.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/ShadowView/**/*.{h,m}'
+
+    s.subspec 'ShadowButton' do |shadowButton|
+      shadowButton.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/ShadowButton/**/*.{h,m}'
+
   end
 end
