@@ -12,9 +12,7 @@
 		8A0F1CE07CE22BE951306424 /* libPods-YYB_iOSComponentUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FCE5D93771191ACE3A51D3 /* libPods-YYB_iOSComponentUITests.a */; };
 		C8C5AF4E21B4B3A800FEE44E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */; };
 		C8C5AF5121B4B3A800FEE44E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF5021B4B3A800FEE44E /* ViewController.m */; };
-		C8C5AF5421B4B3A800FEE44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C5AF5221B4B3A800FEE44E /* Main.storyboard */; };
 		C8C5AF5621B4B3A900FEE44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C5AF5521B4B3A900FEE44E /* Assets.xcassets */; };
-		C8C5AF5921B4B3A900FEE44E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C5AF5721B4B3A900FEE44E /* LaunchScreen.storyboard */; };
 		C8C5AF5C21B4B3A900FEE44E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF5B21B4B3A900FEE44E /* main.m */; };
 		C8C5AF6621B4B3A900FEE44E /* YYB_iOSComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF6521B4B3A900FEE44E /* YYB_iOSComponentTests.m */; };
 		C8C5AF7121B4B3A900FEE44E /* YYB_iOSComponentUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5AF7021B4B3A900FEE44E /* YYB_iOSComponentUITests.m */; };
@@ -79,6 +77,12 @@
 		C8C5B08021B4C9FD00FEE44E /* YYBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B07421B4C9FD00FEE44E /* YYBRefreshHeaderView.m */; };
 		C8C5B08721B4CB6D00FEE44E /* YYBShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B08321B4CB6D00FEE44E /* YYBShadowView.m */; };
 		C8C5B08821B4CB6D00FEE44E /* YYBShadowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B08521B4CB6D00FEE44E /* YYBShadowButton.m */; };
+		C8C5B09021B4E37F00FEE44E /* YYBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B08A21B4E37E00FEE44E /* YYBTableViewController.m */; };
+		C8C5B09121B4E37F00FEE44E /* YYBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B08C21B4E37E00FEE44E /* YYBViewController.m */; };
+		C8C5B09221B4E37F00FEE44E /* YYBCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B08D21B4E37F00FEE44E /* YYBCollectionViewController.m */; };
+		C8C5B09821B4E5C700FEE44E /* UIDevice+YYBAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B09621B4E5C700FEE44E /* UIDevice+YYBAdd.m */; };
+		C8C5B09A21B4E96600FEE44E /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C5B09921B4E96600FEE44E /* Icons.xcassets */; };
+		C8C5B09E21B4EAD800FEE44E /* YIPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B09D21B4EAD800FEE44E /* YIPushViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,9 +114,7 @@
 		C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C8C5AF4F21B4B3A800FEE44E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C8C5AF5021B4B3A800FEE44E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C8C5AF5321B4B3A800FEE44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8C5AF5521B4B3A900FEE44E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C8C5AF5821B4B3A900FEE44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8C5AF5A21B4B3A900FEE44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C5AF5B21B4B3A900FEE44E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8C5AF6121B4B3A900FEE44E /* YYB_iOSComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YYB_iOSComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +249,17 @@
 		C8C5B08321B4CB6D00FEE44E /* YYBShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBShadowView.m; sourceTree = "<group>"; };
 		C8C5B08521B4CB6D00FEE44E /* YYBShadowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBShadowButton.m; sourceTree = "<group>"; };
 		C8C5B08621B4CB6D00FEE44E /* YYBShadowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBShadowButton.h; sourceTree = "<group>"; };
+		C8C5B08A21B4E37E00FEE44E /* YYBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBTableViewController.m; sourceTree = "<group>"; };
+		C8C5B08B21B4E37E00FEE44E /* YYBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBViewController.h; sourceTree = "<group>"; };
+		C8C5B08C21B4E37E00FEE44E /* YYBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBViewController.m; sourceTree = "<group>"; };
+		C8C5B08D21B4E37F00FEE44E /* YYBCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBCollectionViewController.m; sourceTree = "<group>"; };
+		C8C5B08E21B4E37F00FEE44E /* YYBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBTableViewController.h; sourceTree = "<group>"; };
+		C8C5B08F21B4E37F00FEE44E /* YYBCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBCollectionViewController.h; sourceTree = "<group>"; };
+		C8C5B09621B4E5C700FEE44E /* UIDevice+YYBAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+YYBAdd.m"; sourceTree = "<group>"; };
+		C8C5B09721B4E5C700FEE44E /* UIDevice+YYBAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+YYBAdd.h"; sourceTree = "<group>"; };
+		C8C5B09921B4E96600FEE44E /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		C8C5B09C21B4EAD800FEE44E /* YIPushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIPushViewController.h; sourceTree = "<group>"; };
+		C8C5B09D21B4EAD800FEE44E /* YIPushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIPushViewController.m; sourceTree = "<group>"; };
 		E13CDEB53C2305927B696C50 /* Pods-YYB_iOSComponentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponentUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponentUITests/Pods-YYB_iOSComponentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E9D23593DCFC5692FF931D /* Pods-YYB_iOSComponentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponentUITests/Pods-YYB_iOSComponentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6FCE5D93771191ACE3A51D3 /* libPods-YYB_iOSComponentUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYB_iOSComponentUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,15 +318,13 @@
 		C8C5AF4B21B4B3A800FEE44E /* YYB_iOSComponent */ = {
 			isa = PBXGroup;
 			children = (
-				C8C5AFDB21B4B74B00FEE44E /* ViewControllers */,
+				C8C5B09B21B4EAB600FEE44E /* ViewControllers */,
 				C8C5AF7E21B4B3C200FEE44E /* Components */,
 				C8C5AF4C21B4B3A800FEE44E /* AppDelegate.h */,
 				C8C5AF4D21B4B3A800FEE44E /* AppDelegate.m */,
 				C8C5AF4F21B4B3A800FEE44E /* ViewController.h */,
 				C8C5AF5021B4B3A800FEE44E /* ViewController.m */,
-				C8C5AF5221B4B3A800FEE44E /* Main.storyboard */,
 				C8C5AF5521B4B3A900FEE44E /* Assets.xcassets */,
-				C8C5AF5721B4B3A900FEE44E /* LaunchScreen.storyboard */,
 				C8C5AF5A21B4B3A900FEE44E /* Info.plist */,
 				C8C5AF5B21B4B3A900FEE44E /* main.m */,
 			);
@@ -341,6 +352,8 @@
 		C8C5AF7E21B4B3C200FEE44E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C8C5B09921B4E96600FEE44E /* Icons.xcassets */,
+				C8C5B08921B4E35B00FEE44E /* Base */,
 				C8C5B08421B4CB6D00FEE44E /* ShadowButton */,
 				C8C5B08121B4CB6D00FEE44E /* ShadowView */,
 				C8C5B05821B4C9FD00FEE44E /* RefreshView */,
@@ -389,6 +402,8 @@
 		C8C5AF9021B4B3F900FEE44E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C8C5B09721B4E5C700FEE44E /* UIDevice+YYBAdd.h */,
+				C8C5B09621B4E5C700FEE44E /* UIDevice+YYBAdd.m */,
 				C8C5AFB721B4B3F900FEE44E /* NSArray+YYBAdd.h */,
 				C8C5AFA021B4B3F900FEE44E /* NSArray+YYBAdd.m */,
 				C8C5AF9B21B4B3F900FEE44E /* NSData+YYBAdd.h */,
@@ -436,13 +451,6 @@
 				C8C5AFA821B4B3F900FEE44E /* YYBCategory.h */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		C8C5AFDB21B4B74B00FEE44E /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		C8C5B01B21B4C3AB00FEE44E /* Router */ = {
@@ -598,6 +606,28 @@
 			path = ShadowButton;
 			sourceTree = "<group>";
 		};
+		C8C5B08921B4E35B00FEE44E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C8C5B08F21B4E37F00FEE44E /* YYBCollectionViewController.h */,
+				C8C5B08D21B4E37F00FEE44E /* YYBCollectionViewController.m */,
+				C8C5B08E21B4E37F00FEE44E /* YYBTableViewController.h */,
+				C8C5B08A21B4E37E00FEE44E /* YYBTableViewController.m */,
+				C8C5B08B21B4E37E00FEE44E /* YYBViewController.h */,
+				C8C5B08C21B4E37E00FEE44E /* YYBViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C8C5B09B21B4EAB600FEE44E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C8C5B09C21B4EAD800FEE44E /* YIPushViewController.h */,
+				C8C5B09D21B4EAD800FEE44E /* YIPushViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		D47B92C829197AE5AA8F3CE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,7 +716,7 @@
 		C8C5AF4121B4B3A700FEE44E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = YYB;
+				CLASSPREFIX = YI;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Univease Co., Ltd";
 				TargetAttributes = {
@@ -728,9 +758,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C5AF5921B4B3A900FEE44E /* LaunchScreen.storyboard in Resources */,
+				C8C5B09A21B4E96600FEE44E /* Icons.xcassets in Resources */,
 				C8C5AF5621B4B3A900FEE44E /* Assets.xcassets in Resources */,
-				C8C5AF5421B4B3A800FEE44E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,10 +872,12 @@
 				C8C5AF5C21B4B3A900FEE44E /* main.m in Sources */,
 				C8C5AFC121B4B3F900FEE44E /* UIView+YYBLayout.m in Sources */,
 				C8C5AFCE21B4B3F900FEE44E /* NSArray+YYBAdd.m in Sources */,
+				C8C5B09221B4E37F00FEE44E /* YYBCollectionViewController.m in Sources */,
 				C8C5AFC621B4B3F900FEE44E /* UILabel+YYBAdd.m in Sources */,
 				C8C5AFD521B4B3F900FEE44E /* NSData+YYBAdd.m in Sources */,
 				C8C5AFD321B4B3F900FEE44E /* NSObject+YYBAdd.m in Sources */,
 				C8C5AF4E21B4B3A800FEE44E /* AppDelegate.m in Sources */,
+				C8C5B09121B4E37F00FEE44E /* YYBViewController.m in Sources */,
 				C8C5B05721B4C93400FEE44E /* YYBPlaceholderTextView.m in Sources */,
 				C8C5AFBE21B4B3F900FEE44E /* UIImageView+YYBLayout.m in Sources */,
 				C8C5AFCF21B4B3F900FEE44E /* NSError+YYBAdd.m in Sources */,
@@ -880,10 +911,13 @@
 				C8C5AFC421B4B3F900FEE44E /* UITableView+YYBLayout.m in Sources */,
 				C8C5B02021B4C3AB00FEE44E /* UIViewController+YYBRouter.m in Sources */,
 				C8C5B04A21B4C7E200FEE44E /* YYBNavigationBarContainer.m in Sources */,
+				C8C5B09821B4E5C700FEE44E /* UIDevice+YYBAdd.m in Sources */,
+				C8C5B09021B4E37F00FEE44E /* YYBTableViewController.m in Sources */,
 				C8C5B04F21B4C7E200FEE44E /* YYBNavigationBarLabel.m in Sources */,
 				C8C5AFCA21B4B3F900FEE44E /* NSNumber+YYBAdd.m in Sources */,
 				C8C5B04921B4C7E200FEE44E /* YYBNavigationBarButton.m in Sources */,
 				C8C5B07821B4C9FD00FEE44E /* YYBRefreshTopView.m in Sources */,
+				C8C5B09E21B4EAD800FEE44E /* YIPushViewController.m in Sources */,
 				C8C5B08021B4C9FD00FEE44E /* YYBRefreshHeaderView.m in Sources */,
 				C8C5B07C21B4C9FD00FEE44E /* UIScrollView+YYBRefreshDoneView.m in Sources */,
 				C8C5AFC321B4B3F900FEE44E /* UITextField+YYBLayout.m in Sources */,
@@ -921,25 +955,6 @@
 			targetProxy = C8C5AF6D21B4B3A900FEE44E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C8C5AF5221B4B3A800FEE44E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8C5AF5321B4B3A800FEE44E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C8C5AF5721B4B3A900FEE44E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8C5AF5821B4B3A900FEE44E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C8C5AF7321B4B3A900FEE44E /* Debug */ = {
@@ -1059,6 +1074,7 @@
 			baseConfigurationReference = 37B16A44D4CAE0D7220C2E73 /* Pods-YYB_iOSComponent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YYB_iOSComponent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1077,6 +1093,7 @@
 			baseConfigurationReference = 6B6A54FBE9DAC04800B12C15 /* Pods-YYB_iOSComponent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YYB_iOSComponent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

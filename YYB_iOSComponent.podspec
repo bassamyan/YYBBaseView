@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.5"
+  s.version       = "0.0.6"
   s.summary       = "YYB_iOSComponent"
   s.description   = "A pod for iOS develope components"
   s.license       = "MIT"
@@ -74,4 +74,16 @@ Pod::Spec.new do |s|
     shadowButton.dependency 'Masonry'
     shadowButton.dependency 'YYB_iOSComponent/Category'
   end
+
+  s.subspec 'Base' do |base|
+    base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Base/**/*.{h,m}'
+    base.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/Icons.xcassets'
+    base.dependency 'Masonry'
+    base.dependency 'ReactiveObjC'
+    base.dependency 'TPKeyboardAvoiding'
+    base.dependency 'FDFullscreenPopGesture'
+    base.dependency 'YYB_iOSComponent/Category'
+    base.dependency 'YYB_iOSComponent/NavigationBar'
+  end
+
 end

@@ -4,6 +4,9 @@
 target 'YYB_iOSComponent' do
     
     pod 'Masonry'
+    pod 'ReactiveObjC'
+    pod 'TPKeyboardAvoiding'
+    pod 'FDFullscreenPopGesture'
     
     target 'YYB_iOSComponentTests' do
         inherit! :search_paths
