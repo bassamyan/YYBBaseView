@@ -18,6 +18,30 @@
    pod 'YYB_iOSComponent', :subspecs => ["AlertView"]
    ```
 
+   **<u>等待视图</u>**
+
+   ![](https://wx1.sinaimg.cn/mw690/af5699a3ly1fxuf1j2rr3g20640dcq3n.gif)
+
+   **<u>提示视图（Toast）</u>**
+
+   ![](https://wx2.sinaimg.cn/mw690/af5699a3ly1fxuf1j6gp6g20640dc3z6.gif)
+
+   **<u>标题 + 详情 + 两个按钮</u>**
+
+   ![](https://wx3.sinaimg.cn/mw690/af5699a3ly1fxuf1j84wcg20640dcjtr.gif)
+
+   **<u>标题 + 一个按钮</u>**
+
+   ![](https://wx4.sinaimg.cn/mw690/af5699a3ly1fxuf1je7y8g20640dct9y.gif)
+
+   **<u>日期选择器</u>**
+
+   ![](https://wx2.sinaimg.cn/mw690/af5699a3ly1fxuf1j6py1g20640dcdhb.gif)
+
+   **<u>自定义视图</u>**
+
+   ![](https://wx2.sinaimg.cn/mw690/af5699a3ly1fxuf1jnm4wg20640dcjt0.gif)
+
 4. **YYBIndicator ：进度条**
 
    ```
