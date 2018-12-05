@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong,nullable) UIPanGestureRecognizer *pan;
 
 @property (nonatomic) CGRect fromImageRect;
-@property (nonatomic,strong) id imageResource;
+@property (nonatomic,strong) id imageURL;
 
 @property (nonatomic) CGRect finishImageRect;
 

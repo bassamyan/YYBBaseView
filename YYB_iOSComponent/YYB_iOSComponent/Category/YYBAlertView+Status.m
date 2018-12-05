@@ -13,24 +13,7 @@
 + (void)showAlertViewWithStatus:(NSString *)status
 {
     YYBAlertView *alertView = [[YYBAlertView alloc] init];
-    alertView.showContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container) {
-        container.alpha = 0.0f;
-        [UIView animateWithDuration:0.2f animations:^{
-            container.alpha = 1.0f;
-        }];
-        
-        return TRUE;
-    };
-    
-    alertView.closeContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container, void (^removeSubviewsHandler)(void)) {
-        [UIView animateWithDuration:0.2f animations:^{
-            container.alpha = 0.0f;
-        } completion:^(BOOL finished) {
-            removeSubviewsHandler();
-        }];
-        
-        return TRUE;
-    };
+    alertView.displayAnimationStyle = YYBAlertViewAnimationStyleCenter;
     
     alertView.autoHideTimeInterval = 2.0f;
     alertView.isConstraintedWithContainer = TRUE;

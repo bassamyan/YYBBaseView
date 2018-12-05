@@ -8,7 +8,6 @@
 
 #import "YYBAlertView+Storage.h"
 #import "SPStorageStoreView.h"
-#import "YYBAlertView+Animation.h"
 
 @implementation YYBAlertView (Storage)
 
@@ -21,13 +20,13 @@
                   storageTapedHandler:(nonnull void (^)(CGFloat, CGFloat))storageTapedHandler
 {
     YYBAlertView *alertView = [[YYBAlertView alloc] init];
+    alertView.displayAnimationStyle = YYBAlertViewAnimationStyleBottom;
     alertView.backgroundView.backgroundColor = [UIColor colorWithHexInteger:0x000000 alpha:0.6f];
     alertView.isAutoControlKeyboardNotification = FALSE;
     alertView.isUsingKeyboardNotification = TRUE;
     alertView.offsetOfContainerToKeyboard = ^CGFloat(NSInteger containerIndex) {
         return 0.0f;
     };
-    [alertView addSheetStyleAnimation];
     
     @weakify(alertView);
     [alertView addContainerViewWithHandler:^(YYBAlertViewContainer *container) {

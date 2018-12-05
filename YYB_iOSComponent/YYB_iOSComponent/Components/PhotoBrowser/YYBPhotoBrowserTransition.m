@@ -33,9 +33,9 @@
     _transition.fromImageRect = fromImageRect;
 }
 
-- (void)setImageResource:(id)imageResource {
-    _push.imageResource = imageResource;
-    _transition.imageResource = imageResource;
+- (void)setImageURL:(id)imageURL {
+    _push.imageURL = imageURL;
+    _transition.imageURL = imageURL;
 }
 
 - (void)setFinishImageRect:(CGRect)finishImageRect {

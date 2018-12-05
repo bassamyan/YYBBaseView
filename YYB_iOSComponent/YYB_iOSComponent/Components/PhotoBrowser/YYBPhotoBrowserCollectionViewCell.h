@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YYBPhotoBrowserCollectionViewCell : UICollectionViewCell
 
 - (void)renderItemWithImage:(nullable UIImage *)image imageURL:(nullable NSString *)imageURL;
-@property (nonatomic,copy) void (^ oneTapedHandler)(void);
+@property (nonatomic,copy) void (^ imageItemTapedHandler)(void);
 
 @end
 

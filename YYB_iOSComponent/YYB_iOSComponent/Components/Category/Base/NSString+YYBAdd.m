@@ -231,4 +231,8 @@
     return [NSURL URLWithString:encodeStr];
 }
 
+- (NSString *)imageURLEncode {
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+}
+
 @end

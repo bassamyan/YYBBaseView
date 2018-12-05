@@ -7,6 +7,7 @@
 //
 
 #import "YYBPhotoBrowserPushAnimator.h"
+#import "UIImageView+YYBPhotoBrowser.h"
 
 @interface YYBPhotoBrowserPushAnimator ()
 @property (nonatomic,strong) UIView *backgroundView;
@@ -47,12 +48,7 @@
     
     [contentView addSubview:_iconView];
     
-    if ([_imageResource isKindOfClass:[UIImage class]]) {
-        _iconView.image = _imageResource;
-    } else {
-        NSString *utf8 = [_imageResource stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        [_iconView sd_setImageWithURL:[NSURL URLWithString:utf8]];
-    }
+    [_iconView renderImageWithContent:_imageURL webImageCompletionHandler:nil];
     _iconView.frame = _fromImageRect;
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{

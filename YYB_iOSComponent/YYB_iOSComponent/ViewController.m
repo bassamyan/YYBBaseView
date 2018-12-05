@@ -22,7 +22,8 @@
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     self.results = @[@[@"Push",@"Router"],
-                     @[@"Alert",@"AlertView"]].mutableCopy;
+                     @[@"Alert",@"AlertView"],
+                     @[@"PhotoBrowser",@"PhotoBrowser"],].mutableCopy;
 }
 
 - (NSString *)titleForNavigationBar {

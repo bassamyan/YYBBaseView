@@ -56,5 +56,15 @@ typedef NS_ENUM(NSInteger , YYBAlertViewContainerPosition) {
     YYBAlertViewContainerPositionBottom = 1,
 };
 
+typedef NS_ENUM(NSInteger , YYBAlertViewAnimationStyle) {
+    YYBAlertViewAnimationStyleNone,
+    // 从中间展现,适用于Dialog
+    YYBAlertViewAnimationStyleCenter,
+    // 从中间展现,并且会缩放尺寸,适用于弹窗
+    YYBAlertViewAnimationStyleCenterShrink,
+    // 从底部展现
+    YYBAlertViewAnimationStyleBottom,
+};
+
 
 #endif /* YYBAlertViewTypedef_h */

@@ -71,4 +71,7 @@
 - (NSString *)hmacsha256:(NSString *)key;
 - (NSString *)urlEncoding;
 
+// 图片中过滤中文, 进行URLEncoding
+- (NSString *)imageURLEncode;
+
 @end

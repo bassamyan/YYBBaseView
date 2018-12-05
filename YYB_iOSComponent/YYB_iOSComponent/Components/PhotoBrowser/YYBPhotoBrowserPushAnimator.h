@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YYBPhotoBrowserPushAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic) CGRect fromImageRect;
-@property (nonatomic,strong) id imageResource;
+@property (nonatomic,strong) id imageURL;
 
 @end
 

@@ -20,41 +20,9 @@
 {
     YYBAlertView *alertView = [[YYBAlertView alloc] init];
     alertView.backgroundView.backgroundColor = [UIColor colorWithHexInteger:0x000000 alpha:0.6f];
-    
-    alertView.createRectHandler = ^CGRect(NSInteger index, YYBAlertViewContainer *container) {
-        CGSize contentSize = container.contentSizeWithActions;
-        return CGRectMake(0, kScreenHeight - contentSize.height, contentSize.width, contentSize.height);
-    };
+    alertView.displayAnimationStyle = YYBAlertViewAnimationStyleBottom;
     
     @weakify(alertView);
-    alertView.showContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container) {
-        @strongify(alertView);
-        
-        container.transform = CGAffineTransformMakeTranslation(0, container.contentSizeWithActions.height);
-        alertView.backgroundView.alpha = 0.0f;
-        
-        [UIView animateWithDuration:0.2f animations:^{
-            container.transform = CGAffineTransformIdentity;
-            alertView.backgroundView.alpha = 1.0f;
-        }];
-        
-        return TRUE;
-    };
-    
-    alertView.closeContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container, void (^removeSubviewsHandler)(void)) {
-        @strongify(alertView);
-        
-        alertView.backgroundView.alpha = 1.0f;
-        [UIView animateWithDuration:0.2f animations:^{
-            container.transform = CGAffineTransformMakeTranslation(0, container.contentSizeWithActions.height);
-            alertView.backgroundView.alpha = 0.0f;
-        } completion:^(BOOL finished) {
-            removeSubviewsHandler();
-        }];
-        
-        return TRUE;
-    };
-                          
     [alertView addContainerViewWithHandler:^(YYBAlertViewContainer *container) {
         @strongify(alertView);
             

@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) UIPanGestureRecognizer *pan;
 
-@property (nonatomic) CGRect fromImageRect;
-@property (nonatomic,strong) id imageResource;
+@property (nonatomic) CGRect fromImageRect; // 初始图片尺寸
+@property (nonatomic,strong) id imageURL;
 
-@property (nonatomic) CGRect finishImageRect;
+@property (nonatomic) CGRect finishImageRect; // 放大后的图片尺寸
 
 @end
 

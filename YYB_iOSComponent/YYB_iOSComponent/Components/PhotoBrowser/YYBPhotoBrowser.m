@@ -8,10 +8,11 @@
 
 #import "YYBPhotoBrowser.h"
 #import "YYBPhotoBrowserCollectionViewCell.h"
-#import "YYBPhotoBrowserTransition.h"
+#import "YYBAlertView+YYBPhotoBrowser.h"
+#import "UIImageView+YYBPhotoBrowser.h"
+#import "UIImage+YYBAdd.h"
 
 @interface YYBPhotoBrowser () <UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
-@property (nonatomic,strong) UIView *contentView;
 @property (nonatomic,strong) UICollectionView *collectionView;
 
 @property (nonatomic,strong) UIPanGestureRecognizer *pan;
@@ -26,9 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor clearColor];
     
     _contentView = [UIView new];
+    _contentView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_contentView];
     [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -70,19 +72,17 @@
             _collectionView.hidden = TRUE;
             _iconView.hidden = FALSE;
             
-            id image = [_images objectAtIndex:[self pageIndex]];
-            if ([image isKindOfClass:[UIImage class]]) {
-                _iconView.image = image;
-            } else {
-                NSString *utf8 = [image stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-                [_iconView sd_setImageWithURL:[NSURL URLWithString:utf8]];
-            }
+            NSInteger index = [self pageIndex];
+            id image = [_images objectAtIndex:index];
+            @weakify(self);
+            [_iconView renderImageWithContent:image webImageCompletionHandler:^{
+                @strongify(self);
+                [self renderIconViewFrame];
+            }];
             
-            _transition.imageResource = _iconView.image;
-            _transition.fromImageRect = self.queryImageItemRectHandler([self pageIndex]);
-            
-            CGSize imageSize = [self aspectFitSizeWithSize:_iconView.image.size contentSize:self.view.frame.size];
-            _iconView.frame = CGRectMake(0, (CGRectGetHeight(self.view.frame) - imageSize.height) / 2, imageSize.width, imageSize.height);
+            [self renderIconViewFrame];
+            _transition.imageURL = image;
+            _transition.fromImageRect = self.queryImageItemRectHandler(index);
             
             [self dismissViewControllerAnimated:TRUE completion:nil];
         }
@@ -111,6 +111,11 @@
     }
 }
 
+- (void)renderIconViewFrame {
+    CGSize imageSize = [self aspectFitSizeWithSize:_iconView.image.size contentSize:self.view.frame.size];
+    _iconView.frame = CGRectMake(0, (CGRectGetHeight(self.view.frame) - imageSize.height) / 2, imageSize.width, imageSize.height);
+}
+
 - (CGSize)aspectFitSizeWithSize:(CGSize)aspectSize contentSize:(CGSize)contentSize {
     CGSize result_size = aspectSize;
     if (aspectSize.width > contentSize.width || aspectSize.height > contentSize.height) {
@@ -122,14 +127,16 @@
             result_size.height = contentSize.width / (aspectSize.width / aspectSize.height);
         }
     }
-    return result_size;
+    
+    CGFloat max = MAX(result_size.width, result_size.height);
+    return CGSizeMake(max, max);
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    if (_initialIndex < _images.count) {
-        [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:_initialIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:FALSE];
+    if (_initialImageIndex < _images.count) {
+        [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:_initialImageIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:FALSE];
     } else {
         if (_images.count > 0) {
             [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:FALSE];
@@ -165,17 +172,17 @@
     self.navigationBar.titleBarButton.label.font = [UIFont systemFontOfSize:18.0f weight:UIFontWeightSemibold];
     self.navigationBar.backgroundColor = [UIColor blackColor];
     
-    if (self.isDeleteEnable == TRUE) {
-        __weak typeof(self) wself = self;
+    if (self.isDeletable == TRUE) {
+        @weakify(self);
         _deleteBarButton = [YYBNavigationBarContainer imageViewWithConfigureHandler:^(YYBNavigationBarImageView *container, UIImageView *view) {
             container.contentSize = CGSizeMake(20.0f, 24.0f);
             container.contentEdgeInsets = UIEdgeInsetsMake([UIDevice iPhoneXSeries] ? 20.0f : 10.0f, 0, 0, 22.5f);
             
             view.image = [UIImage imageNamed:@"ic_yyb_icon_delete"];
         } tapedActionHandler:^(YYBNavigationBarContainer *view) {
-            __strong typeof(self) sself = wself;
-            if (sself.deleteImageCheckHandler) {
-                sself.deleteImageCheckHandler([sself pageIndex]);
+            @strongify(self);
+            if (self.deleteImageCheckHandler) {
+                self.deleteImageCheckHandler([self pageIndex]);
             }
         }];
         
@@ -225,19 +232,12 @@
         [cell renderItemWithImage:NULL imageURL:contents];
     }
     
-    __weak typeof(self) wself = self;
-    cell.oneTapedHandler = ^{
-        __strong typeof(self) sself = wself;
-        CGFloat alpha = sself.navigationBar.alpha;
-        if (alpha == 1.0f) {
-            [UIView animateWithDuration:0.25f animations:^{
-                sself.navigationBar.alpha = 0.0f;
-            }];
-        } else {
-            [UIView animateWithDuration:0.25f animations:^{
-                sself.navigationBar.alpha = 1.0f;
-            }];
-        }
+    @weakify(self);
+    cell.imageItemTapedHandler = ^{
+        @strongify(self);
+        [UIView animateWithDuration:0.25f animations:^{
+            self.navigationBar.alpha = (self.navigationBar.alpha == 1.0f ? 0.0f : 1.0f);
+        }];
     };
     
     return cell;

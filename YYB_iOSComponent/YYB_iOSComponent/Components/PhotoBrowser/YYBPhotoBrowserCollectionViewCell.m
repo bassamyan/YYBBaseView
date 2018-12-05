@@ -7,6 +7,7 @@
 //
 
 #import "YYBPhotoBrowserCollectionViewCell.h"
+#import "UIImageView+YYBPhotoBrowser.h"
 
 @interface YYBPhotoBrowserCollectionViewCell ()<UIScrollViewDelegate>
 @property (nonatomic,strong) UIImageView *iconView;
@@ -33,7 +34,7 @@
     _scrollView.maximumZoomScale = 3.0f;
     _scrollView.minimumZoomScale = 1.0f;
     
-    UITapGestureRecognizer *oneTaped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneTapedHandlerAction)];
+    UITapGestureRecognizer *oneTaped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageItemTapedAction)];
     oneTaped.numberOfTapsRequired = 1;
     [_scrollView addGestureRecognizer:oneTaped];
     
@@ -44,9 +45,9 @@
     return self;
 }
 
-- (void)oneTapedHandlerAction {
-    if (self.oneTapedHandler) {
-        self.oneTapedHandler();
+- (void)imageItemTapedAction {
+    if (self.imageItemTapedHandler) {
+        self.imageItemTapedHandler();
     }
 }
 
@@ -70,12 +71,7 @@
 }
 
 - (void)renderItemWithImage:(UIImage *)image imageURL:(NSString *)imageURL {
-    if (image) {
-        _iconView.image = image;
-    } else if (imageURL) {
-        NSString *utf8 = [imageURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        [_iconView sd_setImageWithURL:[NSURL URLWithString:utf8]];
-    }
+    [_iconView renderImageWithContent:image ? image : imageURL webImageCompletionHandler:nil];
 }
 
 @end

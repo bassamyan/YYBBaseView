@@ -30,6 +30,8 @@
 
 @interface YYBAlertView : UIView
 
+@property (nonatomic) YYBAlertViewAnimationStyle displayAnimationStyle;
+
 @property (nonatomic,weak) id<YYBAlertViewDelegate> delegate;
 @property (nonatomic,strong) NSMutableArray *containers;
 @property (nonatomic) NSInteger visibleContainerIndex;

@@ -7,6 +7,8 @@
 //
 
 #import "YYBPhotoBrowserInteractiveTransition.h"
+#import "UIImageView+YYBPhotoBrowser.h"
+#import "YYBPhotoBrowser.h"
 
 @interface YYBPhotoBrowserInteractiveTransition ()
 @property (nonatomic,strong) UIView *backgroundView;
@@ -30,6 +32,7 @@
     
     _backgroundView = [[UIView alloc] init];
     _backgroundView.backgroundColor = [UIColor blackColor];
+    _backgroundView.frame = [UIScreen mainScreen].bounds;
     
     return self;
 }
@@ -39,7 +42,7 @@
     [_pan addTarget:self action:@selector(recogizerDidUpdate:)];
 }
 
-- (CGFloat)percentOfRecogzier {
+- (CGFloat)scaleOfRecogzier {
     CGPoint translation = [_pan translationInView:_pan.view];
     CGFloat scale = 1 - (translation.y / [UIScreen mainScreen].bounds.size.height);
     scale = scale < 0 ? 0 : scale;
@@ -48,7 +51,8 @@
 }
 
 - (void)recogizerDidUpdate:(UIPanGestureRecognizer *)recognizer {
-    CGFloat percent = [self percentOfRecogzier];
+    CGFloat percent = [self scaleOfRecogzier];
+    self.backgroundView.alpha = percent;
     
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan: {
@@ -57,7 +61,6 @@
             break;
         case UIGestureRecognizerStateChanged: {
             [self updateInteractiveTransition:percent];
-            _backgroundView.alpha = percent;
         }
             break;
         case UIGestureRecognizerStateEnded: {
@@ -86,21 +89,19 @@
     UIViewController *to = [_transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     [contentView addSubview:to.view];
     
-    _backgroundView.frame = to.view.frame;
     [contentView addSubview:_backgroundView];
     
-    UIViewController *from = [_transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    from.view.backgroundColor = [UIColor clearColor];
+    YYBPhotoBrowser *from = [_transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    
+    [UIView animateWithDuration:0.2f animations:^{
+        from.contentView.backgroundColor = [UIColor clearColor];
+    }];
+    
     [contentView addSubview:from.view];
 }
 
 - (void)cancelTransition:(CGFloat)percent {
-    UIView *contentView = _transitionContext.containerView;
     
-    UIViewController *from = [_transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    [contentView addSubview:from.view];
-    
-    [self.transitionContext completeTransition:FALSE];
 }
 
 - (void)finishTransition:(CGFloat)percent {
@@ -112,14 +113,8 @@
     _backgroundView.alpha = percent;
     [contentView addSubview:_backgroundView];
     
-    if ([_imageResource isKindOfClass:[UIImage class]]) {
-        _iconView.image = _imageResource;
-    } else {
-        NSString *utf8 = [_imageResource stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        [_iconView sd_setImageWithURL:[NSURL URLWithString:utf8]];
-    }
+    [_iconView renderImageWithContent:_imageURL webImageCompletionHandler:nil];
     _iconView.frame = _finishImageRect;
-    _iconView.contentMode = UIViewContentModeScaleAspectFill;
     [contentView addSubview:_iconView];
     
     [UIView animateWithDuration:0.4f animations:^{
