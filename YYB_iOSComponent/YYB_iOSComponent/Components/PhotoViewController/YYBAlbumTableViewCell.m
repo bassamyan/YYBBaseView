@@ -53,11 +53,10 @@
     _nameLabel.text = [NSString stringWithFormat:@"%@ (%@)",collection.localizedTitle,@(result.count).stringValue];
     
     if (result.count > 0) {
-        @weakify(self);
+        __weak typeof(self) wself = self;
         PHAsset *asset = [result firstObject];
         [asset produceImageWithTargetSize:CGSizeMake(80.0f, 80.0f) completionHandler:^(UIImage *image, NSString *filename) {
-            @strongify(self);
-            self.iconView.image = image;
+            wself.iconView.image = image;
         }];
     } else {
         self.iconView.image = nil;
