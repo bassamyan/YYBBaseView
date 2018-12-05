@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
   s.version       = "0.0.11"
-  s.summary       = "YYB_iOSComponent"
-  s.description   = "A pod for iOS develope components"
+  s.summary       = "iOS UI components"
+  s.description   = "components for iOS development"
   s.license       = "MIT"
   s.author        = { "Sniper" => "yanyibin.nz@gmail.com" }
   s.platform      = :ios
