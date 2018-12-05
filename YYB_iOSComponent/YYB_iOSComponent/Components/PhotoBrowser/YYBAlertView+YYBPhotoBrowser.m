@@ -7,6 +7,7 @@
 //
 
 #import "YYBAlertView+YYBPhotoBrowser.h"
+#import "UIColor+YYBAdd.h"
 
 @implementation YYBAlertView (YYBPhotoBrowser)
 
