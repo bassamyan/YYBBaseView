@@ -68,20 +68,20 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    @weakify(self);
-//    [self showPhotoBrowserWithImages:_results queryImageRectHandler:^CGRect(NSInteger index) {
-//        return [self rectWithCollectionView:collectionView indexPath:indexPath];
-//    } initialImageIndex:indexPath.row isDeletable:TRUE deletionCheckHandler:nil reloadImageSourceHandler:^(NSInteger index) {
-//        @strongify(self);
-//        [self.results removeObjectAtIndex:index];
-//        [self.collectionView reloadData];
-//    } configureHandler:^(YYBPhotoBrowser * browser) {
+    @weakify(self);
+    [self showPhotoBrowserWithImages:_results queryImageRectHandler:^CGRect(NSInteger index) {
+        return [self rectWithCollectionView:collectionView indexPath:indexPath];
+    } initialImageIndex:indexPath.row isDeletable:TRUE deletionCheckHandler:nil reloadImageSourceHandler:^(NSInteger index) {
+        @strongify(self);
+        [self.results removeObjectAtIndex:index];
+        [self.collectionView reloadData];
+    } configureHandler:^(YYBPhotoBrowser * browser) {
+
+    }];
+    
+//    [self showPhotoBrowserWithImage:[_results objectAtIndex:indexPath.row] configureHandler:^(YYBPhotoBrowser * _Nonnull browser) {
 //        
 //    }];
-    
-    [self showPhotoBrowserWithImage:[_results objectAtIndex:indexPath.row] configureHandler:^(YYBPhotoBrowser * _Nonnull browser) {
-        
-    }];
 }
 
 - (CGRect)rectWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath {

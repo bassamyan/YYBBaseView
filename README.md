@@ -95,6 +95,8 @@
     ```
     pod 'YYB_iOSComponent', :subspecs => ["PhotoBrowser"]
     ```
+    
+
 
 13. **YYBPhotoViewController ：图片选择器**
 
@@ -102,3 +104,4 @@
     pod 'YYB_iOSComponent', :subspecs => ["PhotoViewController"]
     ```
 
+![](http://wx1.sinaimg.cn/large/af5699a3ly1fxvo3iyuehg20850i61kx.gif)

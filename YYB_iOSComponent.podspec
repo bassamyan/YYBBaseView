@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.7"
+  s.version       = "0.0.8"
   s.summary       = "YYB_iOSComponent"
   s.description   = "A pod for iOS develope components"
   s.license       = "MIT"
