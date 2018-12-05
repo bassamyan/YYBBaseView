@@ -11,11 +11,11 @@
 
 @interface YYBPhotoViewController : YYBViewController
 
-@property (nonatomic,copy) void (^ imageAssetQueryHandler)(PHAsset *asset);
-@property (nonatomic,copy) void (^ imageAssetsQueryHandler)(NSArray *assets);
+@property (nonatomic,copy) void (^ imageResultQueryHandler)(PHAsset *result);
+@property (nonatomic,copy) void (^ imageResultsQueryHandler)(NSArray *results);
 
-@property (nonatomic) BOOL isMultipleImagesRequired;
-@property (nonatomic) NSInteger maxAllowedImages;
-@property (nonatomic) BOOL isImageRequired; // 是否最后得到的是UIImage
+@property (nonatomic) NSInteger maxRequiredImages; // 最大可允许选择的图片数量
+@property (nonatomic) BOOL isCheckImageEnable; // 是否可修改选择的图片,如果不可以则直接点击图片就结束, 默认为TRUE
+@property (nonatomic) BOOL isUIImageRequired; // 是否最后得到的是UIImage, 否则输出的是PHAsset
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "YYBPhotoSelectionsView.h"
+#import "YYBLayout.h"
+#import "UIColor+YYBAdd.h"
 
 @interface YYBPhotoSelectionsView ()
 
@@ -20,7 +22,7 @@
     
     self.backgroundColor = [UIColor whiteColor];
     
-    __weak typeof(self) wself = self;
+    @weakify(self);
     _finishButton = [UIButton buttonWithSuperView:self constraint:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(- 15.0f);
         make.size.mas_equalTo(CGSizeMake(80.0f, 30.0f));
@@ -32,9 +34,9 @@
         button.layer.cornerRadius = 4.0f;
         button.layer.masksToBounds = TRUE;
     } tapedHandler:^(UIButton *sender) {
-        __strong typeof(self) sself = wself;
-        if (sself.finishSelectedHandler) {
-            sself.finishSelectedHandler();
+        @strongify(self);
+        if (self.finishSelectedHandler) {
+            self.finishSelectedHandler();
         }
     }];
     

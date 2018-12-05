@@ -9,14 +9,11 @@
 #import "YIPhotoBrowserViewController.h"
 #import "YIImageCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "YYBPhotoBrowser.h"
-#import "YYBPhotoBrowserTransition.h"
 #import "UIViewController+YYBPhotoBrowser.h"
 
 @interface YIPhotoBrowserViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *results;
-@property (nonatomic,strong) YYBPhotoBrowserTransition *transition;
 
 @end
 
@@ -24,8 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _transition = [[YYBPhotoBrowserTransition alloc] init];
     
     _collectionView = [UICollectionView collectionViewWithDelagateHandler:self superView:self.view constraint:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

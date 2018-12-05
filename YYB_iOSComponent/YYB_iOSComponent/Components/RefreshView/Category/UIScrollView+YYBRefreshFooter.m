@@ -15,7 +15,7 @@ static char const YYBREFRESH_FOOTER_KEY;
 @implementation UIScrollView (YYBRefreshFooter)
 
 - (void)addRefreshFooterWithHandler:(YYBRefreshStartRefreshHandler)startRefreshHandler {
-    [self addRefreshFooterWithClass:NSClassFromString(@"YYBRefreshBottomView") handler:startRefreshHandler];
+    [self addRefreshFooterWithClass:NSClassFromString(@"YYBRefreshSpotBottomView") handler:startRefreshHandler];
 }
 
 - (void)addRefreshFooterWithClass:(Class)viewClass handler:(YYBRefreshStartRefreshHandler)startRefreshHandler {

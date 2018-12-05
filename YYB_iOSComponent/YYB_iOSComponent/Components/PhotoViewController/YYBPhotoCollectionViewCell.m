@@ -7,7 +7,9 @@
 //
 
 #import "YYBPhotoCollectionViewCell.h"
-#import "PHAsset+YYBPhoto.h"
+#import "YYBLayout.h"
+#import "UIColor+YYBAdd.h"
+#import "PHAsset+YYBPhotoViewController.h"
 
 @interface YYBPhotoCollectionViewCell ()
 @property (nonatomic,strong) UIImageView *iconView;
@@ -36,7 +38,7 @@
         view.hidden = TRUE;
     }];
     
-    __weak typeof(self) wself = self;
+    @weakify(self);
     _checkButton = [UIButton buttonWithSuperView:self.contentView constraint:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(-3.0f);
         make.top.equalTo(self.contentView).offset(3.0f);
@@ -45,9 +47,9 @@
         [button setBackgroundImage:[UIImage imageNamed:@"ic_yyb_check_no"] forState:0];
         [button setBackgroundImage:[UIImage imageNamed:@"ic_yyb_check_yes"] forState:UIControlStateSelected];
     } tapedHandler:^(UIButton *sender) {
-        __strong typeof(self) sself = wself;
-        if (sself.selectActionHandler) {
-            sself.selectActionHandler();
+        @strongify(self);
+        if (self.selectActionHandler) {
+            self.selectActionHandler();
         }
     }];
     
@@ -81,11 +83,11 @@
     self.iconView.hidden = TRUE;
     CGFloat size = ([UIScreen mainScreen].bounds.size.width - 5.0f) / 4.0f;
     
-    __weak typeof(self) wself = self;
+    @weakify(self);
     [asset produceImageWithTargetSize:CGSizeMake(size * 2, size * 2) completionHandler:^(UIImage *image, NSString *filename) {
-        __strong typeof(self) sself = wself;
-        sself.iconView.hidden = FALSE;
-        sself.iconView.image = image;
+        @strongify(self);
+        self.iconView.hidden = FALSE;
+        self.iconView.image = image;
     }];
     
     _checkButton.selected = selectionStatus;

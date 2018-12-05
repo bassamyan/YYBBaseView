@@ -8,7 +8,7 @@
 
 #import <Photos/Photos.h>
 
-@interface PHAsset (YYBPhoto)
+@interface PHAsset (YYBPhotoViewController)
 
 - (void)produceImageWithTargetSize:(CGSize)targetSize completionHandler:(void (^)(UIImage *image, NSString *filename))completionHandler;
 

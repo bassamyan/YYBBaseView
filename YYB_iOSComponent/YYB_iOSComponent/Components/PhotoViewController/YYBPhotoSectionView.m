@@ -7,6 +7,7 @@
 //
 
 #import "YYBPhotoSectionView.h"
+#import "YYBLayout.h"
 
 @interface YYBPhotoSectionView ()
 @property (nonatomic,strong) UIImageView *iconView;

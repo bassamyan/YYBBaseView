@@ -43,7 +43,7 @@
             _scheduler = [CADisplayLink displayLinkWithTarget:self selector:@selector(schedulerAction)];
             [_scheduler addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
             if (@available(iOS 10.0, *)) {
-                _scheduler.preferredFramesPerSecond = 1;
+                _scheduler.preferredFramesPerSecond = 60;
             } else {
                 _scheduler.frameInterval = 1.0f;
             }

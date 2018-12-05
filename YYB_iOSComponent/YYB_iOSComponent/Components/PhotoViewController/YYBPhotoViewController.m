@@ -9,10 +9,10 @@
 #import "YYBPhotoViewController.h"
 #import "YYBPhotoContentView.h"
 #import "YYBPhotoCollectionViewCell.h"
-#import "PHAsset+YYBPhoto.h"
 #import "YYBPhotoSectionView.h"
 #import "YYBPhotoSelectionsView.h"
 #import "YYBAlertView+PhotoViewWaiting.h"
+#import "PHAsset+YYBPhotoViewController.h"
 
 @interface YYBPhotoViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,YYBPhotoContentViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
@@ -34,22 +34,32 @@
 
 @implementation YYBPhotoViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (!self) return nil;
+    
+    _maxRequiredImages = 9;
+    _isCheckImageEnable = TRUE;
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.clipsToBounds = TRUE;
+    
     _semaphore = dispatch_semaphore_create(0);
     _queue = dispatch_queue_create("YYBPHOTOVIEWCONTROLLER.CONCURRENT.QUEUE", DISPATCH_QUEUE_CONCURRENT);
-    
-    self.view.clipsToBounds = TRUE;
     _selectedAssets = [NSMutableArray new];
     
-    __weak typeof(self) wself = self;
+    @weakify(self);
     _collectionView = [UICollectionView collectionViewWithDelagateHandler:self superView:self.view constraint:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     } registerClassNames:@[@"YYBPhotoCollectionViewCell"] configureHandler:^(UICollectionView *view, UICollectionViewFlowLayout *layout) {
-        __strong typeof(self) sself = wself;
+        @strongify(self);
         view.backgroundColor = [UIColor whiteColor];
-        view.contentInset = UIEdgeInsetsMake([sself heightForNavigationBar], 1.0f, 64.0f, 1.0f);
+        view.contentInset = UIEdgeInsetsMake([self heightForNavigationBar], 1.0f, 64.0f, 1.0f);
     }];
     
     _shadeView = [UIView viewWithColor:[[UIColor blackColor] colorWithAlphaComponent:0.3f] superView:self.view constraint:^(MASConstraintMaker *make) {
@@ -64,63 +74,66 @@
         make.bottom.equalTo(self.view.mas_top).offset([self heightForNavigationBar]);
         make.height.mas_equalTo(320.0f);
     } configureHandler:^(YYBPhotoContentView *view) {
-        __strong typeof(self) sself = wself;
-        view.delegate = sself;
+        @strongify(self);
+        view.delegate = self;
     }];
     
     _selectionsView = [YYBPhotoSelectionsView viewWithSuperView:self.view constraint:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.mas_equalTo(50.0f + [UIDevice safeAreaBottom]);
     } configureHandler:^(YYBPhotoSelectionsView *view) {
-        __strong typeof(self) sself = wself;
-        view.hidden = [sself isAppendingImagesEnable] == FALSE;
+        @strongify(self);
+        view.hidden = [self isAppendingImagesEnable] == FALSE;
     }];
     
     _selectionsView.finishSelectedHandler = ^{
-        __strong typeof(self) sself = wself;
-        if (sself.isImageRequired == TRUE) {
-            [sself doRequireImages];
+        @strongify(self);
+        if (self.isUIImageRequired == TRUE) {
+            [self produceImageWithAssets];
         } else {
-            if (sself.imageAssetsQueryHandler) {
-                sself.imageAssetsQueryHandler(sself.selectedAssets);
+            if (self.imageResultsQueryHandler) {
+                self.imageResultsQueryHandler(self.selectedAssets);
             }
-            [sself dismissViewControllerAnimated:TRUE completion:nil];
+            [self dismissViewControllerAnimated:TRUE completion:nil];
         }
     };
     
     [self takePhotoAlbumDatasource];
 }
 
-- (void)doRequireImages {
+- (void)produceImageWithAssets {
     dispatch_async(_queue, ^{
         NSMutableArray *results = [NSMutableArray new];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.alertView = [YYBAlertView showPhotoViewWaitingAlertView];
         });
         
-        __weak typeof(self) wself = self;
         for (NSInteger index = 0; index < self.selectedAssets.count; index ++) {
             PHAsset *asset = [self.selectedAssets objectAtIndex:index];
+            
+            @weakify(self);
             [asset produceImageWithTargetSize:CGSizeZero completionHandler:^(UIImage *image, NSString *filename) {
-                __strong typeof(self) sself = wself;
+                @strongify(self);
                 [results addObject:image];
-                dispatch_semaphore_signal(sself.semaphore);
+                dispatch_semaphore_signal(self.semaphore);
             }];
             dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.alertView closeAlertView];
-            if (self.imageAssetsQueryHandler) {
-                self.imageAssetsQueryHandler(results);
+            
+            if (self.imageResultsQueryHandler) {
+                self.imageResultsQueryHandler(results);
             }
+            
             [self dismissViewControllerAnimated:TRUE completion:nil];
         });
     });
 }
 
 - (void)configureNavigationView {
-    __weak typeof(self) wself = self;
+    @weakify(self);
     _cancelBarButton = [YYBNavigationBarLabel labelWithConfigureHandler:^(YYBNavigationBarLabel *container, UILabel *view) {
         container.contentEdgeInsets = UIEdgeInsetsMake([UIDevice iPhoneXSeries] ? 20.0f : 10.0f, 15.0f, 0, 0);
         
@@ -128,27 +141,27 @@
         view.textColor = [UIColor blackColor];
         view.font = [UIFont systemFontOfSize:17.0f weight:UIFontWeightLight];
     } tapedActionHandler:^(YYBNavigationBarContainer *view) {
-        __strong typeof(self) sself = wself;
-        [sself dismissViewControllerAnimated:TRUE completion:nil];
+        @strongify(self);
+        [self dismissViewControllerAnimated:TRUE completion:nil];
     }];
     
     _sectionView = [[YYBPhotoSectionView alloc] init];
     _sectionView.contentSize = CGSizeMake(200.0f, 40.0f);
     _sectionView.contentEdgeInsets = UIEdgeInsetsMake([UIDevice iPhoneXSeries] ? 20.0f : 10.0f, 0, 0, 0);
     _sectionView.librarySelectedHandler = ^(BOOL isSelected) {
-        __strong typeof(self) sself = wself;
+        @strongify(self);
         [UIView animateWithDuration:0.25f animations:^{
             if (isSelected) {
-                sself.shadeView.hidden = FALSE;
-                sself.shadeView.alpha = 1.0f;
-                sself.contentView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(sself.contentView.frame));
+                self.shadeView.hidden = FALSE;
+                self.shadeView.alpha = 1.0f;
+                self.contentView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.contentView.frame));
             } else {
-                sself.shadeView.alpha = 0.0f;
-                sself.contentView.transform = CGAffineTransformIdentity;
+                self.shadeView.alpha = 0.0f;
+                self.contentView.transform = CGAffineTransformIdentity;
             }
         } completion:^(BOOL finished) {
             if (isSelected == FALSE) {
-                sself.shadeView.hidden = TRUE;
+                self.shadeView.hidden = TRUE;
             }
         }];
     };
@@ -177,12 +190,12 @@
     PHFetchResult *result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     _contentView.results = result;
     
-    __weak typeof(self) wself = self;
+    @weakify(self);
     [result enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL * stop) {
         if (collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumUserLibrary) {
-            __strong typeof(self) sself = wself;
+            @strongify(self);
             PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:collection options:option];
-            [sself photoContentViewSelectedResults:fetchResult collection:collection];
+            [self photoContentViewSelectedResults:fetchResult collection:collection];
             *stop = YES;
         }
     }];
@@ -205,35 +218,35 @@
     YYBPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"YYBPhotoCollectionViewCell" forIndexPath:indexPath];
     PHAsset *asset = [_result objectAtIndex:indexPath.row];
     
-    __weak typeof(self) wself = self;
+    @weakify(self);
     cell.checkSelectionHandler = ^BOOL{
-        __strong typeof(self) sself = wself;
-        return [sself selectionStatusWithAsset:asset];
+        @strongify(self);
+        return [self selectionStatusWithAsset:asset];
     };
     
     cell.checkAppendEnableHandler = ^BOOL{
-        __strong typeof(self) sself = wself;
-        return [sself isAppendingImagesEnable];
+        @strongify(self);
+        return [self isAppendingImagesEnable];
     };
     
     cell.selectActionHandler = ^{
-        __strong typeof(self) sself = wself;
-        BOOL isSelected = [sself selectionStatusWithAsset:asset];
+        @strongify(self);
+        BOOL isSelected = [self selectionStatusWithAsset:asset];
         if (isSelected) {
-            [sself.selectedAssets removeObject:asset];
+            [self.selectedAssets removeObject:asset];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"YYBPHOTOSELECTEDNOTIFICATION" object:nil];
         } else {
-            if (sself.selectedAssets.count < sself.maxAllowedImages) {
-                [sself.selectedAssets addObject:asset];
+            if (self.selectedAssets.count < self.maxRequiredImages) {
+                [self.selectedAssets addObject:asset];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"YYBPHOTOSELECTEDNOTIFICATION" object:nil];
             }
         }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"YYBPHOTOSAPPENDNOTIFICATION" object:nil];
-        [sself.selectionsView renderButtonWithImagesCount:sself.selectedAssets.count];
+        [self.selectionsView renderButtonWithImagesCount:self.selectedAssets.count];
     };
     
-    [cell renderItemWithAsset:asset selectionStatus:[self selectionStatusWithAsset:asset] isMultipleImagesRequired:_isMultipleImagesRequired isAppendImageEnable:[self isAppendingImagesEnable]];
+    [cell renderItemWithAsset:asset selectionStatus:[self selectionStatusWithAsset:asset] isMultipleImagesRequired:_isCheckImageEnable isAppendImageEnable:[self isAppendingImagesEnable]];
     
     return cell;
 }
@@ -244,26 +257,30 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     PHAsset *asset = [_result objectAtIndex:indexPath.row];
-    if (_isMultipleImagesRequired == FALSE) {
-        if (self.imageAssetQueryHandler) {
-            self.imageAssetQueryHandler(asset);
+    if (_isCheckImageEnable == FALSE) {
+        if (_isUIImageRequired) {
+            [self produceImageWithAssets];
+        } else {
+            if (self.imageResultQueryHandler) {
+                self.imageResultQueryHandler(asset);
+            }
+            [self dismissViewControllerAnimated:TRUE completion:nil];
         }
-        [self dismissViewControllerAnimated:TRUE completion:nil];
     } else {
         // 查看图片浏览器
     }
 }
 
 - (BOOL)selectionStatusWithAsset:(PHAsset *)asset {
-    if (_isMultipleImagesRequired == FALSE) {
+    if (_isCheckImageEnable == FALSE) {
         return FALSE;
     }
     return [_selectedAssets containsObject:asset];
 }
 
 - (BOOL)isAppendingImagesEnable {
-    if (_isMultipleImagesRequired == TRUE) {
-        return _selectedAssets.count != _maxAllowedImages;
+    if (_isCheckImageEnable == TRUE) {
+        return _selectedAssets.count != _maxRequiredImages;
     } else {
         return TRUE;
     }

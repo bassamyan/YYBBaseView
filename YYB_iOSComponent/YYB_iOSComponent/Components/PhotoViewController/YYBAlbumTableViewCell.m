@@ -7,6 +7,8 @@
 //
 
 #import "YYBAlbumTableViewCell.h"
+#import "PHAsset+YYBPhotoViewController.h"
+#import "YYBLayout.h"
 
 @interface YYBAlbumTableViewCell ()
 
@@ -51,11 +53,11 @@
     _nameLabel.text = [NSString stringWithFormat:@"%@ (%@)",collection.localizedTitle,@(result.count).stringValue];
     
     if (result.count > 0) {
-        __weak typeof(self) wself = self;
+        @weakify(self);
         PHAsset *asset = [result firstObject];
         [asset produceImageWithTargetSize:CGSizeMake(80.0f, 80.0f) completionHandler:^(UIImage *image, NSString *filename) {
-            __strong typeof(self) sself = wself;
-            sself.iconView.image = image;
+            @strongify(self);
+            self.iconView.image = image;
         }];
     } else {
         self.iconView.image = nil;

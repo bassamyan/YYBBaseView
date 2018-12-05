@@ -44,7 +44,7 @@
             [_scheduler addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
             [_scheduler addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
             if (@available(iOS 10.0, *)) {
-                _scheduler.preferredFramesPerSecond = 1;
+                _scheduler.preferredFramesPerSecond = 60;
             } else {
                 _scheduler.frameInterval = 1.0f;
             }
