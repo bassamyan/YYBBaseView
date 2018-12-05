@@ -13,6 +13,7 @@
 #import "YYBPhotoSelectionsView.h"
 #import "YYBAlertView+PhotoViewWaiting.h"
 #import "PHAsset+YYBPhotoViewController.h"
+#import "YYBLayout.h"
 
 @interface YYBPhotoViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,YYBPhotoContentViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
