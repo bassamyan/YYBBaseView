@@ -42,7 +42,12 @@
         case YYBRefreshStatusRefreshing: {
             _scheduler = [CADisplayLink displayLinkWithTarget:self selector:@selector(schedulerAction)];
             [_scheduler addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-            _scheduler.frameInterval = 1.0f;
+            [_scheduler addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+            if (@available(iOS 10.0, *)) {
+                _scheduler.preferredFramesPerSecond = 1;
+            } else {
+                _scheduler.frameInterval = 1.0f;
+            }
         }
             break;
             

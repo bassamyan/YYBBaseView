@@ -69,7 +69,8 @@
 - (NSString *)md5;
 - (NSString *)sha256;
 - (NSString *)hmacsha256:(NSString *)key;
-- (NSString *)urlEncoding;
+
+- (NSString *)stringURLEncode;
 
 // 图片中过滤中文, 进行URLEncoding
 - (NSString *)imageURLEncode;

@@ -197,7 +197,6 @@ static CGFloat const degreesToRadians(CGFloat degrees) {
 - (UIImage *)rotateWithDegrees:(CGFloat)degrees {
     // calculate the size of the rotated view's containing box for our drawing space
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.size.width, self.size.height)];
-    CGFloat angle = degreesToRadians(degrees);
     CGAffineTransform t = CGAffineTransformMakeRotation(degreesToRadians(degrees));
     rotatedViewBox.transform = t;
     CGSize rotatedSize = rotatedViewBox.frame.size;

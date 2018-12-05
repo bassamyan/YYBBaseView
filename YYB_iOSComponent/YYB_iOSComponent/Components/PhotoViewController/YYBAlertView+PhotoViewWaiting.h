@@ -7,7 +7,6 @@
 //
 
 #import "YYBAlertView.h"
-#import "UIColor+YYBAdd.h"
 
 @interface YYBAlertView (PhotoViewWaiting)
 

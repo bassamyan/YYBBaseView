@@ -19,7 +19,8 @@
     
     [alertView addContainerViewWithHandler:^(YYBAlertViewContainer *container) {
         container.contentView.backgroundColor = [UIColor whiteColor];
-        [container.contentView cornerRadius:15.0f];
+        container.contentView.layer.cornerRadius = 15.0f;
+        container.contentView.clipsToBounds = TRUE;
         container.maximalWidth = 300.0f;
         container.maximalHeight = MAXFLOAT;
         container.actionsContainer.flexPosition = YYBAlertViewFlexPositionStretch;

@@ -200,11 +200,11 @@
     unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
     
     CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
-    NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
-    return [HMAC base64EncodedStringWithOptions:0];
+    NSData *hmac = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
+    return [hmac base64EncodedStringWithOptions:0];
 }
 
-- (NSString *)urlEncoding {
+- (NSString *)stringURLEncode {
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8));
 }
 

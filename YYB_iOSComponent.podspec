@@ -91,6 +91,7 @@ Pod::Spec.new do |s|
     photoBrowser.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser/**/*.{h,m}'
     photoBrowser.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser_Icons.xcassets'
     photoBrowser.dependency 'YYB_iOSComponent/Base'
+    photoBrowser.dependency 'YYB_iOSComponent/AlertView'
     photoBrowser.dependency 'SDWebImage'
   end
 
