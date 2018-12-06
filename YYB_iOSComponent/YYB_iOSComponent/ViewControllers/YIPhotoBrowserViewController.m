@@ -66,7 +66,7 @@
     @weakify(self);
     [self showPhotoBrowserWithImages:_results queryImageRectHandler:^CGRect(NSInteger index) {
         return [self rectWithCollectionView:collectionView indexPath:indexPath];
-    } initialImageIndex:indexPath.row isDeletable:TRUE deletionCheckHandler:nil reloadImageSourceHandler:^(NSInteger index) {
+    } initialImageIndex:indexPath.row isDeletable:TRUE deleteActionHandler:nil reloadImageSourceHandler:^(NSInteger index) {
         @strongify(self);
         [self.results removeObjectAtIndex:index];
         [self.collectionView reloadData];

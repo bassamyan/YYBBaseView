@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger,dateFormatType) {
-    dateFormatTypeHm    = 0,
-    dateFormatTypeMD    = 1,
-    dateFormatTypeYMD   = 2,
-    dateFormatTypeYMDHm = 3,
+typedef NS_ENUM(NSUInteger,YYBDateFormatType) {
+    YYBDateFormatTypeHm    = 0,
+    YYBDateFormatTypeMD    = 1,
+    YYBDateFormatTypeYMD   = 2,
+    YYBDateFormatTypeYMDHm = 3,
 };
 
 @interface NSDate (YYBAdd)
@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger,dateFormatType) {
 - (NSDate *)dateByAddingYears:(NSInteger)years;
 
 // 根据类型获得对应的时间文本
-- (NSString *)toStringWithFormatterType:(dateFormatType)type;
+- (NSString *)toStringWithFormatterType:(YYBDateFormatType)type;
 - (NSString *)toStringWithFormatter:(NSString *)format;
 
 // 根据时间文本获取时间

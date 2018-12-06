@@ -44,7 +44,7 @@
         
         [self showPhotoBrowserWithImages:self.results queryImageRectHandler:^CGRect(NSInteger index) {
             return [cell imageRectWithIndex:index convertView:self.view];
-        } initialImageIndex:index isDeletable:TRUE deletionCheckHandler:nil reloadImageSourceHandler:^(NSInteger index) {
+        } initialImageIndex:index isDeletable:TRUE deleteActionHandler:nil reloadImageSourceHandler:^(NSInteger index) {
             [self.results removeObjectAtIndex:index];
             [self.tableView reloadData];
         } configureHandler:^(YYBPhotoBrowser * _Nonnull browser) {

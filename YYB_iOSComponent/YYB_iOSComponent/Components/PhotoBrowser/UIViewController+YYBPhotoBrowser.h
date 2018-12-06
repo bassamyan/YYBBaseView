@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param initialImageIndex 初始图片索引
  @param reloadImageSourceHandler 删除图片后刷新回调
  */
-- (nullable YYBPhotoBrowser *)showPhotoBrowserWithImages:(NSArray *)images queryImageRectHandler:(CGRect(^)(NSInteger index))queryImageRectHandler initialImageIndex:(NSInteger)initialImageIndex isDeletable:(BOOL)isDeletable deletionCheckHandler:(nullable void(^)(NSInteger index))deletionCheckHandler reloadImageSourceHandler:(nullable void(^)(NSInteger index))reloadImageSourceHandler configureHandler:(void(^)(YYBPhotoBrowser *browser))configureHandler;
+- (nullable YYBPhotoBrowser *)showPhotoBrowserWithImages:(NSArray *)images queryImageRectHandler:(CGRect(^)(NSInteger index))queryImageRectHandler initialImageIndex:(NSInteger)initialImageIndex isDeletable:(BOOL)isDeletable deleteActionHandler:(nullable void(^)(NSInteger index))deleteActionHandler reloadImageSourceHandler:(nullable void(^)(NSInteger index))reloadImageSourceHandler configureHandler:(void(^)(YYBPhotoBrowser *browser))configureHandler;
 
 /**
  @param image 图片数据源,可以是URL或者UIImage

@@ -300,13 +300,20 @@
         }
             break;
         case YYBAlertViewAnimationStyleBottom: {
+            CGFloat width = [UIScreen mainScreen].bounds.size.width;
+            CGFloat height = [UIScreen mainScreen].bounds.size.height;
+            
+            self.createRectHandler = ^CGRect(NSInteger index, YYBAlertViewContainer *container) {
+                CGSize contentSize = container.contentSize;
+                return CGRectMake((width - contentSize.width) / 2, height - contentSize.height, contentSize.width, contentSize.height);
+            };
+            
             __weak typeof(self) wself = self;
             self.showContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container) {
-                container.alpha = 0.0f;
-                container.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+                container.transform = CGAffineTransformMakeTranslation(0, container.contentSize.height);
                 wself.backgroundView.alpha = 0.0f;
+                
                 [UIView animateWithDuration:0.2f animations:^{
-                    container.alpha = 1.0f;
                     container.transform = CGAffineTransformIdentity;
                     wself.backgroundView.alpha = 1.0f;
                 }];
@@ -315,9 +322,9 @@
             };
             
             self.closeContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container, void (^removeSubviewsHandler)(void)) {
+                wself.backgroundView.alpha = 1.0f;
                 [UIView animateWithDuration:0.2f animations:^{
-                    container.alpha = 0.0f;
-                    container.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+                    container.transform = CGAffineTransformMakeTranslation(0, container.contentSize.height);
                     wself.backgroundView.alpha = 0.0f;
                 } completion:^(BOOL finished) {
                     removeSubviewsHandler();
@@ -325,6 +332,7 @@
                 
                 return TRUE;
             };
+
         }
             break;
         case YYBAlertViewAnimationStyleCenterShrink: {

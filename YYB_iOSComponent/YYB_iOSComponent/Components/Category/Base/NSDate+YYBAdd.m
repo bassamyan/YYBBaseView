@@ -76,7 +76,7 @@ static NSString * const kDefaultDateFormatter = @"YYYY-MM-dd";
     return [dateFormatter stringFromDate:self];
 }
 
-- (NSString *)toStringWithFormatterType:(dateFormatType)type {
+- (NSString *)toStringWithFormatterType:(YYBDateFormatType)type {
     NSArray *types = @[@"HH:mm",
                        @"MM-dd",
                        @"YYYY-MM-dd",

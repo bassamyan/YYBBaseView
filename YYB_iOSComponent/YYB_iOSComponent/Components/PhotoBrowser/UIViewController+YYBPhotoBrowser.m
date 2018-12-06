@@ -11,7 +11,7 @@
 
 @implementation UIViewController (YYBPhotoBrowser)
 
-- (nullable YYBPhotoBrowser *)showPhotoBrowserWithImages:(NSArray *)images queryImageRectHandler:(CGRect (^)(NSInteger))queryImageRectHandler initialImageIndex:(NSInteger)initialImageIndex isDeletable:(BOOL)isDeletable deletionCheckHandler:(nullable void (^)(NSInteger))deletionCheckHandler reloadImageSourceHandler:(nullable void (^)(NSInteger))reloadImageSourceHandler configureHandler:(nonnull void (^)(YYBPhotoBrowser * _Nonnull))configureHandler
+- (nullable YYBPhotoBrowser *)showPhotoBrowserWithImages:(NSArray *)images queryImageRectHandler:(CGRect (^)(NSInteger))queryImageRectHandler initialImageIndex:(NSInteger)initialImageIndex isDeletable:(BOOL)isDeletable deleteActionHandler:(nullable void (^)(NSInteger))deleteActionHandler reloadImageSourceHandler:(nullable void (^)(NSInteger))reloadImageSourceHandler configureHandler:(nonnull void (^)(YYBPhotoBrowser * _Nonnull))configureHandler
 {
     YYBPhotoBrowserTransition *transition = [[YYBPhotoBrowserTransition alloc] init];
     transition.imageURL = [images objectAtIndex:initialImageIndex];
@@ -27,8 +27,8 @@
     
     @weakify(browser);
     browser.deleteImageCheckHandler = ^(NSInteger index) {
-        if (deletionCheckHandler) {
-            deletionCheckHandler(index);
+        if (deleteActionHandler) {
+            deleteActionHandler(index);
         } else {
             [YYBAlertView showCheckPhotoDeletionAlertViewWithTitle:@"\n确定要删除这张图片吗?\n" detail:nil cancelActionTitle:@"取消" confirmActionTitle:@"确定" confirmActionHandler:^{
                 @strongify(browser);
@@ -52,7 +52,7 @@
 {
     [self showPhotoBrowserWithImages:@[image] queryImageRectHandler:^CGRect(NSInteger index) {
         return CGRectMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame), 0, 0);
-    } initialImageIndex:0 isDeletable:FALSE deletionCheckHandler:nil reloadImageSourceHandler:nil configureHandler:configureHandler];
+    } initialImageIndex:0 isDeletable:FALSE deleteActionHandler:nil reloadImageSourceHandler:nil configureHandler:configureHandler];
 }
 
 @end

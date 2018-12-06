@@ -14,6 +14,7 @@
 @property (nonatomic,strong) YYBRefreshBaseDoneView *doneView;
 - (void)removeDoneView;
 
+- (void)addRefreshDoneView;
 - (void)addRefreshDoneViewWithClass:(Class)viewClass;
 - (void)addRefreshDoneViewWithClass:(Class)viewClass height:(CGFloat)height;
 
