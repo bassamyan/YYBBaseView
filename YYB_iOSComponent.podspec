@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.13"
+  s.version       = "0.0.14"
   s.summary       = "iOS UI components"
   s.description   = "components for iOS development"
   s.license       = "MIT"
@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Base' do |base|
-    base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Base/**/*.{h,m}'
+    base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Base/**/*'
     base.dependency 'Masonry'
     base.dependency 'ReactiveObjC'
     base.dependency 'TPKeyboardAvoiding'
@@ -87,14 +87,14 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'PhotoBrowser' do |photoBrowser|
-    photoBrowser.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser/**/*.{h,m}'
+    photoBrowser.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser/**/*'
     photoBrowser.dependency 'YYB_iOSComponent/Base'
     photoBrowser.dependency 'YYB_iOSComponent/AlertView'
     photoBrowser.dependency 'SDWebImage'
   end
 
   s.subspec 'PhotoViewController' do |photoViewController|
-    photoViewController.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController/**/*.{h,m}'
+    photoViewController.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController/**/*'
     photoViewController.dependency 'YYB_iOSComponent/Base'
     photoViewController.dependency 'YYB_iOSComponent/AlertView'
     photoViewController.framework = 'Photos'
