@@ -24,7 +24,7 @@
         make.center.equalTo(self);
     } configureHandler:nil];
     
-    _iconView = [UIImageView imageViewWithIcon:@"ic_yyb_direction_top" superView:self constraint:^(MASConstraintMaker *make) {
+    _iconView = [UIImageView imageViewWithIcon:@"ic_yyb_pvc_direction_top" superView:self constraint:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentLabel.mas_right).offset(10.0f);
         make.centerY.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(10.0, 6.5f));

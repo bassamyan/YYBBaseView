@@ -44,8 +44,8 @@
         make.top.equalTo(self.contentView).offset(3.0f);
         make.size.mas_equalTo(CGSizeMake(30.0f, 30.0f));
     } configureButtonHandler:^(UIButton *button) {
-        [button setBackgroundImage:[UIImage imageNamed:@"ic_yyb_check_no"] forState:0];
-        [button setBackgroundImage:[UIImage imageNamed:@"ic_yyb_check_yes"] forState:UIControlStateSelected];
+        [button setBackgroundImage:[UIImage imageNamed:@"ic_yyb_pvc_select_normal"] forState:0];
+        [button setBackgroundImage:[UIImage imageNamed:@"ic_yyb_pvc_select_selected"] forState:UIControlStateSelected];
     } tapedHandler:^(UIButton *sender) {
         if (wself.selectActionHandler) {
             wself.selectActionHandler();
