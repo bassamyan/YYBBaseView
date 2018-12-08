@@ -208,22 +208,34 @@
 
 - (void)setBarButtonTextFont:(UIFont *)textFont controlState:(UIControlState)state
 {
-    [_cachedLabelFonts setObject:textFont forKey:@(state)];
+    if (textFont)
+    {
+        [_cachedLabelFonts setObject:textFont forKey:@(state)];
+    }
 }
 
 - (void)setBarButtonTextColor:(UIColor *)textColor controlState:(UIControlState)state
 {
-    [_cachedLabelColors setObject:textColor forKey:@(state)];
+    if (textColor)
+    {
+        [_cachedLabelColors setObject:textColor forKey:@(state)];
+    }
 }
 
 - (void)setBarButtonImage:(UIImage *)image controlState:(UIControlState)state
 {
-    [_cachedImages setObject:image forKey:@(state)];
+    if (image)
+    {
+        [_cachedImages setObject:image forKey:@(state)];
+    }
 }
 
 - (void)setBarButtonTitle:(NSString *)title controlState:(UIControlState)state
 {
-    [_cachedTitles setObject:title forKey:@(state)];
+    if (title)
+    {
+        [_cachedTitles setObject:title forKey:@(state)];
+    }
 }
 
 - (void)setSelected:(BOOL)selected

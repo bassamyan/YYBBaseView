@@ -31,5 +31,6 @@
 #import "UIView+YYBAdd.h"
 #import "UIGestureRecognizer+YYBAdd.h"
 #import "UIDevice+YYBAdd.h"
+#import "NSBundle+YYBAdd.h"
 
 #endif /* YYBCategory */

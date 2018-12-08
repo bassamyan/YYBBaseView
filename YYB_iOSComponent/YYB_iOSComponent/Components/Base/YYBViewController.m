@@ -66,7 +66,8 @@
                 [container setBarButtonTitle:@"返回" controlState:0];
                 [container setBarButtonTextFont:[UIFont systemFontOfSize:16.0f] controlState:0];
                 [container setBarButtonTextFont:[UIFont systemFontOfSize:16.0f] controlState:UIControlStateHighlighted];
-                [container setBarButtonImage:[UIImage imageNamed:@"ic_yyb_navigation_back_black"] controlState:0];
+                
+                [container setBarButtonImage:[NSBundle imageWithBundleName:@"Icon_Base" imageName:@"ic_yyb_navigation_back_black"] controlState:0];
             } tapedActionHandler:^(YYBNavigationBarContainer *view) {
                 @strongify(self);
                 if ([self navigationBackBarButtonHandler] == TRUE) {

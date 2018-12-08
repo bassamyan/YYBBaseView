@@ -24,11 +24,13 @@
         make.center.equalTo(self);
     } configureHandler:nil];
     
-    _iconView = [UIImageView imageViewWithIcon:@"ic_yyb_pvc_direction_top" superView:self constraint:^(MASConstraintMaker *make) {
+    _iconView = [UIImageView imageViewWithIcon:nil superView:self constraint:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentLabel.mas_right).offset(10.0f);
         make.centerY.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(10.0, 6.5f));
-    } configureImageViewHandler:nil];
+    } configureImageViewHandler:^(UIImageView *iconView) {
+        iconView.image = [NSBundle imageWithBundleName:@"Icon_PhotoViewController" imageName:@"ic_yyb_pvc_direction_top"];
+    }];
     
     [self addTarget:self action:@selector(sectionSelectedHandler) forControlEvents:1<<6];
     

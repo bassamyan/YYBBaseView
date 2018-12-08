@@ -163,7 +163,7 @@
 }
 
 - (void)configureNavigationView {
-    [self.navigationBackBarButton setBarButtonImage:[[UIImage imageNamed:@"ic_yyb_pb_navigation_back_white"] scale:2.0f] controlState:0];
+    [self.navigationBackBarButton setBarButtonImage:[[NSBundle imageWithBundleName:@"Icon_PhotoBrowser" imageName:@"ic_yyb_pb_navigation_back_white"] scale:2.0f] controlState:0];
     [self.navigationBackBarButton setBarButtonTextColor:[UIColor whiteColor] controlState:0];
     
     self.navigationBar.titleBarButton.label.text = [NSString stringWithFormat:@"1 / %ld",_images.count];
@@ -178,7 +178,7 @@
             container.contentSize = CGSizeMake(20.0f, 24.0f);
             container.contentEdgeInsets = UIEdgeInsetsMake([UIDevice iPhoneXSeries] ? 20.0f : 10.0f, 0, 0, 22.5f);
             
-            view.image = [UIImage imageNamed:@"ic_yyb_pb_delete"];
+            view.image = [NSBundle imageWithBundleName:@"Icon_PhotoBrowser" imageName:@"ic_yyb_pb_delete"];
         } tapedActionHandler:^(YYBNavigationBarContainer *view) {
             @strongify(self);
             if (self.deleteImageCheckHandler) {

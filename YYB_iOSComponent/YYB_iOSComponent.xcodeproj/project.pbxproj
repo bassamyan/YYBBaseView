@@ -119,12 +119,10 @@
 		C8C5B0AF21B4FD3D00FEE44E /* YYBPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0A521B4FD3D00FEE44E /* YYBPhotoBrowser.m */; };
 		C8C5B0B021B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0A821B4FD3D00FEE44E /* YYBPhotoBrowserInteractiveTransition.m */; };
 		C8C5B0B121B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C5B0AB21B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m */; };
-		C8CDCFE521BA770B0040243C /* ic_yyb_navigation_back_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFE421BA770B0040243C /* ic_yyb_navigation_back_black.png */; };
-		C8CDCFE721BA77160040243C /* ic_yyb_pb_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFE621BA77160040243C /* ic_yyb_pb_delete.png */; };
-		C8CDCFE921BA771A0040243C /* ic_yyb_pb_navigation_back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFE821BA771A0040243C /* ic_yyb_pb_navigation_back_white.png */; };
-		C8CDCFEB21BA77210040243C /* ic_yyb_pvc_select_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFEA21BA77210040243C /* ic_yyb_pvc_select_normal.png */; };
-		C8CDCFED21BA77260040243C /* ic_yyb_pvc_select_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFEC21BA77260040243C /* ic_yyb_pvc_select_selected.png */; };
-		C8CDCFEF21BA772E0040243C /* ic_yyb_pvc_direction_top.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFEE21BA772E0040243C /* ic_yyb_pvc_direction_top.png */; };
+		C8CDCFF421BA8A570040243C /* Icon_Base.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFF321BA8A570040243C /* Icon_Base.bundle */; };
+		C8CDCFF621BA8B330040243C /* Icon_PhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFF521BA8B330040243C /* Icon_PhotoBrowser.bundle */; };
+		C8CDCFF821BA8B720040243C /* Icon_PhotoViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8CDCFF721BA8B720040243C /* Icon_PhotoViewController.bundle */; };
+		C8CDCFFB21BB4C110040243C /* NSBundle+YYBAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CDCFFA21BB4C110040243C /* NSBundle+YYBAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -373,12 +371,11 @@
 		C8C5B0A921B4FD3D00FEE44E /* YYBPhotoBrowserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowserCollectionViewCell.h; sourceTree = "<group>"; };
 		C8C5B0AA21B4FD3D00FEE44E /* YYBPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBPhotoBrowser.h; sourceTree = "<group>"; };
 		C8C5B0AB21B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBPhotoBrowserPushAnimator.m; sourceTree = "<group>"; };
-		C8CDCFE421BA770B0040243C /* ic_yyb_navigation_back_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_yyb_navigation_back_black.png; sourceTree = "<group>"; };
-		C8CDCFE621BA77160040243C /* ic_yyb_pb_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_yyb_pb_delete.png; sourceTree = "<group>"; };
-		C8CDCFE821BA771A0040243C /* ic_yyb_pb_navigation_back_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_yyb_pb_navigation_back_white.png; sourceTree = "<group>"; };
-		C8CDCFEA21BA77210040243C /* ic_yyb_pvc_select_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_yyb_pvc_select_normal.png; sourceTree = "<group>"; };
-		C8CDCFEC21BA77260040243C /* ic_yyb_pvc_select_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_yyb_pvc_select_selected.png; sourceTree = "<group>"; };
-		C8CDCFEE21BA772E0040243C /* ic_yyb_pvc_direction_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_yyb_pvc_direction_top.png; sourceTree = "<group>"; };
+		C8CDCFF321BA8A570040243C /* Icon_Base.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Icon_Base.bundle; sourceTree = "<group>"; };
+		C8CDCFF521BA8B330040243C /* Icon_PhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Icon_PhotoBrowser.bundle; sourceTree = "<group>"; };
+		C8CDCFF721BA8B720040243C /* Icon_PhotoViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Icon_PhotoViewController.bundle; sourceTree = "<group>"; };
+		C8CDCFF921BB4C110040243C /* NSBundle+YYBAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+YYBAdd.h"; sourceTree = "<group>"; };
+		C8CDCFFA21BB4C110040243C /* NSBundle+YYBAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+YYBAdd.m"; sourceTree = "<group>"; };
 		E13CDEB53C2305927B696C50 /* Pods-YYB_iOSComponentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponentUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponentUITests/Pods-YYB_iOSComponentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E9D23593DCFC5692FF931D /* Pods-YYB_iOSComponentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYB_iOSComponentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYB_iOSComponentUITests/Pods-YYB_iOSComponentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6FCE5D93771191ACE3A51D3 /* libPods-YYB_iOSComponentUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYB_iOSComponentUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -415,9 +412,6 @@
 		C83E059321B5036C00619F0D /* PhotoViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C8CDCFEA21BA77210040243C /* ic_yyb_pvc_select_normal.png */,
-				C8CDCFEC21BA77260040243C /* ic_yyb_pvc_select_selected.png */,
-				C8CDCFEE21BA772E0040243C /* ic_yyb_pvc_direction_top.png */,
 				C83E05B121B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.h */,
 				C83E05B221B5054B00619F0D /* YYBAlertView+PhotoViewWaiting.m */,
 				C83E059621B5036C00619F0D /* PHAsset+YYBPhotoViewController.h */,
@@ -436,6 +430,7 @@
 				C83E059521B5036C00619F0D /* YYBPhotoViewController.m */,
 				C83E05FC21B7985100619F0D /* UIViewController+YYBPhotoViewController.h */,
 				C83E05FD21B7985100619F0D /* UIViewController+YYBPhotoViewController.m */,
+				C8CDCFF721BA8B720040243C /* Icon_PhotoViewController.bundle */,
 			);
 			path = PhotoViewController;
 			sourceTree = "<group>";
@@ -643,6 +638,8 @@
 				C8C5AF9621B4B3F900FEE44E /* UIView+YYBAdd.h */,
 				C8C5AFB421B4B3F900FEE44E /* UIView+YYBAdd.m */,
 				C8C5AFA821B4B3F900FEE44E /* YYBCategory.h */,
+				C8CDCFF921BB4C110040243C /* NSBundle+YYBAdd.h */,
+				C8CDCFFA21BB4C110040243C /* NSBundle+YYBAdd.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -801,13 +798,13 @@
 		C8C5B08921B4E35B00FEE44E /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				C8CDCFE421BA770B0040243C /* ic_yyb_navigation_back_black.png */,
 				C8C5B08F21B4E37F00FEE44E /* YYBCollectionViewController.h */,
 				C8C5B08D21B4E37F00FEE44E /* YYBCollectionViewController.m */,
 				C8C5B08E21B4E37F00FEE44E /* YYBTableViewController.h */,
 				C8C5B08A21B4E37E00FEE44E /* YYBTableViewController.m */,
 				C8C5B08B21B4E37E00FEE44E /* YYBViewController.h */,
 				C8C5B08C21B4E37E00FEE44E /* YYBViewController.m */,
+				C8CDCFF321BA8A570040243C /* Icon_Base.bundle */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -832,8 +829,6 @@
 		C8C5B09F21B4FD3D00FEE44E /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				C8CDCFE621BA77160040243C /* ic_yyb_pb_delete.png */,
-				C8CDCFE821BA771A0040243C /* ic_yyb_pb_navigation_back_white.png */,
 				C83E05E021B6358300619F0D /* UIImageView+YYBPhotoBrowser.h */,
 				C83E05E121B6358300619F0D /* UIImageView+YYBPhotoBrowser.m */,
 				C83E05E921B75CFD00619F0D /* UIViewController+YYBPhotoBrowser.h */,
@@ -852,6 +847,7 @@
 				C8C5B0AB21B4FD3D00FEE44E /* YYBPhotoBrowserPushAnimator.m */,
 				C8C5B0A621B4FD3D00FEE44E /* YYBPhotoBrowserTransition.h */,
 				C8C5B0A121B4FD3D00FEE44E /* YYBPhotoBrowserTransition.m */,
+				C8CDCFF521BA8B330040243C /* Icon_PhotoBrowser.bundle */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -986,14 +982,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8CDCFED21BA77260040243C /* ic_yyb_pvc_select_selected.png in Resources */,
-				C8CDCFE521BA770B0040243C /* ic_yyb_navigation_back_black.png in Resources */,
 				C83E05D821B51EB400619F0D /* ic_storage_setting.png in Resources */,
 				C83E05FB21B78F6000619F0D /* ic_icon_add@1x.png in Resources */,
-				C8CDCFEF21BA772E0040243C /* ic_yyb_pvc_direction_top.png in Resources */,
-				C8CDCFE721BA77160040243C /* ic_yyb_pb_delete.png in Resources */,
-				C8CDCFE921BA771A0040243C /* ic_yyb_pb_navigation_back_white.png in Resources */,
-				C8CDCFEB21BA77210040243C /* ic_yyb_pvc_select_normal.png in Resources */,
+				C8CDCFF621BA8B330040243C /* Icon_PhotoBrowser.bundle in Resources */,
+				C8CDCFF821BA8B720040243C /* Icon_PhotoViewController.bundle in Resources */,
+				C8CDCFF421BA8A570040243C /* Icon_Base.bundle in Resources */,
 				C8C5AF5621B4B3A900FEE44E /* Assets.xcassets in Resources */,
 				C83E05F921B78F5300619F0D /* ic_icon_placeholder@1x.png in Resources */,
 			);
@@ -1136,6 +1129,7 @@
 				C8C5AFC821B4B3F900FEE44E /* NSDictionary+YYBAdd.m in Sources */,
 				C83E05EB21B75CFD00619F0D /* UIViewController+YYBPhotoBrowser.m in Sources */,
 				C8C5B04B21B4C7E200FEE44E /* YYBNavigationBarControl.m in Sources */,
+				C8CDCFFB21BB4C110040243C /* NSBundle+YYBAdd.m in Sources */,
 				C83E05A821B5036C00619F0D /* YYBPhotoContentView.m in Sources */,
 				C8C5B04E21B4C7E200FEE44E /* YYBNavigationBar.m in Sources */,
 				C8C5B07F21B4C9FD00FEE44E /* YYBRefreshBaseDoneView.m in Sources */,
