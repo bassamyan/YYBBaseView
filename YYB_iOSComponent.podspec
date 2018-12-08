@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.18"
+  s.version       = "0.0.19"
   s.summary       = "iOS UI components"
   s.description   = "components for iOS development"
   s.license       = "MIT"
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'PhotoBrowser' do |photoBrowser|
     photoBrowser.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser/**/*.{h,m}'
-    photoBrowser.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/Icon_PhotoBrowser/Icon_PhotoBrowser.bundle'
+    photoBrowser.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoBrowser/Icon_PhotoBrowser.bundle'
     photoBrowser.dependency 'YYB_iOSComponent/Base'
     photoBrowser.dependency 'YYB_iOSComponent/AlertView'
     photoBrowser.dependency 'SDWebImage'
@@ -97,7 +97,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'PhotoViewController' do |photoViewController|
     photoViewController.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController/**/*.{h,m}'
-    photoViewController.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/Icon_PhotoViewController/Icon_PhotoViewController.bundle'
+    photoViewController.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/PhotoViewController/Icon_PhotoViewController.bundle'
     photoViewController.dependency 'YYB_iOSComponent/Base'
     photoViewController.dependency 'YYB_iOSComponent/AlertView'
     photoViewController.framework = 'Photos'
