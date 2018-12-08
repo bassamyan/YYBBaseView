@@ -10,6 +10,7 @@
 #import "YYBLayout.h"
 #import "UIColor+YYBAdd.h"
 #import "PHAsset+YYBPhotoViewController.h"
+#import "UIButton+YYBAdd.h"
 
 @interface YYBPhotoCollectionViewCell ()
 @property (nonatomic,strong) UIImageView *iconView;
