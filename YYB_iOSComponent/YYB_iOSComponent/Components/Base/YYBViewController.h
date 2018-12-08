@@ -10,6 +10,9 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
 #import "YYBNavigationBar.h"
+#import "UIColor+YYBAdd.h"
+#import "NSString+YYBAdd.h"
+#import "UIDevice+YYBAdd.h"
 
 @interface YYBViewController : UIViewController
 

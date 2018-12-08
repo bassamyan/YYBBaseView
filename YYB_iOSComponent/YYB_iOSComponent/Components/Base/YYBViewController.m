@@ -8,9 +8,6 @@
 
 #import "YYBViewController.h"
 #import "NSBundle+YYBAdd.h"
-#import "UIColor+YYBAdd.h"
-#import "NSString+YYBAdd.h"
-#import "UIDevice+YYBAdd.h"
 
 @interface YYBViewController ()
 
