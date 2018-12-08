@@ -11,6 +11,7 @@
 #import "YYBAlertView+YYBPhotoBrowser.h"
 #import "UIImageView+YYBPhotoBrowser.h"
 #import "UIImage+YYBAdd.h"
+#import "NSBundle+YYBAdd.h"
 
 @interface YYBPhotoBrowser () <UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
