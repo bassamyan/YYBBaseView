@@ -11,7 +11,7 @@
 
 @implementation UIViewController (YYBPhotoBrowser)
 
-- (nullable YYBPhotoBrowser *)showPhotoBrowserWithImages:(NSArray *)images queryImageRectHandler:(CGRect (^)(NSInteger))queryImageRectHandler initialImageIndex:(NSInteger)initialImageIndex isDeletable:(BOOL)isDeletable deleteActionHandler:(nullable void (^)(NSInteger))deleteActionHandler reloadImageSourceHandler:(nullable void (^)(NSInteger))reloadImageSourceHandler configureHandler:(nonnull void (^)(YYBPhotoBrowser * _Nonnull))configureHandler
+- (nullable YYBPhotoBrowser *)showPhotoBrowserWithImages:(NSArray *)images queryImageRectHandler:(CGRect (^)(NSInteger))queryImageRectHandler initialImageIndex:(NSInteger)initialImageIndex isDeletable:(BOOL)isDeletable deleteActionHandler:(nullable void (^)(NSInteger))deleteActionHandler reloadImageSourceHandler:(nullable void (^)(NSInteger))reloadImageSourceHandler configureHandler:(nullable void (^)(YYBPhotoBrowser * ))configureHandler
 {
     YYBPhotoBrowserTransition *transition = [[YYBPhotoBrowserTransition alloc] init];
     transition.imageURL = [images objectAtIndex:initialImageIndex];
@@ -48,7 +48,7 @@
     return browser;
 }
 
-- (void)showPhotoBrowserWithImage:(id)image configureHandler:(void (^)(YYBPhotoBrowser * _Nonnull))configureHandler
+- (void)showPhotoBrowserWithImage:(id)image configureHandler:(nullable void (^)(YYBPhotoBrowser *))configureHandler
 {
     [self showPhotoBrowserWithImages:@[image] queryImageRectHandler:^CGRect(NSInteger index) {
         return CGRectMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame), 0, 0);

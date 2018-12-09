@@ -77,23 +77,25 @@
         view.delegate = wself;
     }];
     
-    _selectionsView = [YYBPhotoSelectionsView viewWithSuperView:self.view constraint:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
-        make.height.mas_equalTo(50.0f + [UIDevice safeAreaBottom]);
-    } configureHandler:^(YYBPhotoSelectionsView *view) {
-        view.hidden = [wself isAppendingImagesEnable] == FALSE;
-    }];
-    
-    _selectionsView.finishSelectedHandler = ^{
-        if (wself.isUIImageRequired == TRUE) {
-            [wself produceImageWithAssets];
-        } else {
-            if (wself.imageResultsQueryHandler) {
-                wself.imageResultsQueryHandler(wself.selectedAssets);
+    if (_isCheckImageEnable == TRUE) {
+        _selectionsView = [YYBPhotoSelectionsView viewWithSuperView:self.view constraint:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(self.view);
+            make.height.mas_equalTo(50.0f + [UIDevice safeAreaBottom]);
+        } configureHandler:^(YYBPhotoSelectionsView *view) {
+            view.hidden = [wself isAppendingImagesEnable] == FALSE;
+        }];
+        
+        _selectionsView.finishSelectedHandler = ^{
+            if (wself.isUIImageRequired == TRUE) {
+                [wself produceImageWithAssets];
+            } else {
+                if (wself.imageResultsQueryHandler) {
+                    wself.imageResultsQueryHandler(wself.selectedAssets);
+                }
+                [wself dismissViewControllerAnimated:TRUE completion:nil];
             }
-            [wself dismissViewControllerAnimated:TRUE completion:nil];
-        }
-    };
+        };
+    }
     
     [self takePhotoAlbumDatasource];
 }
@@ -180,7 +182,7 @@
 - (void)takePhotoAlbumDatasource {
     PHFetchOptions *option = [[PHFetchOptions alloc] init];
     option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
-
+    
     // Videos,Bursts,Hidden,Camera Roll,Selfies,Panoramas,ecently Deleted,Time-lapse,Favorites,Recently Added,Slo-mo,Screenshots,Portrait,Live Photos,Animated,Long Exposure
     PHFetchResult *result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     _contentView.results = result;
@@ -250,6 +252,7 @@
     PHAsset *asset = [_result objectAtIndex:indexPath.row];
     if (_isCheckImageEnable == FALSE) {
         if (_isUIImageRequired) {
+            [_selectedAssets addObject:asset];
             [self produceImageWithAssets];
         } else {
             if (self.imageResultQueryHandler) {
