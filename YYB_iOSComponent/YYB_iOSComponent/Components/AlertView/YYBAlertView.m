@@ -304,13 +304,13 @@
             CGFloat height = [UIScreen mainScreen].bounds.size.height;
             
             self.createRectHandler = ^CGRect(NSInteger index, YYBAlertViewContainer *container) {
-                CGSize contentSize = container.contentSize;
+                CGSize contentSize = container.contentSizeWithActions;
                 return CGRectMake((width - contentSize.width) / 2, height - contentSize.height, contentSize.width, contentSize.height);
             };
             
             __weak typeof(self) wself = self;
             self.showContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container) {
-                container.transform = CGAffineTransformMakeTranslation(0, container.contentSize.height);
+                container.transform = CGAffineTransformMakeTranslation(0, container.contentSizeWithActions.height);
                 wself.backgroundView.alpha = 0.0f;
                 
                 [UIView animateWithDuration:0.2f animations:^{
@@ -324,7 +324,7 @@
             self.closeContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container, void (^removeSubviewsHandler)(void)) {
                 wself.backgroundView.alpha = 1.0f;
                 [UIView animateWithDuration:0.2f animations:^{
-                    container.transform = CGAffineTransformMakeTranslation(0, container.contentSize.height);
+                    container.transform = CGAffineTransformMakeTranslation(0, container.contentSizeWithActions.height);
                     wself.backgroundView.alpha = 0.0f;
                 } completion:^(BOOL finished) {
                     removeSubviewsHandler();
@@ -332,7 +332,7 @@
                 
                 return TRUE;
             };
-
+            
         }
             break;
         case YYBAlertViewAnimationStyleCenterShrink: {
