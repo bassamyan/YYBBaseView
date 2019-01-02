@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "YYBRouter.h"
+#import "YITabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,9 @@
         return [NSString stringWithFormat:@"YI%@ViewController",protocol];
     }];
 
-    ViewController *vc = [[ViewController alloc] init];
+//    ViewController *vc = [[ViewController alloc] init];
+    YITabBarViewController *vc = [[YITabBarViewController alloc] init];
+    
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
     
     self.window = [[UIWindow alloc] init];

@@ -69,8 +69,23 @@
     CGFloat label_width = CGRectGetWidth(_label.frame);
     CGFloat label_height = CGRectGetHeight(_label.frame);
     
-    return CGSizeMake(MAX(label_width + label_horizonal_width, self.imageSize.width + icon_horizonal_width),
-                      label_height + _imageSize.height + vertical_height);
+    switch (_style)
+    {
+        case YYBTabBarControlStyleCenter:
+        {
+            return CGSizeMake(MAX(label_width + label_horizonal_width, self.imageSize.width + icon_horizonal_width),
+                              MAX(CGRectGetHeight(_label.frame) + label_vertical_height, self.imageSize.height + icon_vertical_height));
+        }
+            break;
+        case YYBTabBarControlStyleTop:
+        {
+            return CGSizeMake(MAX(label_width + label_horizonal_width, self.imageSize.width + icon_horizonal_width),
+                              label_height + _imageSize.height + vertical_height);
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)configureContent
@@ -135,9 +150,24 @@
     CGFloat width_label = CGRectGetWidth(self.frame) - _labelEdgeInsets.left - _labelEdgeInsets.right;
     CGFloat height_label = CGRectGetHeight(self.frame) - _labelEdgeInsets.top - _labelEdgeInsets.bottom;
     
-    _iconView.frame = CGRectMake((width_icon - _imageSize.width) / 2 + icon_horizonal, icon_vertical, _imageSize.width, _imageSize.height);
-    _label.frame = CGRectMake((width_label - labelSize.width) / 2 + label_horizonal, CGRectGetMaxY(_iconView.frame) + _labelEdgeInsets.top +
-                              _iconEdgeInsets.bottom, labelSize.width, labelSize.height);
+    switch (_style)
+    {
+        case YYBTabBarControlStyleCenter:
+        {
+            _iconView.frame = CGRectMake((width_icon - _imageSize.width) / 2 + icon_horizonal, (height_icon - _imageSize.height) / 2 + icon_vertical, _imageSize.width, _imageSize.height);
+            _label.frame = CGRectMake((width_label - labelSize.width) / 2 + _labelEdgeInsets.left + _iconEdgeInsets.right , (height_label - labelSize.height) / 2 + _labelEdgeInsets.top + _iconEdgeInsets.bottom, labelSize.width, labelSize.height);
+        }
+            break;
+        case YYBTabBarControlStyleTop:
+        {
+            _iconView.frame = CGRectMake((width_icon - _imageSize.width) / 2 + icon_horizonal, icon_vertical, _imageSize.width, _imageSize.height);
+            _label.frame = CGRectMake((width_label - labelSize.width) / 2 + label_horizonal, CGRectGetMaxY(_iconView.frame) + _labelEdgeInsets.top +
+                                      _iconEdgeInsets.bottom, labelSize.width, labelSize.height);
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)setBarButtonTextFont:(UIFont *)textFont controlState:(UIControlState)state

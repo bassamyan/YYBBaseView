@@ -10,7 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger,YYBTabBarControlStyle)
+{
+    // 两者居中
+    YYBTabBarControlStyleCenter,
+    // 图片在上,文字在下
+    YYBTabBarControlStyleTop,
+};
+
 @interface YYBTabBarControl : UIControl
+
+@property (nonatomic) YYBTabBarControlStyle style;
 
 @property (nonatomic,strong) UIImageView *iconView;
 @property (nonatomic,strong) UILabel *label;

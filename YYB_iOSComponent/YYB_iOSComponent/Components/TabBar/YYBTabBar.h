@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YYBTabBarControl.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class YYBTabBar;
-@class YYBTabBarControl;
 
 @protocol YYBTabBarDelegate <NSObject>
 
 - (NSInteger)numbersOfTabBarControlsInTabBar:(YYBTabBar *)tabBar;
 - (YYBTabBarControl *)tabBarControlInTabBar:(YYBTabBar *)tabBar withIndex:(NSInteger)index;
+
+- (void)tabBar:(YYBTabBar *)tabBar didClickedAtIndex:(NSInteger)index;
 
 @end
 
@@ -25,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,weak) id<YYBTabBarDelegate> delegate;
 
 @property (nonatomic,strong) UIView *contentView;
+- (void)reloadContents;
+
+@property (nonatomic) NSInteger initialIndex;
 
 @end
 
