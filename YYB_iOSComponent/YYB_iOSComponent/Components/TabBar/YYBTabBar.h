@@ -15,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol YYBTabBarDelegate <NSObject>
 
+@required
 - (NSInteger)numbersOfTabBarControlsInTabBar:(YYBTabBar *)tabBar;
 - (YYBTabBarControl *)tabBarControlInTabBar:(YYBTabBar *)tabBar withIndex:(NSInteger)index;
 
+@optional
 - (void)tabBar:(YYBTabBar *)tabBar didClickedAtIndex:(NSInteger)index;
 
 @end
