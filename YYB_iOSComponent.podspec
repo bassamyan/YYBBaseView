@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.1.0"
+  s.version       = "0.1.1"
   s.summary       = "iOS UI components"
   s.description   = "components for iOS development"
   s.license       = "MIT"
@@ -25,21 +25,6 @@ Pod::Spec.new do |s|
     router.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Router/**/*.{h,m}'
   end
 
-  s.subspec 'AlertView' do |alertView|
-    alertView.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Icon_Alert.bundle'
-
-    category.subspec 'Base' do |base|
-      base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Base/**/*.{h,m}'
-    end
-    
-    category.subspec 'Category' do |category|
-      base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Category/**/*.{h,m}'
-      category.dependency 'ReactiveObjC'
-      category.dependency 'YYB_iOSComponent/Category'
-      category.dependency 'YYB_iOSComponent/AlertView/Base'
-    end
-  end
-
   s.subspec 'Indicator' do |indicator|
     indicator.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Indicator/**/*.{h,m}'
   end
@@ -61,8 +46,8 @@ Pod::Spec.new do |s|
     segment.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Segment/**/*.{h,m}'
   end
 
-  s.subspec 'Tabbar' do |tabbar|
-    tabbar.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Tabbar/**/*.{h,m}'
+  s.subspec 'TabBar' do |tabBar|
+    tabBar.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/TabBar/**/*.{h,m}'
   end
 
   s.subspec 'RefreshView' do |refreshView|
@@ -104,6 +89,20 @@ Pod::Spec.new do |s|
     base.dependency 'FDFullscreenPopGesture'
     base.dependency 'YYB_iOSComponent/Category'
     base.dependency 'YYB_iOSComponent/NavigationBar'
+  end
+
+  s.subspec 'AlertView' do |alertView|
+    alertView.subspec 'Base' do |base|
+      base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Base/**/*.{h,m}'
+    end
+    
+    alertView.subspec 'Category' do |category|
+      category.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Icon_Alert.bundle'
+      category.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Category/**/*.{h,m}'
+      category.dependency 'ReactiveObjC'
+      category.dependency 'YYB_iOSComponent/Category'
+      category.dependency 'YYB_iOSComponent/AlertView/Base'
+    end
   end
 
   s.subspec 'PhotoBrowser' do |photoBrowser|
