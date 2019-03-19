@@ -8,6 +8,7 @@
 
 #import "YYBAlertView.h"
 #import "UIColor+YYBAdd.h"
+#import "UIView+YYBAdd.h"
 
 @interface YYBAlertView (Alert)
 

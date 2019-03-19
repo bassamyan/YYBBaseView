@@ -9,6 +9,8 @@
 #import "YYBAlertView.h"
 #import "UIColor+YYBAdd.h"
 #import "NSBundle+YYBAdd.h"
+#import "NSString+YYBAdd.h"
+#import "UIView+YYBAdd.h"
 
 @interface YYBAlertView (Status)
 

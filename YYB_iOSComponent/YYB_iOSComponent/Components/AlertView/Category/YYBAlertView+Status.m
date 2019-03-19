@@ -18,8 +18,10 @@
     alertView.isConstraintedWithContainer = TRUE;
     
     [alertView addContainerViewWithHandler:^(YYBAlertViewContainer *container) {
-        [container.shadowView setLayerShadow:[UIColor colorWithHexInteger:0xAFADAD alpha:0.5f] offset:CGSizeZero radius:14.0f];
         container.contentView.backgroundColor = [UIColor blackColor];
+        container.contentView.layer.shadowColor = [UIColor colorWithHexInteger:0xAFADAD alpha:0.5f].CGColor;
+        container.contentView.layer.shadowOffset = CGSizeZero;
+        container.contentView.layer.shadowRadius = 14.0f;
         [container.contentView cornerRadius:4.0f];
         
         [container addLabelWithHandler:^(YYBAlertViewAction *action, UILabel *label) {

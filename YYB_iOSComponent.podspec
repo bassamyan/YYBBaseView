@@ -97,7 +97,7 @@ Pod::Spec.new do |s|
     end
     
     alertView.subspec 'Category' do |category|
-      category.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Icon_Alert.bundle'
+      category.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Icon_AlertView.bundle'
       category.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Category/**/*.{h,m}'
       category.dependency 'ReactiveObjC'
       category.dependency 'YYB_iOSComponent/Category'

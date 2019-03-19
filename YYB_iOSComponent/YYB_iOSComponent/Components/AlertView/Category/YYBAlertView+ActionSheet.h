@@ -9,6 +9,7 @@
 #import "YYBAlertView.h"
 #import "UIColor+YYBAdd.h"
 #import "UIDevice+YYBAdd.h"
+#import "UIView+YYBAdd.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

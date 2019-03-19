@@ -8,6 +8,7 @@
 
 #import "YYBAlertView.h"
 #import "YYBAlertView+Status.h"
+#import "NSString+YYBAdd.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
