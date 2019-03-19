@@ -20,6 +20,15 @@
     return FALSE;
 }
 
++ (CGFloat)statusBarHeight {
+    if (@available(iOS 11.0, *)) {
+        if ([self iPhoneXSeries]) {
+            return [UIApplication sharedApplication].delegate.window.safeAreaInsets.top;
+        }
+    }
+    return 20.0f;
+}
+
 + (CGFloat)safeAreaTop {
     if (@available(iOS 11.0, *)) {
         UIWindow *window = [UIApplication sharedApplication].delegate.window;

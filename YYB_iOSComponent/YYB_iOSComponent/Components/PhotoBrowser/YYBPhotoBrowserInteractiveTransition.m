@@ -101,7 +101,7 @@
 }
 
 - (void)cancelTransition:(CGFloat)percent {
-    
+    [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
 }
 
 - (void)finishTransition:(CGFloat)percent {
@@ -113,7 +113,7 @@
     _backgroundView.alpha = percent;
     [contentView addSubview:_backgroundView];
     
-    [_iconView renderImageWithContent:_imageURL webImageCompletionHandler:nil];
+    [_iconView renderImageWithContent:_imageURL];
     _iconView.frame = _finishImageRect;
     [contentView addSubview:_iconView];
     

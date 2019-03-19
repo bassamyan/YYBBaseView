@@ -7,8 +7,6 @@
 //
 
 #import "YYBAlbumTableViewCell.h"
-#import "PHAsset+YYBPhotoViewController.h"
-#import "YYBLayout.h"
 
 @interface YYBAlbumTableViewCell ()
 

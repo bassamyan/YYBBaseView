@@ -15,9 +15,9 @@
     if (!self) return nil;
     
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.font = [UIFont systemFontOfSize:12.0f];
+    _titleLabel.font = [UIFont systemFontOfSize:14.0f];
     _titleLabel.textColor = [UIColor colorWithRed:0.4974 green:0.4974 blue:0.4974 alpha:1.0f];
-    _titleLabel.text = @"没有更多了";
+    _titleLabel.text = @"暂无更多内容";
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_titleLabel];
     

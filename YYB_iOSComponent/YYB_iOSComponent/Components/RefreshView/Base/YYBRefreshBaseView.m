@@ -28,7 +28,10 @@
 }
 
 - (void)startRefreshAnimation {
-    self.status = YYBRefreshStatusRefreshing;
+    [_scrollView setContentOffset:CGPointMake(0, - _scrollView.contentInset.top - CGRectGetHeight(self.frame)) animated:TRUE];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.status = YYBRefreshStatusRefreshing;
+    });
 }
 
 - (void)endRefreshAnimation {

@@ -75,4 +75,6 @@
 // 图片中过滤中文, 进行URLEncoding
 - (NSString *)imageURLEncode;
 
+- (CGSize)sizeWithFont:(UIFont *)font lineSpacing:(CGFloat)lineSpace size:(CGSize)size;
+
 @end

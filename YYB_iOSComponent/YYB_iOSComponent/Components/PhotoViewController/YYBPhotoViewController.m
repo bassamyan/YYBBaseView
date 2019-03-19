@@ -40,7 +40,7 @@
     if (!self) return nil;
     
     _maxRequiredImages = 9;
-    _isCheckImageEnable = TRUE;
+    _isEditSelectedImageEnable = TRUE;
     
     return self;
 }
@@ -77,7 +77,7 @@
         view.delegate = wself;
     }];
     
-    if (_isCheckImageEnable == TRUE) {
+    if (_isEditSelectedImageEnable == TRUE) {
         _selectionsView = [YYBPhotoSelectionsView viewWithSuperView:self.view constraint:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(self.view);
             make.height.mas_equalTo(50.0f + [UIDevice safeAreaBottom]);
@@ -86,7 +86,7 @@
         }];
         
         _selectionsView.finishSelectedHandler = ^{
-            if (wself.isUIImageRequired == TRUE) {
+            if (wself.isFormattedByUIImage == TRUE) {
                 [wself produceImageWithAssets];
             } else {
                 if (wself.imageResultsQueryHandler) {
@@ -182,7 +182,7 @@
 - (void)takePhotoAlbumDatasource {
     PHFetchOptions *option = [[PHFetchOptions alloc] init];
     option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
-    
+
     // Videos,Bursts,Hidden,Camera Roll,Selfies,Panoramas,ecently Deleted,Time-lapse,Favorites,Recently Added,Slo-mo,Screenshots,Portrait,Live Photos,Animated,Long Exposure
     PHFetchResult *result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     _contentView.results = result;
@@ -239,7 +239,7 @@
         [wself.selectionsView renderButtonWithImagesCount:wself.selectedAssets.count];
     };
     
-    [cell renderItemWithAsset:asset selectionStatus:[self selectionStatusWithAsset:asset] isMultipleImagesRequired:_isCheckImageEnable isAppendImageEnable:[self isAppendingImagesEnable]];
+    [cell renderItemWithAsset:asset selectionStatus:[self selectionStatusWithAsset:asset] isMultipleImagesRequired:_isEditSelectedImageEnable isAppendImageEnable:[self isAppendingImagesEnable]];
     
     return cell;
 }
@@ -250,8 +250,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     PHAsset *asset = [_result objectAtIndex:indexPath.row];
-    if (_isCheckImageEnable == FALSE) {
-        if (_isUIImageRequired) {
+    if (_isEditSelectedImageEnable == FALSE) {
+        if (_isFormattedByUIImage) {
             [_selectedAssets addObject:asset];
             [self produceImageWithAssets];
         } else {
@@ -266,14 +266,14 @@
 }
 
 - (BOOL)selectionStatusWithAsset:(PHAsset *)asset {
-    if (_isCheckImageEnable == FALSE) {
+    if (_isEditSelectedImageEnable == FALSE) {
         return FALSE;
     }
     return [_selectedAssets containsObject:asset];
 }
 
 - (BOOL)isAppendingImagesEnable {
-    if (_isCheckImageEnable == TRUE) {
+    if (_isEditSelectedImageEnable == TRUE) {
         return _selectedAssets.count != _maxRequiredImages;
     } else {
         return TRUE;

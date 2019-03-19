@@ -64,7 +64,7 @@
     
     _shadowView.frame = self.bounds;
     _contentView.frame = _shadowView.bounds;
-    _bottomLayerView.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 0.5f, CGRectGetWidth(self.frame), 0.5f);
+    _bottomLayerView.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 0.25f, CGRectGetWidth(self.frame), 0.25f);
     
     CGFloat height = self.frame.size.height;
     CGFloat width = self.frame.size.width;

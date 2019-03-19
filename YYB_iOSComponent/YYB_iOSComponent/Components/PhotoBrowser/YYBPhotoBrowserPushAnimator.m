@@ -48,13 +48,12 @@
     
     [contentView addSubview:_iconView];
     
-    [_iconView renderImageWithContent:_imageURL webImageCompletionHandler:nil];
+    [_iconView renderImageWithContent:_imageURL];
     _iconView.frame = _fromImageRect;
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         self.backgroundView.alpha = 1.0f;
         self.iconView.frame = contentView.bounds;
-        self.iconView.contentMode = UIViewContentModeScaleAspectFit;
     } completion:^(BOOL finished) {
         [self.backgroundView removeFromSuperview];
         [self.iconView removeFromSuperview];

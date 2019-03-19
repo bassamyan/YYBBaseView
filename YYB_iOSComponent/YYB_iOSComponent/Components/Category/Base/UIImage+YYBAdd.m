@@ -602,4 +602,18 @@ static UIImage * animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceR
     return newImage;
 }
 
++ (NSData *)compressImage:(UIImage *)image toMaxFileSize:(NSInteger)maxFileSize
+{
+    CGFloat compression = 0.9f;
+    CGFloat maxCompression = 0.1f;
+    NSData *imageData = UIImageJPEGRepresentation(image, compression);
+    while ([imageData length] > maxFileSize && compression > maxCompression)
+    {
+        compression -= 0.1;
+        imageData = UIImageJPEGRepresentation(image, compression);
+    }
+    
+    return imageData;
+}
+
 @end

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIDevice (YYBAdd)
 
 + (BOOL)iPhoneXSeries;
++ (CGFloat)statusBarHeight;
 
 // 顶部safearea
 + (CGFloat)safeAreaTop;

@@ -7,8 +7,6 @@
 //
 
 #import "YYBPhotoContentView.h"
-#import "YYBAlbumTableViewCell.h"
-#import "YYBLayout.h"
 
 @interface YYBPhotoContentView ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;

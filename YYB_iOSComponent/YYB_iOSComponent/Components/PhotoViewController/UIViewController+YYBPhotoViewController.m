@@ -15,7 +15,7 @@
     YYBPhotoViewController *controller = [[YYBPhotoViewController alloc] init];
     
     controller.maxRequiredImages = maxValue;
-    controller.isUIImageRequired = TRUE;
+    controller.isFormattedByUIImage = TRUE;
     controller.imageResultsQueryHandler = imagesSelectedHandler;
     
     if (configureHandler) {

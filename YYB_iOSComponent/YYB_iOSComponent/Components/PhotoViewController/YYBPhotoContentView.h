@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
+#import "YYBAlbumTableViewCell.h"
+#import "YYBLayout.h"
 
 @protocol YYBPhotoContentViewDelegate <NSObject>
 

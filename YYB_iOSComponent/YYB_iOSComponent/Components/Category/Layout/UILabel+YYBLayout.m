@@ -27,4 +27,17 @@
     return label;
 }
 
+- (void)lineSpaceText:(NSString *)text lineSpacing:(CGFloat)lineSpacing
+{
+    NSMutableParagraphStyle *graph = [[NSMutableParagraphStyle alloc] init];
+    graph.alignment = NSTextAlignmentLeft;
+    graph.lineSpacing = lineSpacing;
+    graph.lineBreakMode = NSLineBreakByTruncatingTail;
+    
+    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithString:text];
+    [attributed addAttribute:NSParagraphStyleAttributeName value:graph range:NSMakeRange(0, text.length)];
+    
+    self.attributedText = attributed;
+}
+
 @end

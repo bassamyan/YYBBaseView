@@ -18,6 +18,8 @@
 @property (nonatomic,strong,readonly) UIImageView *contentView;
 @property (nonatomic,strong,readonly) UIScrollView *scrollView;
 
+@property (nonatomic) BOOL scrollViewScrollable;
+
 @property (nonatomic,assign) CGSize contentSize;
 @property (nonatomic,assign) CGSize contentSizeWithActions;
 @property (nonatomic,assign) UIEdgeInsets padding;

@@ -53,6 +53,8 @@
     _scrollView.showsHorizontalScrollIndicator = FALSE;
     [_contentView addSubview:_scrollView];
     
+    _scrollViewScrollable = TRUE;
+    
     if (isUsingActionsContainer)
     {
         _actionsContainer = [[YYBAlertViewContainer alloc] initWithFlexDirection:YYBAlertViewFlexDirectionVertical isUsingActionsContainer:FALSE];
@@ -210,7 +212,7 @@
             
             padding = container.padding;
             margin = container.margin;
-
+            
             CGSize container_contentSize = container.contentSize;
             height = (container_contentSize.height == _maximalHeight) ? container_contentSize.height - margin.top - margin.bottom : container_contentSize.height;
             width = (container_contentSize.width == _maximalWidth) ? container_contentSize.width - margin.left - margin.right : container_contentSize.width;
@@ -303,7 +305,7 @@
             {
                 y = padding.top - margin.bottom - margin.top + margin.top;
             }
-
+            
             if (isCalculateContentSize == TRUE)
             {
                 _stretchTotalUsableSize += width;
@@ -343,14 +345,20 @@
         {
             if (_maximalHeight < height_max)
             {
-                _scrollView.scrollEnabled = TRUE;
+                if (_scrollViewScrollable)
+                {
+                    _scrollView.scrollEnabled = TRUE;
+                }
             }
         }
         else if (_flexDirection == YYBAlertViewFlexDirectionHorizonal)
         {
             if (_maximalWidth < width_max)
             {
-                _scrollView.scrollEnabled = TRUE;
+                if (_scrollViewScrollable)
+                {
+                    _scrollView.scrollEnabled = TRUE;
+                }
             }
         }
         
@@ -366,31 +374,31 @@
         {
             CGSize contentSize = _actionsContainer.contentSize;
             UIEdgeInsets actionPadding = _actionsContainer.padding;
-
+            
             CGFloat width_action = 0.0f, height_action = 0.0f;
             if (_flexDirection == YYBAlertViewFlexDirectionVertical)
             {
                 width_action = MAX(contentSize.width, width_max);
                 height_action = contentSize.height + height_max;
-
+                
                 _actionsContainer.frame = CGRectMake(actionPadding.left,
                                                      height_max + actionPadding.top,
                                                      width_action - actionPadding.right,
                                                      contentSize.height - actionPadding.bottom);
-
+                
             }
             else if (_flexDirection == YYBAlertViewFlexDirectionHorizonal)
             {
                 width_action = contentSize.width + width_max;
                 height_action = MAX(contentSize.height,height_max);
-
+                
                 _actionsContainer.frame = CGRectMake(width_max + actionPadding.left,
                                                      actionPadding.top,
                                                      contentSize.width - actionPadding.right,
                                                      contentSize.height - actionPadding.bottom);
-
+                
             }
-
+            
             [_actionsContainer createContentViewsWithCalculationStatus:FALSE];
             _shadowView.frame = CGRectMake((CGRectGetWidth(self.frame) - width_action) / 2, (CGRectGetHeight(self.frame) - height_action) / 2, width_action, height_action);
             _contentView.frame = _shadowView.bounds;
@@ -479,7 +487,7 @@
         }
         
         handler(action,action.view);
-
+        
         [_innerViews addObject:action];
     }
 }

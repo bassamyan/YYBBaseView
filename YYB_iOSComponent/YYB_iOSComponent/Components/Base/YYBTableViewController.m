@@ -23,9 +23,12 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.contentInset = [self tableViewContentInsets];
     [self.view addSubview:_tableView];
-    
-    _tableView.contentInset = UIEdgeInsetsMake([self heightForNavigationBar], 0, [UIDevice safeAreaBottom], 0);
+}
+
+- (UIEdgeInsets)tableViewContentInsets {
+    return UIEdgeInsetsMake([self heightForNavigationBar], 0, [UIDevice safeAreaBottom], 0);
 }
 
 - (void)setResults:(NSMutableArray *)results {

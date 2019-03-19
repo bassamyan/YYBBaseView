@@ -43,17 +43,16 @@
         CGFloat contentHeight = self.scrollView.contentSize.height;
         CGFloat height = CGRectGetHeight(self.scrollView.frame);
 
-        [self setHidden:contentHeight < height];
-        [self setFrame:CGRectMake(0, self.scrollEdgeInsets.bottom + contentHeight,
-                                  CGRectGetWidth(self.frame) - self.scrollEdgeInsets.left - self.scrollEdgeInsets.right,
-                                  CGRectGetHeight(self.frame))];
+        // 如果内容视图的高度比tableView的高度还小, 则隐藏
+        self.hidden = contentHeight < height;
+        self.frame = CGRectMake(0, contentHeight, CGRectGetWidth(self.frame),  CGRectGetHeight(self.frame));
     }
 }
 
 - (CGFloat)initialStatusToPullingStatusOffset {
     CGFloat scrollc = self.scrollView.contentSize.height;
     CGFloat scrollh = CGRectGetHeight(self.scrollView.frame);
-    if (scrollc < scrollh) return self.scrollEdgeInsets.top + self.scrollEdgeInsets.bottom;
+    if (scrollc < scrollh) return self.scrollEdgeInsets.top;
     return scrollc - scrollh;
 }
 

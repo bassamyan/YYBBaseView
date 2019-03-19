@@ -27,7 +27,7 @@ static char const YYBREFRESH_FOOTER_KEY;
     
     YYBRefreshFooterView *view = [[viewClass alloc] initWithScrollView:self];
     UIEdgeInsets edgeInsets = self.contentInset;
-    CGFloat width = CGRectGetWidth(self.frame) - edgeInsets.left - edgeInsets.right;
+    CGFloat width = CGRectGetWidth(self.frame);
 
     view.frame = CGRectMake(0, self.contentSize.height, width, height);
     view.startRefreshHandler = startRefreshHandler;

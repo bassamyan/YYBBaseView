@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.0.19"
+  s.version       = "0.1.0"
   s.summary       = "iOS UI components"
   s.description   = "components for iOS development"
   s.license       = "MIT"
@@ -26,7 +26,18 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'AlertView' do |alertView|
-    alertView.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/**/*.{h,m}'
+    alertView.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Icon_Alert.bundle'
+
+    category.subspec 'Base' do |base|
+      base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Base/**/*.{h,m}'
+    end
+    
+    category.subspec 'Category' do |category|
+      base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Category/**/*.{h,m}'
+      category.dependency 'ReactiveObjC'
+      category.dependency 'YYB_iOSComponent/Category'
+      category.dependency 'YYB_iOSComponent/AlertView/Base'
+    end
   end
 
   s.subspec 'Indicator' do |indicator|
@@ -44,6 +55,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'PlaceholderTextView' do |placeholderTextView|
     placeholderTextView.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/PlaceholderTextView/**/*.{h,m}'
+  end
+
+  s.subspec 'Segment' do |segment|
+    segment.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Segment/**/*.{h,m}'
+  end
+
+  s.subspec 'Tabbar' do |tabbar|
+    tabbar.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Tabbar/**/*.{h,m}'
   end
 
   s.subspec 'RefreshView' do |refreshView|
@@ -101,6 +120,13 @@ Pod::Spec.new do |s|
     photoViewController.dependency 'YYB_iOSComponent/Base'
     photoViewController.dependency 'YYB_iOSComponent/AlertView'
     photoViewController.framework = 'Photos'
+  end
+
+  s.subspec 'GesOverlay' do |gesoverlay|
+    gesoverlay.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/GesOverlay/**/*.{h,m}'
+    gesoverlay.resource = 'YYB_iOSComponent/YYB_iOSComponent/Components/GesOverlay/Icon_Overlay.bundle'
+    gesoverlay.dependency 'YYB_iOSComponent/Base'
+    gesoverlay.dependency 'YYB_iOSComponent/Category'
   end
 
 end

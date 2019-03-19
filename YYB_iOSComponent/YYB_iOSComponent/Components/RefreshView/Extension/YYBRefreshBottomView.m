@@ -28,9 +28,7 @@
     
     [self addSubview:self.activityView];
     [self.activityView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.textLabel.mas_right).offset(5);
-        make.centerY.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.center.equalTo(self);
     }];
     
     [self _refreshInitialize];
@@ -55,6 +53,7 @@
     _textLabel.text = [self keyTitleAttachState:status];
     switch (status) {
         case YYBRefreshStatusInitial: {
+            _textLabel.hidden = FALSE;
             [_activityView stopAnimating];
         }
             break;
@@ -63,6 +62,7 @@
         }
             break;
         case YYBRefreshStatusRefreshing: {
+            _textLabel.hidden = TRUE;
             [_activityView startAnimating];
         }
             break;

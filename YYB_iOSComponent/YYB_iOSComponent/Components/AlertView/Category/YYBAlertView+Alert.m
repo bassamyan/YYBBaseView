@@ -3,14 +3,18 @@
 //  SavingPot365
 //
 //  Created by Aokura on 2018/9/23.
-//  Copyright © 2018年 Tree,Inc. All rights reserved.
+//  Copyright © 2018年 Univease Co., Ltd. All rights reserved.
 //
 
 #import "YYBAlertView+Alert.h"
 
 @implementation YYBAlertView (Alert)
 
-+ (void)showAlertViewWithTitle:(NSString *)title detail:(NSString *)detail cancelActionTitle:(NSString *)cancelActionTitle confirmActionTitle:(NSString *)confirmActionTitle confirmActionHandler:(YYBAlertViewActionBlankHandler)confirmActionHandler
++ (void)showAlertViewWithTitle:(NSString *)title
+                        detail:(NSString *)detail
+             cancelActionTitle:(NSString *)cancelActionTitle
+            confirmActionTitle:(NSString *)confirmActionTitle
+          confirmActionHandler:(YYBAlertViewActionBlankHandler)confirmActionHandler
 {
     YYBAlertView *alertView = [[YYBAlertView alloc] init];
     alertView.backgroundView.backgroundColor = [UIColor colorWithHexInteger:0x000000 alpha:0.6f];
@@ -18,17 +22,17 @@
     
     [alertView addContainerViewWithHandler:^(YYBAlertViewContainer *container) {
         container.contentView.backgroundColor = [UIColor whiteColor];
-        [container.contentView cornerRadius:15.0f];
+        [container.contentView cornerRadius:16.0f];
         container.maximalWidth = 300.0f;
         container.maximalHeight = MAXFLOAT;
         container.actionsContainer.flexPosition = YYBAlertViewFlexPositionStretch;
         container.actionsContainer.flexDirection = YYBAlertViewFlexDirectionHorizonal;
-        container.actionsContainer.backgroundColor = [UIColor colorWithHexInteger:0xEBEBEB];
+        container.actionsContainer.backgroundColor = [UIColor colorWithHexInteger:0xF6F6F6];
         
         if (title)
         {
             [container addLabelWithHandler:^(YYBAlertViewAction *action, UILabel *label) {
-                action.margin = UIEdgeInsetsMake(15.0f, 20.0f, detail ? 0 : 15.0f, 20.0f);
+                action.margin = UIEdgeInsetsMake(20.0f, 0, 0, 0);
                 label.text = title;
                 label.font = [UIFont systemFontOfSize:20.0f weight:UIFontWeightSemibold];
                 label.textColor = [UIColor blackColor];
@@ -38,9 +42,9 @@
         if (detail)
         {
             [container addLabelWithHandler:^(YYBAlertViewAction *action, UILabel *label) {
-                action.margin = UIEdgeInsetsMake(title ? 10.0f : 15.0f, 20.0f, 15.0f, 20.0f);
-                label.font = [UIFont systemFontOfSize:17.0f weight:UIFontWeightLight];
-                label.textColor = [UIColor colorWithHexInteger:0x7B7B7B];
+                action.margin = UIEdgeInsetsMake(title ? 15.0f : 20.0f, 25.0f, 20.0f, 25.0f);
+                label.font = [UIFont systemFontOfSize:17.0f];
+                label.textColor = [UIColor colorWithHexInteger:0x333333];
                 label.numberOfLines = 0;
                 
                 NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -99,34 +103,7 @@
 {
     YYBAlertView *alertView = [[YYBAlertView alloc] init];
     alertView.backgroundView.backgroundColor = [UIColor colorWithHexInteger:0x000000 alpha:0.6f];
-    
-    @weakify(alertView);
-    alertView.showContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container) {
-        @strongify(alertView);
-        container.alpha = 0.0f;
-        container.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
-        alertView.backgroundView.alpha = 0.0f;
-        [UIView animateWithDuration:0.2f animations:^{
-            container.alpha = 1.0f;
-            container.transform = CGAffineTransformIdentity;
-            alertView.backgroundView.alpha = 1.0f;
-        }];
-        
-        return TRUE;
-    };
-    
-    alertView.closeContainerHandler = ^BOOL(NSInteger index, YYBAlertViewContainer *container, void (^removeSubviewsHandler)(void)) {
-        @strongify(alertView);
-        [UIView animateWithDuration:0.2f animations:^{
-            container.alpha = 0.0f;
-            container.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
-            alertView.backgroundView.alpha = 0.0f;
-        } completion:^(BOOL finished) {
-            removeSubviewsHandler();
-        }];
-        
-        return TRUE;
-    };
+    alertView.displayAnimationStyle = YYBAlertViewAnimationStyleCenterShrink;
     
     [alertView addContainerViewWithHandler:^(YYBAlertViewContainer *container) {
         container.contentView.backgroundColor = [UIColor whiteColor];

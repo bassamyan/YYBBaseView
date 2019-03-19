@@ -7,8 +7,6 @@
 //
 
 #import "YYBPhotoSelectionsView.h"
-#import "YYBLayout.h"
-#import "UIColor+YYBAdd.h"
 
 @interface YYBPhotoSelectionsView ()
 

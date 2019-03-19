@@ -12,10 +12,10 @@
 
 @implementation UIImageView (YYBPhotoBrowser)
 
-- (void)renderImageWithContent:(id)content webImageCompletionHandler:(nullable void (^)(void))completionHandler {
+- (void)renderImageWithContent:(id)content {
     if ([content isKindOfClass:[UIImage class]]) {
         self.image = content;
-    } else {
+    } else if ([content isKindOfClass:[NSString class]]) {
         if ([content isContainsChinese]) {
             [self sd_setImageWithURL:[NSURL URLWithString:[content imageURLEncode]]];
         } else {

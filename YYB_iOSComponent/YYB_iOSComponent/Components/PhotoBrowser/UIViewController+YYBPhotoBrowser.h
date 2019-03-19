@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (YYBPhotoBrowser)
 
+- (YYBPhotoBrowser *)showPhotoBrowserWithImage:(id)image imageRect:(CGRect)imageRect;
+
 /**
  @param images 图片数据源,可以是URL或者UIImage
  @param queryImageRectHandler 获取图片控件的尺寸

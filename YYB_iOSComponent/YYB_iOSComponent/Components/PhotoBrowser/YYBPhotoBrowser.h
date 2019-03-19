@@ -18,16 +18,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong,readonly) UIView *contentView;
 @property (nonatomic,strong) YYBPhotoBrowserTransition *transition;
 
+// 显示的图片数据源
 @property (nonatomic,strong) NSMutableArray *images;
+// 初始选中的图片下标
 @property (nonatomic) NSInteger initialImageIndex;
 // 获取图片视图对应的初始尺寸
 @property (nonatomic,copy) CGRect (^ queryImageItemRectHandler)(NSInteger index);
 
-@property (nonatomic) BOOL isDeletable; // 是否允许删除照片
-
-// 删除图片回调
-@property (nonatomic,copy) void (^ deleteImageCheckHandler)(NSInteger index);
-@property (nonatomic,copy) void (^ deleteImageHandler)(NSInteger index);
+// 是否允许删除照片
+@property (nonatomic) BOOL isDeletionValid;
+// 点击删除图标后的回调,用于确认是否删除图片
+@property (nonatomic,copy) void (^ deleteImageQueryHandler)(NSInteger index);
+// 确认删除后的回调
+@property (nonatomic,copy) void (^ deleteImageActionHandler)(NSInteger index);
 - (void)deleteImageAtIndex:(NSInteger)index;
 @property (nonatomic,copy) void (^ reloadImagesHandler)(void);
 

@@ -45,4 +45,7 @@
 // 对图像添加alpha值
 - (UIImage *)imageByApplyingAlpha:(CGFloat)alpha;
 
+// 压缩图像
++ (NSData *)compressImage:(UIImage *)image toMaxFileSize:(NSInteger)maxFileSize;
+
 @end

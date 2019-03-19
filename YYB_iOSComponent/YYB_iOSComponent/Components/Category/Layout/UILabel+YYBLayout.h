@@ -16,4 +16,6 @@
                 constraint:(void(^)(MASConstraintMaker *make))constraint
           configureHandler:(void(^)(UILabel *label))configureHandler;
 
+- (void)lineSpaceText:(NSString *)text lineSpacing:(CGFloat)lineSpacing;
+
 @end

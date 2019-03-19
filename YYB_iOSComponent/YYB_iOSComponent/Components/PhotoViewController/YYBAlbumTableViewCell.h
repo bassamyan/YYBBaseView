@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
 #import <Masonry/Masonry.h>
+#import "PHAsset+YYBPhotoViewController.h"
+#import "YYBLayout.h"
 
 @interface YYBAlbumTableViewCell : UITableViewCell
 

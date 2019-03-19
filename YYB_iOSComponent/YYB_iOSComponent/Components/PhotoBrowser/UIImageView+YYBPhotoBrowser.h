@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (YYBPhotoBrowser)
 
-- (void)renderImageWithContent:(id)content webImageCompletionHandler:(nullable void(^)(void))completionHandler;
+- (void)renderImageWithContent:(id)content;
 
 @end
 

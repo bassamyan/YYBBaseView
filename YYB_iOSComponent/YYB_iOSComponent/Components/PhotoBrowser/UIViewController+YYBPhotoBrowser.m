@@ -11,6 +11,13 @@
 
 @implementation UIViewController (YYBPhotoBrowser)
 
+- (void)showPhotoBrowserWithImage:(id)image imageRect:(CGRect)imageRect
+{
+    [self showPhotoBrowserWithImages:@[image] queryImageRectHandler:^CGRect(NSInteger index) {
+        return imageRect;
+    } initialImageIndex:0 isDeletable:FALSE deleteActionHandler:nil reloadImageSourceHandler:nil configureHandler:nil];
+}
+
 - (nullable YYBPhotoBrowser *)showPhotoBrowserWithImages:(NSArray *)images queryImageRectHandler:(CGRect (^)(NSInteger))queryImageRectHandler initialImageIndex:(NSInteger)initialImageIndex isDeletable:(BOOL)isDeletable deleteActionHandler:(nullable void (^)(NSInteger))deleteActionHandler reloadImageSourceHandler:(nullable void (^)(NSInteger))reloadImageSourceHandler configureHandler:(nullable void (^)(YYBPhotoBrowser * ))configureHandler
 {
     YYBPhotoBrowserTransition *transition = [[YYBPhotoBrowserTransition alloc] init];
@@ -21,12 +28,12 @@
     browser.images = [images mutableCopy];
     browser.transitioningDelegate = transition;
     browser.transition = transition;
-    browser.isDeletable = isDeletable;
+    browser.isDeletionValid = isDeletable;
     browser.initialImageIndex = initialImageIndex;
     browser.queryImageItemRectHandler = queryImageRectHandler;
     
     @weakify(browser);
-    browser.deleteImageCheckHandler = ^(NSInteger index) {
+    browser.deleteImageQueryHandler = ^(NSInteger index) {
         if (deleteActionHandler) {
             deleteActionHandler(index);
         } else {

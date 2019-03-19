@@ -70,8 +70,8 @@
     return _iconView;
 }
 
-- (void)renderItemWithImage:(UIImage *)image imageURL:(NSString *)imageURL {
-    [_iconView renderImageWithContent:image ? image : imageURL webImageCompletionHandler:nil];
+- (void)renderItemWithValueModel:(id)valueModel {
+    [_iconView renderImageWithContent:valueModel];
 }
 
 @end

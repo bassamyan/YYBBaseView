@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
 #import <Masonry/Masonry.h>
+#import "YYBLayout.h"
+#import "UIColor+YYBAdd.h"
+#import "PHAsset+YYBPhotoViewController.h"
+#import "UIButton+YYBAdd.h"
+#import "NSBundle+YYBAdd.h"
 
 @interface YYBPhotoCollectionViewCell : UICollectionViewCell
 

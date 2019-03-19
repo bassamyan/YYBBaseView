@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) TPKeyboardAvoidingCollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *results;
 
+- (UIEdgeInsets)collectionViewContentInsets;
+
 @end
 
 NS_ASSUME_NONNULL_END

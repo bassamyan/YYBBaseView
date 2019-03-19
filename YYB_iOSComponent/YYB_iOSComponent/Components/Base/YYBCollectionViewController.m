@@ -18,13 +18,16 @@
     [super viewDidLoad];
     
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    _collectionView = [[TPKeyboardAvoidingCollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    _collectionView = [[TPKeyboardAvoidingCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - [UIDevice safeAreaBottom]) collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.contentInset = [self collectionViewContentInsets];
     [self.view addSubview:_collectionView];
+}
 
-    _collectionView.contentInset = UIEdgeInsetsMake([self heightForNavigationBar], 0, 0, 0);
+- (UIEdgeInsets)collectionViewContentInsets {
+    return UIEdgeInsetsMake([self heightForNavigationBar], 0, 0, 0);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

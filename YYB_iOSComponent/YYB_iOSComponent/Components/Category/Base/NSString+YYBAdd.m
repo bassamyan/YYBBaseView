@@ -235,4 +235,19 @@
     return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 }
 
+- (CGSize)sizeWithFont:(UIFont *)font lineSpacing:(CGFloat)lineSpace size:(CGSize)size
+{
+    NSMutableParagraphStyle *graph = [[NSMutableParagraphStyle alloc] init];
+    graph.lineSpacing = lineSpace;
+    graph.alignment = NSTextAlignmentLeft;
+    
+    NSMutableDictionary *attr = [NSMutableDictionary new];
+    attr[NSFontAttributeName] = font;
+    attr[NSParagraphStyleAttributeName] = graph;
+    CGRect rect = [self boundingRectWithSize:size
+                                     options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                  attributes:attr context:nil];
+    return rect.size;
+}
+
 @end

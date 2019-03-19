@@ -17,7 +17,7 @@
 - (instancetype)initWithStyle:(YYBAlertViewActionStyle)style {
     self = [super init];
     if (!self) return nil;
-
+    
     _style = style;
     _padding = UIEdgeInsetsZero;
     
@@ -25,7 +25,7 @@
     {
         case YYBAlertViewActionStyleUnknow:
         {
-
+            
         }
             break;
         case YYBAlertViewActionStyleLabel:

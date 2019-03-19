@@ -52,12 +52,22 @@
     _iconView.contentMode = UIViewContentModeScaleAspectFit;
     _iconView.clipsToBounds = TRUE;
     _iconView.hidden = TRUE;
+    _iconView.frame = self.view.bounds;
     [self.contentView addSubview:_iconView];
     
     _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(recognizerUpdate:)];
     [self.contentView addGestureRecognizer:_pan];
     
     _transition.pan = nil;
+    
+    [self configureInitialImage];
+}
+
+- (void)configureInitialImage {
+    if (_images.count > _initialImageIndex) {
+        id image = [_images objectAtIndex:_initialImageIndex];
+        [_iconView renderImageWithContent:image];
+    }
 }
 
 - (void)recognizerUpdate:(UIPanGestureRecognizer *)pan {
@@ -74,15 +84,7 @@
             _iconView.hidden = FALSE;
             
             NSInteger index = [self pageIndex];
-            id image = [_images objectAtIndex:index];
-            @weakify(self);
-            [_iconView renderImageWithContent:image webImageCompletionHandler:^{
-                @strongify(self);
-                [self renderIconViewFrame];
-            }];
-            
-            [self renderIconViewFrame];
-            _transition.imageURL = image;
+            _transition.imageURL = [_images objectAtIndex:index];
             _transition.fromImageRect = self.queryImageItemRectHandler(index);
             
             [self dismissViewControllerAnimated:TRUE completion:nil];
@@ -95,7 +97,6 @@
             break;
         case UIGestureRecognizerStateEnded: {
             _transition.finishImageRect = _iconView.frame;
-            // 回复原状
             if (scale > 0.95f) {
                 [UIView animateWithDuration:0.2f animations:^{
                     self.iconView.center = self.view.center;
@@ -110,11 +111,6 @@
         default:
             break;
     }
-}
-
-- (void)renderIconViewFrame {
-    CGSize imageSize = [self aspectFitSizeWithSize:_iconView.image.size contentSize:self.view.frame.size];
-    _iconView.frame = CGRectMake(0, (CGRectGetHeight(self.view.frame) - imageSize.height) / 2, imageSize.width, imageSize.height);
 }
 
 - (CGSize)aspectFitSizeWithSize:(CGSize)aspectSize contentSize:(CGSize)contentSize {
@@ -153,8 +149,8 @@
         [self.images removeObjectAtIndex:index];
     }
     
-    if (self.deleteImageHandler) {
-        self.deleteImageHandler(index);
+    if (self.deleteImageActionHandler) {
+        self.deleteImageActionHandler(index);
     } else if (self.reloadImagesHandler) {
         self.reloadImagesHandler();
     }
@@ -167,13 +163,17 @@
     [self.navigationBackBarButton setBarButtonImage:[[NSBundle imageWithBundleName:@"Icon_PhotoBrowser" imageName:@"ic_yyb_pb_navigation_back_white"] scale:2.0f] controlState:0];
     [self.navigationBackBarButton setBarButtonTextColor:[UIColor whiteColor] controlState:0];
     
-    self.navigationBar.titleBarButton.label.text = [NSString stringWithFormat:@"1 / %ld",_images.count];
-    self.navigationBar.titleBarButton.label.textColor = [UIColor whiteColor];
-    self.navigationBar.titleBarButton.contentEdgeInsets = UIEdgeInsetsMake([UIDevice iPhoneXSeries] ? 20.0f : 10.0f, 0, 0, 0);
-    self.navigationBar.titleBarButton.label.font = [UIFont systemFontOfSize:18.0f weight:UIFontWeightSemibold];
+    if (_images.count > 1) {
+        self.navigationBar.titleBarButton.label.text = [NSString stringWithFormat:@"1 / %ld",_images.count];
+        self.navigationBar.titleBarButton.label.textColor = [UIColor whiteColor];
+        self.navigationBar.titleBarButton.contentEdgeInsets = UIEdgeInsetsMake([UIDevice iPhoneXSeries] ? 20.0f : 10.0f, 0, 0, 0);
+        self.navigationBar.titleBarButton.label.font = [UIFont systemFontOfSize:18.0f weight:UIFontWeightSemibold];
+    }
+
     self.navigationBar.backgroundColor = [UIColor blackColor];
+    self.navigationBar.alpha = 0.0f;
     
-    if (self.isDeletable == TRUE) {
+    if (self.isDeletionValid == TRUE) {
         @weakify(self);
         _deleteBarButton = [YYBNavigationBarContainer imageViewWithConfigureHandler:^(YYBNavigationBarImageView *container, UIImageView *view) {
             container.contentSize = CGSizeMake(20.0f, 24.0f);
@@ -182,8 +182,8 @@
             view.image = [NSBundle imageWithBundleName:@"Icon_PhotoBrowser" imageName:@"ic_yyb_pb_delete"];
         } tapedActionHandler:^(YYBNavigationBarContainer *view) {
             @strongify(self);
-            if (self.deleteImageCheckHandler) {
-                self.deleteImageCheckHandler([self pageIndex]);
+            if (self.deleteImageQueryHandler) {
+                self.deleteImageQueryHandler([self pageIndex]);
             }
         }];
         
@@ -207,6 +207,10 @@
     self.navigationBar.titleBarButton.label.text = [NSString stringWithFormat:@"%ld / %ld",index + 1,_images.count];
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [_iconView renderImageWithContent:[_images objectAtIndex:[self pageIndex]]];
+}
+
 - (NSInteger)pageIndex {
     CGFloat width = CGRectGetWidth(_collectionView.frame);
     return _collectionView.contentOffset.x / width;
@@ -226,12 +230,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YYBPhotoBrowserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"YYBPhotoBrowserCollectionViewCell" forIndexPath:indexPath];
-    id contents = [_images objectAtIndex:indexPath.row];
-    if ([contents isKindOfClass:[UIImage class]]) {
-        [cell renderItemWithImage:contents imageURL:NULL];
-    } else if ([contents isKindOfClass:[NSString class]]) {
-        [cell renderItemWithImage:NULL imageURL:contents];
-    }
+    [cell renderItemWithValueModel:[_images objectAtIndex:indexPath.row]];
     
     @weakify(self);
     cell.imageItemTapedHandler = ^{

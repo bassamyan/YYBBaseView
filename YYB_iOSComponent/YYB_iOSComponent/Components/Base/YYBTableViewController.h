@@ -14,4 +14,6 @@
 @property (nonatomic,strong) TPKeyboardAvoidingTableView *tableView;
 @property (nonatomic,strong) NSMutableArray *results;
 
+- (UIEdgeInsets)tableViewContentInsets;
+
 @end

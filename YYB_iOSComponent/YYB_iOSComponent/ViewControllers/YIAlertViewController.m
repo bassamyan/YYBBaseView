@@ -7,11 +7,11 @@
 //
 
 #import "YIAlertViewController.h"
-#import "YYBAlertView+Waiting.h"
+//#import "YYBAlertView+Waiting.h"
 #import "YYBAlertView+Status.h"
 #import "YYBAlertView+Alert.h"
 #import "YYBAlertView+DatePicker.h"
-#import "YYBAlertView+Storage.h"
+//#import "YYBAlertView+Storage.h"
 
 @interface YIAlertViewController ()
 
@@ -44,7 +44,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        [YYBAlertView showWaitingAlertViewWithTimeInterval:2.0f];
+//        [YYBAlertView showWaitingAlertViewWithTimeInterval:2.0f];
     } else if (indexPath.row == 1) {
         [YYBAlertView showAlertViewWithStatus:@"YYB  iOSComponent"];
     } else if (indexPath.row == 2) {
@@ -60,13 +60,13 @@
             
         }];
     } else if (indexPath.row == 5) {
-        [YYBAlertView showStorageAlertViewWithMoney:20.0f prestoredMoney:100.0f desc:nil cardId:0 descValueChangedHandler:^(NSString * _Nonnull string) {
-            
-        } cardChangedHandler:^(NSInteger cardId) {
-            
-        } storageTapedHandler:^(CGFloat neededPrestoredMoney, CGFloat neededMoney) {
-            
-        }];
+//        [YYBAlertView showStorageAlertViewWithMoney:20.0f prestoredMoney:100.0f desc:nil cardId:0 descValueChangedHandler:^(NSString * _Nonnull string) {
+//            
+//        } cardChangedHandler:^(NSInteger cardId) {
+//            
+//        } storageTapedHandler:^(CGFloat neededPrestoredMoney, CGFloat neededMoney) {
+//            
+//        }];
     }
 }
 
