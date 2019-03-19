@@ -85,6 +85,7 @@ Pod::Spec.new do |s|
       base.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/AlertView/Base/**/*.{h,m}'
       base.dependency 'ReactiveObjC'
       base.dependency 'Masonry'
+      base.dependency 'YYB_iOSComponent/Category'
     end
     
     alertView.subspec 'Category' do |category|
