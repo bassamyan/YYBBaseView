@@ -7,13 +7,12 @@
 //
 
 #import "UIViewController+YYBPhotoBrowser.h"
-#import "YYBAlertView+YYBPhotoBrowser.h"
 
 @implementation UIViewController (YYBPhotoBrowser)
 
-- (void)showPhotoBrowserWithImage:(id)image imageRect:(CGRect)imageRect
+- (YYBPhotoBrowser *)showPhotoBrowserWithImage:(id)image imageRect:(CGRect)imageRect
 {
-    [self showPhotoBrowserWithImages:@[image] queryImageRectHandler:^CGRect(NSInteger index) {
+    return [self showPhotoBrowserWithImages:@[image] queryImageRectHandler:^CGRect(NSInteger index) {
         return imageRect;
     } initialImageIndex:0 isDeletable:FALSE deleteActionHandler:nil reloadImageSourceHandler:nil configureHandler:nil];
 }
@@ -37,7 +36,7 @@
         if (deleteActionHandler) {
             deleteActionHandler(index);
         } else {
-            [YYBAlertView showCheckPhotoDeletionAlertViewWithTitle:@"\n确定要删除这张图片吗?\n" detail:nil cancelActionTitle:@"取消" confirmActionTitle:@"确定" confirmActionHandler:^{
+            [YYBAlertView showAlertViewWithTitle:@"\n确定要删除这张图片吗?\n" detail:nil cancelActionTitle:@"取消" confirmActionTitle:@"确定" confirmActionHandler:^{
                 @strongify(browser);
                 [browser deleteImageAtIndex:index];
                 if (reloadImageSourceHandler) {

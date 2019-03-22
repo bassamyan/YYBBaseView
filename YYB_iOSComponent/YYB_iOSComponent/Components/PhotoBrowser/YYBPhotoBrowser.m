@@ -8,7 +8,6 @@
 
 #import "YYBPhotoBrowser.h"
 #import "YYBPhotoBrowserCollectionViewCell.h"
-#import "YYBAlertView+YYBPhotoBrowser.h"
 #import "UIImageView+YYBPhotoBrowser.h"
 #import "UIImage+YYBAdd.h"
 #import "NSBundle+YYBAdd.h"

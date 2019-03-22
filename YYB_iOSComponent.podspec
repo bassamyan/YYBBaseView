@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "YYB_iOSComponent"
-  s.version       = "0.1.3"
+  s.version       = "0.2.0"
   s.summary       = "iOS UI components"
   s.description   = "components for iOS development"
   s.license       = "MIT"
@@ -44,6 +44,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'Segment' do |segment|
     segment.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Segment/**/*.{h,m}'
+  end
+
+  s.subspec 'Request' do |request|
+    request.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Request/**/*.{h,m}'
   end
 
   s.subspec 'TabBar' do |tabBar|

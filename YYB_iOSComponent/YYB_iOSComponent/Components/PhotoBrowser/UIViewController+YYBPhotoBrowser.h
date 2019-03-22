@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YYBPhotoBrowser.h"
+#import "YYBAlertView+Alert.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

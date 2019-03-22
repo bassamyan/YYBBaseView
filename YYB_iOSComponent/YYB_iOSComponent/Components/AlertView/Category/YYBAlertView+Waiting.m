@@ -2,17 +2,17 @@
 //  YYBAlertView+Waiting.m
 //  YYB_iOSComponent
 //
-//  Created by Sniper on 2018/9/26.
-//  Copyright © 2018年 Univease Co., Ltd All rights reserved.
+//  Created by Sniper on 2019/3/22.
+//  Copyright © 2019 Univease Co., Ltd. All rights reserved.
 //
 
-#import "YYBAlertView+PhotoViewWaiting.h"
+#import "YYBAlertView+Waiting.h"
 
-@implementation YYBAlertView (PhotoViewWaiting)
+@implementation YYBAlertView (Waiting)
 
 + (YYBAlertView *)showPhotoViewWaitingAlertView;
 {
-    return [self showPhotoViewWaitingAlertViewWithTimeInterval:1.0f];
+    return [self showPhotoViewWaitingAlertViewWithTimeInterval:MAXFLOAT];
 }
 
 + (YYBAlertView *)showPhotoViewWaitingAlertViewWithTimeInterval:(NSTimeInterval)timeInterval
@@ -41,5 +41,6 @@
     [alertView showAlertViewOnKeyWindow];
     return alertView;
 }
+
 
 @end

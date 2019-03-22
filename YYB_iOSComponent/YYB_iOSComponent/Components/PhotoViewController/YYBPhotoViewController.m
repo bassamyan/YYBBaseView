@@ -11,7 +11,7 @@
 #import "YYBPhotoCollectionViewCell.h"
 #import "YYBPhotoSectionView.h"
 #import "YYBPhotoSelectionsView.h"
-#import "YYBAlertView+PhotoViewWaiting.h"
+#import "YYBAlertView+Waiting.h"
 #import "PHAsset+YYBPhotoViewController.h"
 #import "YYBLayout.h"
 
