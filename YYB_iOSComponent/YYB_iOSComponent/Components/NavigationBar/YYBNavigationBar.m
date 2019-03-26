@@ -13,7 +13,7 @@
 @end
 
 @implementation YYBNavigationBar
-{    
+{
     NSDictionary *_defaultTitleAttributes;
 }
 
@@ -64,16 +64,16 @@
     
     _shadowView.frame = self.bounds;
     _contentView.frame = _shadowView.bounds;
-    _bottomLayerView.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 0.25f, CGRectGetWidth(self.frame), 0.25f);
+    _bottomLayerView.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 0.5f, CGRectGetWidth(self.frame), 0.5f);
     
     CGFloat height = self.frame.size.height;
     CGFloat width = self.frame.size.width;
-
+    
     if (_titleBarContainer)
     {
         _titleBarButton.frame = CGRectZero;
         
-        [self addSubview:_titleBarContainer];
+        [_shadowView insertSubview:_titleBarContainer belowSubview:_contentView];
         
         CGSize contentSize = _titleBarContainer.contentSize;
         _titleBarContainer.frame = CGRectMake((width - contentSize.width) / 2 + _titleBarContainer.contentEdgeInsets.left - _titleBarContainer.contentEdgeInsets.right, (height - contentSize.height) / 2 + _titleBarContainer.contentEdgeInsets.top - _titleBarContainer.contentEdgeInsets.bottom, contentSize.width, contentSize.height);
