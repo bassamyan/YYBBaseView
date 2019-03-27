@@ -32,13 +32,13 @@
     _shadowView.backgroundColor = [UIColor clearColor];
     [self addSubview:_shadowView];
     
-    _titleBarButton = [YYBNavigationBarLabel new];
-    _titleBarButton.label.textAlignment = NSTextAlignmentCenter;
-    [_shadowView addSubview:_titleBarButton];
-    
     _contentView = [UIImageView new];
     _contentView.userInteractionEnabled = TRUE;
     [_shadowView addSubview:_contentView];
+    
+    _titleBarButton = [YYBNavigationBarLabel new];
+    _titleBarButton.label.textAlignment = NSTextAlignmentCenter;
+    [_shadowView addSubview:_titleBarButton];
     
     _bottomLayerView = [UIView new];
     [self addSubview:_bottomLayerView];
@@ -73,7 +73,7 @@
     {
         _titleBarButton.frame = CGRectZero;
         
-        [_shadowView insertSubview:_titleBarContainer belowSubview:_contentView];
+        [_shadowView insertSubview:_titleBarContainer aboveSubview:_contentView];
         
         CGSize contentSize = _titleBarContainer.contentSize;
         _titleBarContainer.frame = CGRectMake((width - contentSize.width) / 2 + _titleBarContainer.contentEdgeInsets.left - _titleBarContainer.contentEdgeInsets.right, (height - contentSize.height) / 2 + _titleBarContainer.contentEdgeInsets.top - _titleBarContainer.contentEdgeInsets.bottom, contentSize.width, contentSize.height);

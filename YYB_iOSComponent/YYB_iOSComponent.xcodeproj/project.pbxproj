@@ -25,6 +25,7 @@
 		C83E05F921B78F5300619F0D /* ic_icon_placeholder@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = C83E05F821B78F5300619F0D /* ic_icon_placeholder@1x.png */; };
 		C83E05FB21B78F6000619F0D /* ic_icon_add@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = C83E05FA21B78F6000619F0D /* ic_icon_add@1x.png */; };
 		C83E060121B79DA000619F0D /* YIRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83E060021B79DA000619F0D /* YIRefreshViewController.m */; };
+		C86F3B9E224BADB800784233 /* YYBAlertView+Cover.m in Sources */ = {isa = PBXBuildFile; fileRef = C86F3B9D224BADB800784233 /* YYBAlertView+Cover.m */; };
 		C8A70DB021DCE8D5001429FB /* YITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A70DAF21DCE8D5001429FB /* YITabBarViewController.m */; };
 		C8B9A6532244BEE0001560B6 /* YYBAlertView+Waiting.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B9A6522244BEE0001560B6 /* YYBAlertView+Waiting.m */; };
 		C8B9A6572244BF50001560B6 /* YYBRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B9A6562244BF50001560B6 /* YYBRequestHelper.m */; };
@@ -193,6 +194,8 @@
 		C83E05FA21B78F6000619F0D /* ic_icon_add@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_icon_add@1x.png"; sourceTree = "<group>"; };
 		C83E05FF21B79DA000619F0D /* YIRefreshViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIRefreshViewController.h; sourceTree = "<group>"; };
 		C83E060021B79DA000619F0D /* YIRefreshViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIRefreshViewController.m; sourceTree = "<group>"; };
+		C86F3B9C224BADB800784233 /* YYBAlertView+Cover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+Cover.h"; sourceTree = "<group>"; };
+		C86F3B9D224BADB800784233 /* YYBAlertView+Cover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYBAlertView+Cover.m"; sourceTree = "<group>"; };
 		C8A70DAE21DCE8D5001429FB /* YITabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YITabBarViewController.h; sourceTree = "<group>"; };
 		C8A70DAF21DCE8D5001429FB /* YITabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YITabBarViewController.m; sourceTree = "<group>"; };
 		C8B9A6512244BEE0001560B6 /* YYBAlertView+Waiting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYBAlertView+Waiting.h"; sourceTree = "<group>"; };
@@ -817,6 +820,8 @@
 		C8C37CAE22412B50004C391B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C86F3B9C224BADB800784233 /* YYBAlertView+Cover.h */,
+				C86F3B9D224BADB800784233 /* YYBAlertView+Cover.m */,
 				C8C37D4B22412F42004C391B /* YYBAlertView+DatePicker.h */,
 				C8C37D4C22412F42004C391B /* YYBAlertView+DatePicker.m */,
 				C8C37CB522412B50004C391B /* YYBAlertView+ActionSheet.h */,
@@ -1272,6 +1277,7 @@
 				C8C37D0B22412B50004C391B /* YYBPhotoViewController.m in Sources */,
 				C8C37CEA22412B50004C391B /* UICollectionView+YYBLayout.m in Sources */,
 				C8C37CF122412B50004C391B /* UIImageView+YYBAdd.m in Sources */,
+				C86F3B9E224BADB800784233 /* YYBAlertView+Cover.m in Sources */,
 				C8C37CE322412B50004C391B /* UIScrollView+YYBRefreshDoneView.m in Sources */,
 				C83E05C721B51C8700619F0D /* SPCreateDateView.m in Sources */,
 				C8C37D4422412B50004C391B /* YYBRouter.m in Sources */,
