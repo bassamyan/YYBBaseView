@@ -48,6 +48,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Request' do |request|
     request.source_files = 'YYB_iOSComponent/YYB_iOSComponent/Components/Request/**/*.{h,m}'
+    request.dependency 'AFNetworking'
   end
 
   s.subspec 'TabBar' do |tabBar|
